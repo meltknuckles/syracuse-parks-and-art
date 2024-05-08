@@ -12,6 +12,7 @@ function App() {
     longitude: null,
   });
 
+  const [selectedMarker, setSelectedMarker] = useState<any>();
   const { coords, isGeolocationAvailable, getPosition } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false,
@@ -30,13 +31,19 @@ function App() {
   }, [coords]);
   return (
     <div className="grid">
-      <div className="col-4"></div>
+      <div className="col-4">
+        <code>
+          {selectedMarker ? JSON.stringify(selectedMarker, null, 2) : ''}
+        </code>
+      </div>
       <div className="col" style={{ padding: 0 }}>
         <MapContainer
           location={coords}
           setMapLocation={setLocation}
           isGeolocationAvailable={isGeolocationAvailable}
           getPosition={getPosition}
+          selectedMarker={selectedMarker}
+          setSelectedMarker={setSelectedMarker}
         />
       </div>
     </div>

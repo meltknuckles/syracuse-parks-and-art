@@ -43,11 +43,15 @@ export const MapContainer = ({
   setMapLocation,
   isGeolocationAvailable,
   getPosition,
+  selectedMarker,
+  setSelectedMarker,
 }: {
   location: any;
   setMapLocation: any;
   isGeolocationAvailable: boolean;
   getPosition: any;
+  selectedMarker: any;
+  setSelectedMarker: any;
 }) => {
   const [googlaApiLoaded, setGoogleApiLoaded] = useState(false);
   const [showBikePaths, setShowBikePaths] = useState(false);
@@ -60,6 +64,7 @@ export const MapContainer = ({
   if (!apiKey || !location) {
     return null;
   }
+  console.log('selectedMarker', selectedMarker);
 
   return (
     <div style={{ overflow: 'hidden' }}>
@@ -158,73 +163,91 @@ export const MapContainer = ({
             }
             onGoogleApiLoaded={({ map, maps }) => {
               setGoogleApiLoaded(true);
-              new maps.Marker({
-                position: { lat: location.latitude, lng: location.longitude },
-                map,
-                title: 'You are Here',
-                icon: {
-                  url: navIcon,
-                  scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
-                },
-              });
 
-              for (const dogpark of dogparkdata) {
-                new maps.Marker({
-                  position: {
-                    lat: dogpark.latitude,
-                    lng: dogpark.longitude,
-                  },
+              const addMarker = ({
+                type,
+                title,
+                icon,
+                lat,
+                lng,
+                selectable,
+              }: {
+                type: string;
+                title: string;
+                icon: any;
+                lat: number;
+                lng: number;
+                selectable: any;
+              }) => {
+                const _marker = new maps.Marker({
+                  position: { lat, lng },
                   map,
-                  title: dogpark.name,
+                  title,
                   icon: {
-                    url: dogIcon,
+                    url: icon,
                     scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
                   },
                 });
+                maps.event.addListener(_marker, 'click', () => {
+                  // map.setZoom(15);
+                  if (selectable) {
+                    console.log('selectable', selectable);
+                    setSelectedMarker({ ...selectable, type });
+                  }
+                  map.panTo(_marker.getPosition());
+                });
+              };
+
+              addMarker({
+                type: 'you',
+                title: 'You are Here',
+                icon: navIcon,
+                lat: location.latitude,
+                lng: location.longitude,
+                selectable: location,
+              });
+
+              for (const dogpark of dogparkdata) {
+                addMarker({
+                  type: 'dogpark',
+                  title: dogpark.name,
+                  icon: dogIcon,
+                  lat: dogpark.latitude,
+                  lng: dogpark.longitude,
+                  selectable: dogpark,
+                });
               }
               for (const playground of playgrounddata) {
-                new maps.Marker({
-                  position: {
-                    lat: playground.latitude,
-                    lng: playground.longitude,
-                  },
-                  map,
+                addMarker({
+                  type: 'playground',
                   title: playground.name,
-                  icon: {
-                    url: playgroundIcon,
-                    scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
-                  },
+                  icon: playgroundIcon,
+                  lat: playground.latitude,
+                  lng: playground.longitude,
+                  selectable: playground,
                 });
               }
 
               for (const pool of pooldata.features) {
-                new maps.Marker({
-                  position: {
-                    lat: pool.properties.Latitude,
-                    lng: pool.properties.Longitude,
-                  },
-                  map,
+                addMarker({
+                  type: 'pool',
                   title: `${pool.properties.Park} Pool`,
-                  icon: {
-                    url: poolIcon,
-                    scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
-                  },
+                  icon: poolIcon,
+                  lat: pool.properties.Latitude,
+                  lng: pool.properties.Longitude,
+                  selectable: pool.properties,
                 });
               }
 
               for (const center of centerdata.features) {
                 if (center.properties.PARK) {
-                  new maps.Marker({
-                    position: {
-                      lat: center.geometry.coordinates[1],
-                      lng: center.geometry.coordinates[0],
-                    },
-                    map,
+                  addMarker({
+                    type: 'center',
                     title: center.properties.PARK,
-                    icon: {
-                      url: centerIcon,
-                      scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
-                    },
+                    icon: centerIcon,
+                    lat: center.geometry.coordinates[1],
+                    lng: center.geometry.coordinates[0],
+                    selectable: center.properties,
                   });
                 }
               }
@@ -271,30 +294,27 @@ export const MapContainer = ({
                 } else if (court.properties.COURT_TYPE.includes('Cycle')) {
                   icon = bikeIcon;
                 }
-                new maps.Marker({
-                  position: {
+
+                if (court.properties.LAT && court.properties.LONG) {
+                  addMarker({
+                    type: 'court',
+                    title: `${court.properties.PARK} ${court.properties.COURT_TYPE} Court`,
+                    icon,
                     lat: court.properties.LAT,
                     lng: court.properties.LONG,
-                  },
-                  map,
-                  title: `${court.properties.PARK} ${court.properties.COURT_TYPE} Court`,
-                  icon: {
-                    url: `${icon}`,
-                    scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
-                  },
-                });
+                    selectable: court.properties,
+                  });
+                }
               }
 
               for (const park of parkdata) {
-                console.log('park', park.name, park.tags);
-                new maps.Marker({
-                  position: { lat: park.latitude, lng: park.longitude },
-                  map,
+                addMarker({
+                  type: 'park',
                   title: park.name,
-                  icon: {
-                    url: parkIcon,
-                    scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
-                  },
+                  icon: parkIcon,
+                  lat: park.latitude,
+                  lng: park.longitude,
+                  selectable: park,
                 });
               }
 
@@ -314,7 +334,6 @@ export const MapContainer = ({
               map.data.addGeoJson(boundary);
 
               map.data.setStyle((feature: any) => {
-                console.log(feature.getProperty('name'));
                 if (feature.getProperty('name') === 'a') {
                   console.log('in');
                   return /** @type {!google.maps.Data.StyleOptions} */ {
