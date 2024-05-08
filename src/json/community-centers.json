@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "Syracuse_Parks_%26_Recreation_Community_Centers",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PARK": "Kirk Park Seals Community Center", "COMMUNITY_CENTER": "Yes", "ADDRESS": "300 W. Borden Ave. ", "LAT": 43.025991, "LONG": -76.153647, "FID": 1 }, "geometry": { "type": "Point", "coordinates": [ -76.153647, 43.025991 ] } },
+{ "type": "Feature", "properties": { "PARK": "Bova Community Center\nat Schiller Park", "COMMUNITY_CENTER": "Yes", "ADDRESS": "223 Whitwell Dr.", "LAT": 43.065739, "LONG": -76.138583, "FID": 2 }, "geometry": { "type": "Point", "coordinates": [ -76.138583, 43.065739 ] } },
+{ "type": "Feature", "properties": { "PARK": "Magnarelli Community Center\nat McChesney Park", "COMMUNITY_CENTER": "Yes", "ADDRESS": "2308 Grant Blvd. ", "LAT": 43.074292, "LONG": -76.145929, "FID": 3 }, "geometry": { "type": "Point", "coordinates": [ -76.145929, 43.074292 ] } },
+{ "type": "Feature", "properties": { "PARK": "Wilson Park Community Center", "COMMUNITY_CENTER": "Yes", "ADDRESS": "1117 S. McBride St.", "LAT": 43.039942, "LONG": -76.143658, "FID": 4 }, "geometry": { "type": "Point", "coordinates": [ -76.143658, 43.039942 ] } },
+{ "type": "Feature", "properties": { "PARK": "Bob Cecile Community Center", "COMMUNITY_CENTER": "Yes", "ADDRESS": "174 W. Seneca Turnpike", "LAT": 43.001564, "LONG": -76.146325, "FID": 5 }, "geometry": { "type": "Point", "coordinates": [ -76.146325, 43.001564 ] } },
+{ "type": "Feature", "properties": { "PARK": "Westmoreland Community Center", "COMMUNITY_CENTER": "Yes", "ADDRESS": "130 Westmoreland Ave. ", "LAT": 43.050298, "LONG": -76.115442, "FID": 6 }, "geometry": { "type": "Point", "coordinates": [ -76.115442, 43.050298 ] } },
+{ "type": "Feature", "properties": { "PARK": "Burnet Park Arts & Crafts Center", "COMMUNITY_CENTER": "Yes", "ADDRESS": "297 Coleridge Ave. ", "LAT": 43.042294, "LONG": -76.184737, "FID": 7 }, "geometry": { "type": "Point", "coordinates": [ -76.184737, 43.042294 ] } },
+{ "type": "Feature", "properties": { "PARK": null, "COMMUNITY_CENTER": null, "ADDRESS": null, "LAT": null, "LONG": null, "FID": 8 }, "geometry": { "type": "Point", "coordinates": [ -76.187259, 43.040223 ] } },
+{ "type": "Feature", "properties": { "PARK": null, "COMMUNITY_CENTER": null, "ADDRESS": null, "LAT": null, "LONG": null, "FID": 9 }, "geometry": { "type": "Point", "coordinates": [ -76.114377, 43.058912 ] } }
+]
+}
