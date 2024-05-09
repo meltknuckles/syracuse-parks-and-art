@@ -4,6 +4,10 @@
     "address": "600 Broad Street, Syracuse, NY 13210",
     "description": "This 12+ acre park offers plenty of outdoor recreation and nature preservation opportunities for all to enjoy.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "gallery": {
+      "count": 10,
+      "folder": "barry-park"
+    },
     "latitude": 43.028827,
     "longitude": -76.117295
   },
@@ -12,6 +16,10 @@
     "address": "299 Coleridge Ave, Syracuse, NY 13204",
     "description": "Burnet Park, located in Syracuse's historic Tipperary Hill, is a multi-use park that spans 88 acres featuring a golf course, swimming pool, multiple athletic fields, a tennis court and basketball court.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "gallery": {
+      "count": 10,
+      "folder": "burnet-park"
+    },
     "latitude": 43.042274,
     "longitude": -76.183936
   },
@@ -28,6 +36,10 @@
     "address": "2 Clinton Square, Syracuse, NY 13202",
     "description": "Clinton Square continues to be a gathering place where tens of thousands get together every year -- Whether to ice skate from late Nov. to March, take part in a walk or run, or to celebrate at one of the many festivals during the warmer months.",
     "tags": ["Downtown Park"],
+    "gallery": {
+      "count": 6,
+      "folder": "clinton-square"
+    },
     "latitude": 43.050975,
     "longitude": -76.152846
   },
@@ -65,7 +77,8 @@
   },
   {
     "name": "Elmwood Park",
-    "address": "600 Craddock Street, Syracuse, NY 13207",
+    "address": "Elmwood Park, 919 Glenwood Ave, Syracuse, NY 13207",
+    "old_address": "600 Craddock Street, Syracuse, NY 13207",
     "description": "This 65 acre community park, on the southside of the city, features picturesque bridges, walls and staircases made of rustic stone throughout, and is home to Furnace Brook stream.",
     "tags": ["Athletic Field", "Natural Areas"],
     "latitude": 43.018696,
@@ -89,7 +102,7 @@
   },
   {
     "name": "Franklin Square Park",
-    "address": "601 Plum Street, Syracuse, NY 13204",
+    "address": "Franklin Square Park, 101 Solar St, Syracuse, NY 13204",
     "description": "This picturesque park is a popular backdrop for many brides and grooms. This enchanting green space at the corner of Plum and Solar Streets features a fountain, arbors and magnificently-colored flowers in season.",
     "tags": ["Downtown Park"],
     "latitude": 43.056991,
@@ -129,7 +142,7 @@
   },
   {
     "name": "Kirk Park",
-    "address": "300 West Borden Ave, Syracuse, NY 13205",
+    "address": "Kirk Park, 1101 South Ave, Syracuse, NY 13207",
     "description": "This 33 acre park, located on the southside of Syracuse, features a community center, outdoor swimming pool and a variety of athletic fields and courts.",
     "tags": ["Athletic Court, Athletic Field, Multi-Use Park"],
     "latitude": 43.026792,
@@ -164,6 +177,10 @@
     "address": "140 Robinson Street, Syracuse, NY 13203",
     "description": "Located in the northeast section of Syracuse. this 19-acre neighborhood park, features basketball courts, a tennis court, a playground and a large, wooded area.",
     "tags": ["Athletic Court", "Athletic Field", "Dog Park", "Multi-Use Park"],
+    "gallery": {
+      "count": 2,
+      "folder": "lincoln-park"
+    },
     "latitude": 43.056873,
     "longitude": -76.126814
   },
@@ -193,7 +210,7 @@
   },
   {
     "name": "Meachem Field",
-    "address": "121 W. Seneca Trpk, Syracuse, NY 13205",
+    "address": "Meachem Field, 121 W. Seneca Trpk, Syracuse, NY 13205",
     "description": "Located alongside the Onondaga Creek on the City's South Side, this park is home to multiple softball fields, lighted tennis/pickleball courts, an ice skating rink, and a playground.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
     "latitude": 43.000026,
@@ -201,7 +218,7 @@
   },
   {
     "name": "Norwood Park",
-    "address": "393 Ashdale Ave, Syracuse, NY 13206",
+    "address": "Norwood Park, 393 Ashdale Ave, Syracuse, NY 13206",
     "description": "This neighborhood park, with over 8 acres of land, features two football fields and a beautiful new playground.",
     "tags": ["Athletic Field", "Multi-Use Park"],
     "latitude": 43.077105,
@@ -212,12 +229,16 @@
     "address": "Along Onondaga Creekwalk, Syracuse, NY Various",
     "description": "The Onondaga Creekwalk trail is 4.8 miles of an accessible pathway designed for bicyclists, skaters, and pedestrians to take in the rich history and vibrant culture of Syracuse. The trail runs, mostly, parallel to Onondaga Creek connecting Syracuse's Southside neighborhood, through Downtown's historic Armory Square, and then on to Onondaga Lake, a birder's paradise.",
     "tags": ["Downtown Park"],
+    "gallery": {
+      "count": 5,
+      "folder": "onondaga-creekwalk"
+    },
     "latitude": 43.059744,
     "longitude": -76.166213
   },
   {
     "name": "Onondaga Park - Lower",
-    "address": "655 Onondaga Ave, Syracuse, NY 13207",
+    "address": "Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
     "description": "This 16 acre park is a wonderful place to wander and explore. See the stone bridge arch, fountain, and greenhouse. The park has a great spray fountain and playground for all ages to enjoy.",
     "tags": ["Multi-Use Park"],
     "latitude": 43.02872,
@@ -225,7 +246,7 @@
   },
   {
     "name": "Onondaga Park - Upper",
-    "address": "301 Crossett Street, Syracuse, NY 13207",
+    "address": "Upper Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
     "description": "This 67 acre park is situated on the City's south side, in the Strathmore neighborhood. This park is home to Hiawatha Lake, multiple tennis courts, 3 basketball courts, a playground and a swimming pool.",
     "tags": ["Multi-Use Park"],
     "latitude": 43.026796,
@@ -257,7 +278,7 @@
   },
   {
     "name": "Sherman Park",
-    "address": "101 Sherman Place, Syracuse, NY 13210",
+    "address": "Sherman Park, 1401 Westmoreland Ave, Syracuse, NY 13210",
     "description": "Nestled in a university neighborhood, Sherman Park features two little league fields and comes in at just over 2 acres.",
     "tags": ["Athletic Field"],
     "latitude": 43.026427,
@@ -297,7 +318,7 @@
   },
   {
     "name": "Union Park",
-    "address": "1001 N. Salina Street, Syracuse, NY 13208",
+    "address": "Lower Union Park, 1001 S Salina St, Syracuse, NY 13202",
     "description": "This neighborhood park features a beautiful playground and spray feature.",
     "tags": ["Playlot"],
     "latitude": 43.064213,
@@ -321,7 +342,7 @@
   },
   {
     "name": "Wilson Park",
-    "address": "1117 S. McBride Street, Syracuse, NY 13202",
+    "address": "Wilson Park, 1117 S. McBride Street, Syracuse, NY 13202",
     "description": "Wilson Park is just over 2 acres and features 2 basketball courts, a community center, outdoor pool, playground and water feature.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
     "latitude": 43.039905,

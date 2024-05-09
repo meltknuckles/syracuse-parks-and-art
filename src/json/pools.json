@@ -17,8 +17,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "50 M x 60'",
         "Depth": "4' to 14'",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/burnet-park-pool-2022.jpg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/burnet-park-pool-2022.jpg",
+        "website": "https://syr.gov/swimming",
         "FID": 1
       },
       "geometry": { "type": "Point", "coordinates": [-76.1868552, 43.0422915] }
@@ -34,8 +34,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 63'",
         "Depth": "3' to 11'",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/kirkparkpool.jpeg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/kirkparkpool.jpeg",
+        "website": "https://syr.gov/swimming",
         "FID": 2
       },
       "geometry": { "type": "Point", "coordinates": [-76.1566506, 43.0268659] }
@@ -44,7 +44,7 @@
       "type": "Feature",
       "properties": {
         "Park": "Lincoln Park",
-        "Address": "Lincoln Park, 140 Robinson St, Syracuse, NY 13203",
+        "address": "Lincoln Park, 140 Robinson St, Syracuse, NY 13203",
         "Pool": "Yes",
         "Type": "Outdoor",
         "Latitude": 43.05672712443621,
@@ -52,8 +52,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 60'",
         "Depth": "3'6\" to 12'",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/lincolnparkpool.jpeg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/lincolnparkpool.jpeg",
+        "website": "https://syr.gov/swimming",
         "FID": 3
       },
       "geometry": {
@@ -72,8 +72,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "48 yds x 69'",
         "Depth": "3'6\" to 7'",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/mckinleyparkpool.jpeg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/mckinleyparkpool.jpeg",
+        "website": "https://syr.gov/swimming",
         "FID": 4
       },
       "geometry": { "type": "Point", "coordinates": [-76.1514346, 43.0199537] }
@@ -89,8 +89,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "50 M x 42'",
         "Depth": "3'6\" to 12'",
-        "Pool_Image": "https://www.syr.gov//files/sharedassets/public/2-departments/parks-recreation/images/2021-onondaga-park-pool.jpg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov//files/sharedassets/public/2-departments/parks-recreation/images/2021-onondaga-park-pool.jpg",
+        "website": "https://syr.gov/swimming",
         "FID": 5
       },
       "geometry": { "type": "Point", "coordinates": [-76.1712197, 43.0241038] }
@@ -106,8 +106,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "55 yds x 75'",
         "Depth": "3'6\" to 12'",
-        "Pool_Image": "https://www.syr.gov//files/sharedassets/public/2-departments/parks-recreation/images/2019-schiller-park-pool.jpg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov//files/sharedassets/public/2-departments/parks-recreation/images/2019-schiller-park-pool.jpg",
+        "website": "https://syr.gov/swimming",
         "FID": 6
       },
       "geometry": { "type": "Point", "coordinates": [-76.1401406, 43.0669885] }
@@ -123,8 +123,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 42'",
         "Depth": "3'6\" to 12'",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/southestcommunitycenterpool.jpeg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/southestcommunitycenterpool.jpeg",
+        "website": "https://syr.gov/swimming",
         "FID": 7
       },
       "geometry": { "type": "Point", "coordinates": [-76.1570104, 43.0342252] }
@@ -140,8 +140,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "50 M x 72'",
         "Depth": "3'6\" to 7'",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/2020-thornden-park-pool.jpg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/2020-thornden-park-pool.jpg",
+        "website": "https://syr.gov/swimming",
         "FID": 8
       },
       "geometry": { "type": "Point", "coordinates": [-76.1244485, 43.0427262] }
@@ -157,8 +157,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 42'",
         "Depth": "3'6\" to 11'",
-        "Pool_Image": "https://www.syr.gov//files/sharedassets/public/2-departments/parks-recreation/images/20220929_valleypool.jpeg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov//files/sharedassets/public/2-departments/parks-recreation/images/20220929_valleypool.jpeg",
+        "website": "https://syr.gov/swimming",
         "FID": 9
       },
       "geometry": { "type": "Point", "coordinates": [-76.1489819, 42.997232] }
@@ -174,8 +174,8 @@
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 42'",
         "Depth": "3'6\"",
-        "Pool_Image": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/wilsonparkpool.jpeg",
-        "Website": "https://syr.gov/swimming",
+        "imgUrl": "https://www.syr.gov/files/sharedassets/public/2-departments/parks-recreation/images/pools/wilsonparkpool.jpeg",
+        "website": "https://syr.gov/swimming",
         "FID": 10
       },
       "geometry": { "type": "Point", "coordinates": [-76.1452366, 43.0399134] }

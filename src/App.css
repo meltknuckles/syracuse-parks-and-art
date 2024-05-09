@@ -2,3 +2,11 @@
     width: 100%;
     text-align: center;
 }
+
+.info-table thead {
+    display: none;
+}
+
+.p-galleria-thumbnail-item {
+    overflow: hidden;
+}
