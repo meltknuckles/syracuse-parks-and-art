@@ -4,10 +4,30 @@
     "address": "600 Broad Street, Syracuse, NY 13210",
     "description": "This 12+ acre park offers plenty of outdoor recreation and nature preservation opportunities for all to enjoy.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Baseball Field(s)",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Bicycle Racks",
+      "Drinking Fountains",
+      "Field House",
+      "Monday Mile Trail",
+      "Parking Lot",
+      "Pickleball Courts",
+      "Pavilion (Rental Availability)",
+      "Picnic Tables",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Soccer Field",
+      "Swings",
+      "Tennis Court(s)"
+    ],
     "gallery": {
       "count": 10,
       "folder": "barry-park"
     },
+    "accessibility": "https://search.inclusiverec.org/agencies/6088",
     "latitude": 43.028827,
     "longitude": -76.117295
   },
@@ -16,6 +36,32 @@
     "address": "299 Coleridge Ave, Syracuse, NY 13204",
     "description": "Burnet Park, located in Syracuse's historic Tipperary Hill, is a multi-use park that spans 88 acres featuring a golf course, swimming pool, multiple athletic fields, a tennis court and basketball court.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Baseball Field(s)",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Bicycle Racks",
+      "Drinking Fountains",
+      "Field House",
+      "Golf Course",
+      "Monday Mile Trail",
+      "Monument/Memorial",
+      "Multi-Purpose Field(s)",
+      "Outdoor Fitness Equipment",
+      "Parking Lot",
+      "Pickleball Courts",
+      "Picnic Tables",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Softball Field(s)",
+      "Swimming Pool (Outdoor)",
+      "Swings",
+      "Tennis Court(s)",
+      "Turf Field (Partially Enclosed)",
+      "Walking Trails Paved"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6108",
     "gallery": {
       "count": 10,
       "folder": "burnet-park"
@@ -28,6 +74,12 @@
     "address": "199 Spaulding Ave, Syracuse, NY 13205",
     "description": "Located adjacent to Meachem Elementary School, this park is classified in playlots, fields & courts. It is home to two baseball fields and backs up to the Syracuse City School District's playground.",
     "tags": ["Athletic Field"],
+    "features": [
+      "Accessible",
+      "Baseball Field(s)",
+      "Drinking Fountains",
+      "Multi-Purpose Field(s)"
+    ],
     "latitude": 42.987084,
     "longitude": -76.147915
   },
@@ -36,6 +88,8 @@
     "address": "2 Clinton Square, Syracuse, NY 13202",
     "description": "Clinton Square continues to be a gathering place where tens of thousands get together every year -- Whether to ice skate from late Nov. to March, take part in a walk or run, or to celebrate at one of the many festivals during the warmer months.",
     "tags": ["Downtown Park"],
+    "features": [],
+    "accessibility": "https://search.inclusiverec.org/agencies/6106",
     "gallery": {
       "count": 6,
       "folder": "clinton-square"
@@ -48,6 +102,8 @@
     "address": "298 E. Jefferson Street, Syracuse, NY 13202",
     "description": "Located in the downtown section of Syracuse featuring a large fountain and Columbus Monument surrounded cultural and institutional facilities such as churches, a library and a courthouse.",
     "tags": ["Downtown Park"],
+    "accessibility": "https://search.inclusiverec.org/agencies/6103",
+    "features": [],
     "latitude": 43.046857,
     "longitude": -76.1491
   },
@@ -56,6 +112,21 @@
     "address": "1100 Comstock Ave, Syracuse, NY 13210",
     "description": "This 3+ acre park offers plenty of outdoor recreation and is classified as a neighborhood park.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Baseball Field(s)",
+      "Basketball Court(s)",
+      "Pickleball Courts",
+      "Pavilion (Rental Availability)",
+      "Picnic Tables",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Tennis Court(s)",
+      "Water Feature (Play)"
+    ],
+    "gallery": {
+      "count": 4,
+      "folder": "comfort-tyler-park"
+    },
     "latitude": 43.02289,
     "longitude": -76.129316
   },
@@ -64,6 +135,7 @@
     "address": "121 Edtim Road, Syracuse, NY 13206",
     "description": "Located in Eastwood, this park is home to three little league fields, a concession stand and a swing set.",
     "tags": ["Athletic Field"],
+    "features": [],
     "latitude": 43.070529,
     "longitude": -76.114924
   },
@@ -72,6 +144,7 @@
     "address": "350 Mosley Drive, Syracuse, NY 13206",
     "description": "With almost 4 acres of green space this neighborhood park offers several recreational opportunities, including a half basketball court.",
     "tags": ["Athletic Court"],
+    "features": [],
     "latitude": 43.062695,
     "longitude": -76.101659
   },
@@ -80,22 +153,60 @@
     "address": "Elmwood Park, 919 Glenwood Ave, Syracuse, NY 13207",
     "old_address": "600 Craddock Street, Syracuse, NY 13207",
     "description": "This 65 acre community park, on the southside of the city, features picturesque bridges, walls and staircases made of rustic stone throughout, and is home to Furnace Brook stream.",
+    "features": [
+      "Baseball Field(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Drinking Fountains",
+      "Historical Building",
+      "Nature Trails",
+      "Parking Lot",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Walking Trails Unpaved",
+      "Water Feature (Natural/Decorative)"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6089",
+    "gallery": {
+      "count": 4,
+      "folder": "elmwood-park"
+    },
     "tags": ["Athletic Field", "Natural Areas"],
     "latitude": 43.018696,
     "longitude": -76.16694
   },
   {
     "name": "Fayette Firefighters Memorial Park",
-    "address": "420 E. Fayette Street, Syracuse, NY 13202",
+    "address": "Firefighter's Memorial Park, 407 S State St, Syracuse, NY 13202",
     "description": "Surrounded by a beautiful cast iron fence, this park is home to two monuments and a memorial dedicated to brave fallen firefighters of the Syracuse Fire Department.",
+    "subdescription": "<strong>Hamilton White Monument</strong> stands on the west end of the Park and is a statue and seat in memory of Hamilton S. White who lost his life at a fire on March 13, 1899. It was given by fellow fireman and other citizens. It was unveiled on June 27, 1905.<br /><br /><strong>Monument to Fireman</strong> stands on the east side of the Park and is to the men who lost their lives in the Collins Block disaster February 2, 1939.<br /><br /><strong>Phillip Eckel Memorial</strong> stands in the center of the park and was dedicated Syracuse Fire Chief who lost his life at a fire on June 1, 1886.",
+    "features": [
+      "Accessible",
+      "Monument/Memorial",
+      "Water Feature (Natural/Decorative)"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6102",
+    "gallery": {
+      "count": 7,
+      "folder": "fayette-firefighters-memorial-park"
+    },
     "tags": ["Downtown Park"],
     "latitude": 43.048354,
     "longitude": -76.146495
   },
   {
     "name": "Forman Park",
-    "address": "420 E. Fayette Street, Syracuse, NY 13202",
-    "description": "Forman Park is just over one acre of land located in between East Genesee Street, Almond Street and Forman Ave. The park is home to a statue of Joshua Forman and Lewis Hamilton Redfield, along with, the Syracuse Police Memorial.",
+    "address": "Forman Park, 717 E Genesee St, Syracuse, NY 13210",
+    "description": "Forman Park is just over one acre of land located in between East Genesee Street, Almond Street and Forman Ave. The park is home to a statue of Joshua Forman and Lewis Hamilton Redfield, along with, the Syracuse Police Memorial.<br /><br />The three stones that comprise the Syracuse Police Memorial are inscribed with the words: Dedication, Sacrifice and Tradition and list the Syracuse Police Officers who have lost their lives in the line of duty. ",
+    "features": [
+      "Accessible",
+      "Monument/Memorial",
+      "Water Feature (Natural/Decorative)"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6100",
+    "gallery": {
+      "count": 5,
+      "folder": "forman-park"
+    },
     "tags": ["Downtown Park"],
     "latitude": 43.047192,
     "longitude": -76.14107
@@ -104,15 +215,27 @@
     "name": "Franklin Square Park",
     "address": "Franklin Square Park, 101 Solar St, Syracuse, NY 13204",
     "description": "This picturesque park is a popular backdrop for many brides and grooms. This enchanting green space at the corner of Plum and Solar Streets features a fountain, arbors and magnificently-colored flowers in season.",
+    "features": [
+      "Drinking Fountains",
+      "Monument/Memorial",
+      "Water Feature (Natural/Decorative)"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6087",
+    "gallery": {
+      "count": 8,
+      "folder": "franklin-square-park"
+    },
+    "announcement": "The Franklin Square fountain has been removed for restoration. We anticipate the restoration will be complete by mid-2024.",
     "tags": ["Downtown Park"],
     "latitude": 43.056991,
     "longitude": -76.157146
   },
   {
-    "name": "Grace Massena Playlot",
-    "address": "200 Grace Street, Syracuse, NY 13204",
-    "description": "This adorable playlot is located on the westside of the Syracuse on the corner of Grace Street and Massena Street. If features a beautiful playground and plenty of seating.",
+    "name": "Grace & Massena Park",
+    "address": "Grace & Messina Park, 413 Massena St, Syracuse, NY 13204",
+    "description": "This adorable park is located on the westside of the Syracuse on the corner of Grace Street and Massena Street. If features a beautiful playground and plenty of seating.",
     "tags": ["Playlot"],
+    "features": [],
     "latitude": 43.038505,
     "longitude": -76.166615
   },
@@ -121,6 +244,8 @@
     "address": "110 South Warren Street, Syracuse, NY 13202",
     "description": "This Downtown park is home to pubs, restaurants, loft living, businesses and more.",
     "tags": ["Downtown Park"],
+    "accessibility": "https://search.inclusiverec.org/agencies/6105",
+    "features": [],
     "latitude": 43.050402,
     "longitude": -76.150988
   },
@@ -129,6 +254,20 @@
     "address": "311 Mountainview Ave, Syracuse, NY 13224",
     "description": "This 11+ acre neighborhood park includes a little league field, tennis court, basketball court and a pretty cool playground.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Baseball Field(s)",
+      "Basketball Court(s)",
+      "Drinking Fountains",
+      "Pavilion (No Rental Availability)",
+      "Pickleball Courts",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Tennis Court(s)"
+    ],
+    "gallery": {
+      "count": 4,
+      "folder": "homer-wheaton-park"
+    },
     "latitude": 43.05136,
     "longitude": -76.099707
   },
@@ -137,6 +276,7 @@
     "address": "301 Caleb Ave, Syracuse, NY 13206",
     "description": "With just over 3 acres of space, this neighborhood park sits behind Huntington K-8 School and close to the District's playground. The space features a skate park popular among the skateboard, bmx and in-line skating community.",
     "tags": ["Multi-Use Park"],
+    "features": [],
     "latitude": 43.059396,
     "longitude": -76.110449
   },
@@ -145,6 +285,27 @@
     "address": "Kirk Park, 1101 South Ave, Syracuse, NY 13207",
     "description": "This 33 acre park, located on the southside of Syracuse, features a community center, outdoor swimming pool and a variety of athletic fields and courts.",
     "tags": ["Athletic Court, Athletic Field, Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Basketball Court (Covered)",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Bicycle Racks",
+      "Community Center",
+      "Drinking Fountains",
+      "Football Field",
+      "Multi-Purpose Field(s)",
+      "Parking Lot",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Swimming Pool (Outdoor)",
+      "Tennis Court(s)"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6092",
+    "gallery": {
+      "count": 6,
+      "folder": "kirk-park"
+    },
     "latitude": 43.026792,
     "longitude": -76.154486
   },
@@ -153,6 +314,11 @@
     "address": "120 Wilkenson Street, Syracuse, NY 13204",
     "description": "This neighborhood park features a beautiful gazebo at its center, a playground at the east end, and plenty of open green space to enjoy throughout.",
     "tags": ["Downtown Park"],
+    "features": ["Playground (2-5 Years Old)", "Playground (5-12 Years Old)"],
+    "gallery": {
+      "count": 2,
+      "folder": "leavenworth-park"
+    },
     "latitude": 43.051315,
     "longitude": -76.163144
   },
@@ -161,6 +327,7 @@
     "address": "305 Lewis Ave, Syracuse, NY 13204",
     "description": "This neighborhood park offers plenty of outdoor recreation opportunities with multiple little leagues fields, basketball courts and a playground with play features for ages 2-12.",
     "tags": ["Athletic Court", "Athletic Field"],
+    "features": [],
     "latitude": 43.054076,
     "longitude": -76.192185
   },
@@ -168,7 +335,17 @@
     "name": "Libba Cotten Grove",
     "address": "1338 S. State Street, Syracuse, NY 13202",
     "description": "This neighborhood park, on the southside of Syracuse, features a basketball court, a beautiful playground, a statue of the legendary Elizabeth 'Libba' Cotten as well as a large open green space for recreational fun.",
+    "subdescription": "Who is Libba Cotten?Elizabeth “Libba” Cotten 1891-1987 – Grammy Award-winning folk singer Libba Cotten bought her first guitar at Sears and Roebuck for $3.75 when she was 11 years old.  That same year she wrote her most famous song “Freight Train” which she would later record with Pete Seeger as an American classic.  Playing on the folk music circuit, Libba Cotten was honored wherever she went, including at the Smithsonian Institution on her 90th birthday.  She captivated her audiences with her warm spirit and her unique left-handed style of guitar playing dubbed “Cotton picking.”  Her songs and style have influenced countless musicians. In 1983 Ms. Cotten was named Syracuse’s first Living Treasure, an award which recognizes this community’s greatest asset, its people.  The Libba Cotten Grove, at the corner of South State and Castle Streets, is a living memorial to this unique Syracusan.",
     "tags": ["Athletic Court", "Playlot"],
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Libba-Cotten-Grove",
+    "features": [
+      "Accessible",
+      "Basketball Court(s)",
+      "Pavilion (No Rental Availability)",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Swings"
+    ],
     "latitude": 43.03447,
     "longitude": -76.147408
   },
@@ -177,6 +354,8 @@
     "address": "140 Robinson Street, Syracuse, NY 13203",
     "description": "Located in the northeast section of Syracuse. this 19-acre neighborhood park, features basketball courts, a tennis court, a playground and a large, wooded area.",
     "tags": ["Athletic Court", "Athletic Field", "Dog Park", "Multi-Use Park"],
+    "features": [],
+    "accessibility": "https://search.inclusiverec.org/agencies/6095",
     "gallery": {
       "count": 2,
       "folder": "lincoln-park"
@@ -189,6 +368,7 @@
     "address": "1003 W. Fayette Street, Syracuse, NY 13204",
     "description": "Lipe Art Park is an intriguing blend of public art project, outdoor venue, and recreational space, sprawling across approximately 2 acres in the city's Warehouse District.",
     "tags": ["Downtown Park"],
+    "features": [],
     "latitude": 43.046464,
     "longitude": -76.169608
   },
@@ -197,6 +377,23 @@
     "address": "2308 Grant Blvd., Syracuse, NY 13208",
     "description": "This neighborhood park, on the northside of Syracuse, boasts two basketball courts, two tennis courts with pickleball lines, a beautiful playground and recreation center for youth and seniors.",
     "tags": ["Athletic Court", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Community Center",
+      "Gymnasium",
+      "Parking Lot",
+      "Pickleball Courts",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Swings",
+      "Tennis Court(s)"
+    ],
+    "gallery": {
+      "count": 3,
+      "folder": "mcchesney-park"
+    },
     "latitude": 43.07399,
     "longitude": -76.145253
   },
@@ -205,6 +402,19 @@
     "address": "351 W. Newell St, Syracuse, NY 13205",
     "description": "This neighborhood park, on the southside of Syracuse, boasts two basketball courts, an outdoor pool, a spray feature, a beautiful playground and a large open green space for recreational fun.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Basketball Court(s)",
+      "Parking Lot",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Specialty Garden (I.e. Rain Garden/Rose Garden)",
+      "Swimming Pool (Outdoor)",
+      "Water Feature (Play)"
+    ],
+    "gallery": {
+      "count": 6,
+      "folder": "mckinley-park"
+    },
     "latitude": 43.016545,
     "longitude": -76.150892
   },
@@ -213,6 +423,8 @@
     "address": "Meachem Field, 121 W. Seneca Trpk, Syracuse, NY 13205",
     "description": "Located alongside the Onondaga Creek on the City's South Side, this park is home to multiple softball fields, lighted tennis/pickleball courts, an ice skating rink, and a playground.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [],
+    "accessibility": "https://search.inclusiverec.org/agencies/6094",
     "latitude": 43.000026,
     "longitude": -76.146268
   },
@@ -221,6 +433,7 @@
     "address": "Norwood Park, 393 Ashdale Ave, Syracuse, NY 13206",
     "description": "This neighborhood park, with over 8 acres of land, features two football fields and a beautiful new playground.",
     "tags": ["Athletic Field", "Multi-Use Park"],
+    "features": [],
     "latitude": 43.077105,
     "longitude": -76.109578
   },
@@ -229,6 +442,7 @@
     "address": "Along Onondaga Creekwalk, Syracuse, NY Various",
     "description": "The Onondaga Creekwalk trail is 4.8 miles of an accessible pathway designed for bicyclists, skaters, and pedestrians to take in the rich history and vibrant culture of Syracuse. The trail runs, mostly, parallel to Onondaga Creek connecting Syracuse's Southside neighborhood, through Downtown's historic Armory Square, and then on to Onondaga Lake, a birder's paradise.",
     "tags": ["Downtown Park"],
+    "features": [],
     "gallery": {
       "count": 5,
       "folder": "onondaga-creekwalk"
@@ -241,6 +455,8 @@
     "address": "Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
     "description": "This 16 acre park is a wonderful place to wander and explore. See the stone bridge arch, fountain, and greenhouse. The park has a great spray fountain and playground for all ages to enjoy.",
     "tags": ["Multi-Use Park"],
+    "accessibility": "https://search.inclusiverec.org/agencies/6091",
+    "features": [],
     "latitude": 43.02872,
     "longitude": -76.162606
   },
@@ -249,6 +465,27 @@
     "address": "Upper Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
     "description": "This 67 acre park is situated on the City's south side, in the Strathmore neighborhood. This park is home to Hiawatha Lake, multiple tennis courts, 3 basketball courts, a playground and a swimming pool.",
     "tags": ["Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Historical Building",
+      "Pavilion (Rental Availability)",
+      "Picnic Tables",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Shared Mobility Service (Bike Share)",
+      "Swimming Pool (Outdoor)",
+      "Tennis Court(s)",
+      "Walking Trails Paved",
+      "Water Feature (Natural/Decorative)",
+      "Water Feature (Play)"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6091",
+    "gallery": {
+      "count": 13,
+      "folder": "onondaga-park-upper"
+    },
     "latitude": 43.026796,
     "longitude": -76.165426
   },
@@ -257,6 +494,7 @@
     "address": "1121 East Washington Street, Syracuse, NY 13210",
     "description": "Spanning seven acres, Ormand Spencer Park is home to the city of Syracuse's only dog park. The park also features basketball courts and a playground.",
     "tags": ["Athletic Court", "Dog Park"],
+    "features": [],
     "latitude": 43.049764,
     "longitude": -76.133157
   },
@@ -265,6 +503,30 @@
     "address": "1099 Oak Street, Syracuse, NY 13203",
     "description": "Classified as a community park, this 37+ acre park is located on the northside of Syracuse and boasts a swimming pool, tennis courts, a soccer field and a community center.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Bicycle Racks",
+      "Community Center",
+      "Drinking Fountains",
+      "Gymnasium",
+      "Monday Mile Trail",
+      "Monument/Memorial",
+      "Outdoor Fitness Equipment",
+      "Parking Lot",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Soccer Field",
+      "Swimming Pool (Outdoor)",
+      "Tennis Court(s)",
+      "Walking Trails Paved",
+      "Water Feature (Play)"
+    ],
+    "gallery": {
+      "count": 11,
+      "folder": "onondaga-park-upper"
+    },
     "latitude": 43.066534,
     "longitude": -76.13852
   },
@@ -273,6 +535,11 @@
     "address": "506 Nichols Ave, Syracuse, NY 13206",
     "description": "This neighborhood park is tucked behind Fire Station #17 between S. Midler Ave and Nichols Ave, in Eastwood. The park features a 9/11 memorial and a firetruck to climb on.",
     "tags": ["Playlot"],
+    "features": ["Accessible"],
+    "gallery": {
+      "count": 1,
+      "folder": "sheridan-park"
+    },
     "latitude": 43.059183,
     "longitude": -76.103409
   },
@@ -281,6 +548,7 @@
     "address": "Sherman Park, 1401 Westmoreland Ave, Syracuse, NY 13210",
     "description": "Nestled in a university neighborhood, Sherman Park features two little league fields and comes in at just over 2 acres.",
     "tags": ["Athletic Field"],
+    "features": [],
     "latitude": 43.026427,
     "longitude": -76.113003
   },
@@ -289,6 +557,24 @@
     "address": "300 Tioga Street, Syracuse, NY 13204",
     "description": "Skiddy Park, located on the westside of Syracuse, is a neighborhood park that spans 2.75 acres featuring a playground, futsol court, a multi-purpose field, 2 basketball courts and a field house.",
     "tags": ["Athletic Court", "Athletic Field"],
+    "features": [
+      "Accessible",
+      "Baseball Field(s)",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Field House",
+      "Monument/Memorial",
+      "Multi-Purpose Field(s)",
+      "Picnic Tables",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Swings",
+      "Water Feature (Play)"
+    ],
+    "gallery": {
+      "count": 1,
+      "folder": "skiddy-park"
+    },
     "latitude": 43.044966,
     "longitude": -76.163669
   },
@@ -297,6 +583,7 @@
     "address": "201 South Ave, Syracuse, NY 13204",
     "description": "At just over 2 acres of green space, this neighborhood park on the southside of the city features a tennis court, a basketball court and a playground.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [],
     "latitude": 43.037403,
     "longitude": -76.158379
   },
@@ -305,14 +592,67 @@
     "address": "698 Robinson Street, Syracuse, NY 13206",
     "description": "Sunnycrest Park is a multi-purpose park. The athletic fields and ice rink are located at 698 Robinson Street. The golf course and winter lodge are located at 100 Caleb Ave, off of Hickok Ave on the Eastside of Syracuse.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Baseball Field(s)",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Bicycle Racks",
+      "Cross Country Ski Trails",
+      "Drinking Fountains",
+      "Golf Course",
+      "Ice Rink",
+      "Parking Lot",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Running Track",
+      "Soccer Field",
+      "Tennis Court(s)",
+      "Turf Field (Outdoor)",
+      "Walking Trails Paved"
+    ],
+    "accessibility": "https://search.inclusiverec.org/agencies/6097",
+    "gallery": {
+      "count": 6,
+      "folder": "sunnycrest-park"
+    },
     "latitude": 43.058909,
     "longitude": -76.116918
   },
   {
     "name": "Thornden Park",
-    "address": "201 Ostrom Ave, Syracuse, NY 13210",
+    "address": "Thornden Park Dr, 201 Ostrom Ave, Syracuse, NY 13210",
     "description": "This 76 acre community park on the eastside of the city features the E.M. Mills Rose Garden, a lily pond, an outdoor pool, a playground, athletic courts, a rentable pavilion and plenty of green spaces to enjoy.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Amphitheatre/Performance Stage",
+      "Basketball Court(s)",
+      "Bathrooms (Open with city programming or permitted events)",
+      "Bicycle Racks",
+      "Drinking Fountains",
+      "Field House",
+      "Football Field",
+      "Historical Building",
+      "Monday Mile Trail",
+      "Outdoor Fitness Equipment",
+      "Parking Lot",
+      "Pavilion (Rental Availability)",
+      "Picnic Tables",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Specialty Garden (I.e. Rain Garden/Rose Garden)",
+      "Swimming Pool (Outdoor)",
+      "Tennis Court(s)",
+      "Walking Trails Paved",
+      "Water Feature (Natural/Decorative)",
+      "Water Feature (Play)"
+    ],
+    "gallery": {
+      "count": 9,
+      "folder": "thornden-park"
+    },
+    "accessibility": "https://search.inclusiverec.org/agencies/6084",
     "latitude": 43.04222,
     "longitude": -76.126505
   },
@@ -321,6 +661,11 @@
     "address": "Lower Union Park, 1001 S Salina St, Syracuse, NY 13202",
     "description": "This neighborhood park features a beautiful playground and spray feature.",
     "tags": ["Playlot"],
+    "features": [],
+    "gallery": {
+      "count": 4,
+      "folder": "union-park"
+    },
     "latitude": 43.064213,
     "longitude": -76.156655
   },
@@ -329,6 +674,17 @@
     "address": "101 Washington Square, Syracuse, NY 13208",
     "description": "Nestled on the North Side of Syracuse, this neighborhood park features plenty of recreational opportunities.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [
+      "Accessible",
+      "Basketball Court(s)",
+      "Drinking Fountains",
+      "Monument/Memorial",
+      "Multi-Purpose Field(s)",
+      "Pavilion (No Rental Availability)",
+      "Playground (2-5 Years Old)",
+      "Playground (5-12 Years Old)",
+      "Water Feature (Play)"
+    ],
     "latitude": 43.070437,
     "longitude": -76.162851
   },
@@ -337,6 +693,7 @@
     "address": "130 Westmoreland Ave, Syracuse, NY 13224",
     "description": "Westmoreland Park is 2.50 acres and features a covered basketball court, community center and playground.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [],
     "latitude": 43.049808,
     "longitude": -76.115491
   },
@@ -345,6 +702,7 @@
     "address": "Wilson Park, 1117 S. McBride Street, Syracuse, NY 13202",
     "description": "Wilson Park is just over 2 acres and features 2 basketball courts, a community center, outdoor pool, playground and water feature.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "features": [],
     "latitude": 43.039905,
     "longitude": -76.142923
   }

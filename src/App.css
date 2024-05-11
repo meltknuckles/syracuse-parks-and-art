@@ -1,12 +1,61 @@
 #root {
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
     text-align: center;
+    font-family: Inclusive Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 .info-table thead {
     display: none;
 }
+.info-table tr td:first-child {
+    background: #eff4f4;
+    /* text-align: right; */
+    padding-right: 12px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    width: 40%;
+}
 
 .p-galleria-thumbnail-item {
     overflow: hidden;
+}
+
+a,
+.p-button.p-button-link:not(:disabled) {
+    color: #1982C4 !important;
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active,
+.p-button.p-button-link:active,
+.p-button.p-button-link:focus,
+.p-button.p-button-link:hover {
+    color: rgb(62, 167, 231) !important;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight {
+    background: #FEF4D7;
+}
+.p-inputtext:enabled,
+.p-treeselect:not(.p-disabled) {
+    border-color: #acadd3 !important;
+}
+.p-inputtext:enabled:hover,
+.p-treeselect:not(.p-disabled):hover {
+    border-color: #2d2f82 !important;
+}
+.p-checkbox.p-highlight .p-checkbox-box {
+    border-color: #2d2f82 !important;
+    background: #2d2f82 !important;
+    color: #ffffff;
+}
+.p-treenode-content {
+    padding: 6px;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight {
+    color: #2d2f82 !important;
 }

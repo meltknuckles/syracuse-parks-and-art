@@ -9,11 +9,11 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Kirk Park Seals Community Center",
+        "Park": "Kirk Park Seals Community Center",
         "COMMUNITY_CENTER": "Yes",
         "address": "300 W. Borden Ave. ",
-        "LAT": 43.025991,
-        "LONG": -76.153647,
+        "latitude": 43.025991,
+        "longitude": -76.153647,
         "FID": 1
       },
       "geometry": { "type": "Point", "coordinates": [-76.153647, 43.025991] }
@@ -21,23 +21,24 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Bova Community Center\nat Schiller Park",
+        "Park": "Bova Community Center\nat Schiller Park",
         "COMMUNITY_CENTER": "Yes",
         "address": "223 Whitwell Dr.",
-        "LAT": 43.065739,
-        "LONG": -76.138583,
+        "latitude": 43.065739,
+        "longitude": -76.138583,
         "FID": 2
       },
+      "accessibility": "https://search.inclusiverec.org/agencies/6096",
       "geometry": { "type": "Point", "coordinates": [-76.138583, 43.065739] }
     },
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Magnarelli Community Center\nat McChesney Park",
+        "Park": "Magnarelli Community Center\nat McChesney Park",
         "COMMUNITY_CENTER": "Yes",
         "address": "2308 Grant Blvd. ",
-        "LAT": 43.074292,
-        "LONG": -76.145929,
+        "latitude": 43.074292,
+        "longitude": -76.145929,
         "FID": 3
       },
       "geometry": { "type": "Point", "coordinates": [-76.145929, 43.074292] }
@@ -45,23 +46,24 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Wilson Park Community Center",
+        "Park": "Wilson Park Community Center",
         "COMMUNITY_CENTER": "Yes",
         "address": "1117 S. McBride St.",
-        "LAT": 43.039942,
-        "LONG": -76.143658,
+        "latitude": 43.039942,
+        "longitude": -76.143658,
         "FID": 4
       },
+      "accessibility": "https://search.inclusiverec.org/agencies/4472",
       "geometry": { "type": "Point", "coordinates": [-76.143658, 43.039942] }
     },
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Bob Cecile Community Center",
+        "Park": "Bob Cecile Community Center",
         "COMMUNITY_CENTER": "Yes",
         "address": "174 W. Seneca Turnpike",
-        "LAT": 43.001564,
-        "LONG": -76.146325,
+        "latitude": 43.001564,
+        "longitude": -76.146325,
         "FID": 5
       },
       "geometry": { "type": "Point", "coordinates": [-76.146325, 43.001564] }
@@ -69,11 +71,11 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Westmoreland Community Center",
+        "Park": "Westmoreland Community Center",
         "COMMUNITY_CENTER": "Yes",
         "address": "130 Westmoreland Ave. ",
-        "LAT": 43.050298,
-        "LONG": -76.115442,
+        "latitude": 43.050298,
+        "longitude": -76.115442,
         "FID": 6
       },
       "geometry": { "type": "Point", "coordinates": [-76.115442, 43.050298] }
@@ -81,11 +83,11 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Burnet Park Arts & Crafts Center",
+        "Park": "Burnet Park Arts & Crafts Center",
         "COMMUNITY_CENTER": "Yes",
         "address": "297 Coleridge Ave. ",
-        "LAT": 43.042294,
-        "LONG": -76.184737,
+        "latitude": 43.042294,
+        "longitude": -76.184737,
         "FID": 7
       },
       "geometry": { "type": "Point", "coordinates": [-76.184737, 43.042294] }
@@ -93,11 +95,11 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": null,
+        "Park": null,
         "COMMUNITY_CENTER": null,
         "address": null,
-        "LAT": null,
-        "LONG": null,
+        "latitude": null,
+        "longitude": null,
         "FID": 8
       },
       "geometry": { "type": "Point", "coordinates": [-76.187259, 43.040223] }
@@ -105,11 +107,11 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": null,
+        "Park": null,
         "COMMUNITY_CENTER": null,
         "address": null,
-        "LAT": null,
-        "LONG": null,
+        "latitude": null,
+        "longitude": null,
         "FID": 9
       },
       "geometry": { "type": "Point", "coordinates": [-76.114377, 43.058912] }

@@ -9,12 +9,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Barker Square",
+        "Park": "Barker Square",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.050634,
-        "LONG": -76.161638,
+        "latitude": 43.050634,
+        "longitude": -76.161638,
         "ObjectId": 1
       },
       "geometry": { "type": "Point", "coordinates": [-76.161638, 43.050634] }
@@ -22,12 +22,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Barry Park",
+        "Park": "Barry Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.02871,
-        "LONG": -76.116828,
+        "latitude": 43.02871,
+        "longitude": -76.116828,
         "ObjectId": 2
       },
       "geometry": { "type": "Point", "coordinates": [-76.116828, 43.02871] }
@@ -35,12 +35,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Barry Park",
+        "Park": "Barry Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": null,
-        "LAT": 43.028485,
-        "LONG": -76.116854,
+        "latitude": 43.028485,
+        "longitude": -76.116854,
         "ObjectId": 3
       },
       "geometry": { "type": "Point", "coordinates": [-76.116854, 43.028485] }
@@ -48,12 +48,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Barry Park",
+        "Park": "Barry Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.030181,
-        "LONG": -76.117332,
+        "latitude": 43.030181,
+        "longitude": -76.117332,
         "ObjectId": 4
       },
       "geometry": { "type": "Point", "coordinates": [-76.117332, 43.030181] }
@@ -61,12 +61,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Burnet Park",
+        "Park": "Burnet Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.04139,
-        "LONG": -76.184078,
+        "latitude": 43.04139,
+        "longitude": -76.184078,
         "ObjectId": 5
       },
       "geometry": { "type": "Point", "coordinates": [-76.184078, 43.04139] }
@@ -74,12 +74,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Burnet Park",
+        "Park": "Burnet Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": null,
-        "LAT": 43.041316,
-        "LONG": -76.184839,
+        "latitude": 43.041316,
+        "longitude": -76.184839,
         "ObjectId": 6
       },
       "geometry": { "type": "Point", "coordinates": [-76.184839, 43.041316] }
@@ -87,12 +87,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Cannon Street Community Center",
+        "Park": "Cannon Street Community Center",
         "COURT_TYPE": "Backboard & Hoop",
         "COURT_SIZE___QUANTITY": "No Lines",
         "IMPROV__YEAR": "Unlined",
-        "LAT": 43.020535,
-        "LONG": -76.145916,
+        "latitude": 43.020535,
+        "longitude": -76.145916,
         "ObjectId": 7
       },
       "geometry": { "type": "Point", "coordinates": [-76.145916, 43.020535] }
@@ -100,12 +100,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Clinton Playlot",
+        "Park": "Clinton Playlot",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.053991,
-        "LONG": -76.136667,
+        "latitude": 43.053991,
+        "longitude": -76.136667,
         "ObjectId": 8
       },
       "geometry": { "type": "Point", "coordinates": [-76.136667, 43.053991] }
@@ -113,12 +113,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Comfort Tyler Park",
+        "Park": "Comfort Tyler Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": null,
-        "LAT": 43.022453,
-        "LONG": -76.129041,
+        "latitude": 43.022453,
+        "longitude": -76.129041,
         "ObjectId": 9
       },
       "geometry": { "type": "Point", "coordinates": [-76.129041, 43.022453] }
@@ -126,12 +126,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Comfort Tyler Park",
+        "Park": "Comfort Tyler Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.022657,
-        "LONG": -76.129526,
+        "latitude": 43.022657,
+        "longitude": -76.129526,
         "ObjectId": 10
       },
       "geometry": { "type": "Point", "coordinates": [-76.129526, 43.022657] }
@@ -139,12 +139,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Dunbar Park",
+        "Park": "Dunbar Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.03245,
-        "LONG": -76.146153,
+        "latitude": 43.03245,
+        "longitude": -76.146153,
         "ObjectId": 11
       },
       "geometry": { "type": "Point", "coordinates": [-76.146153, 43.03245] }
@@ -152,12 +152,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Dunbar Park",
+        "Park": "Dunbar Park",
         "COURT_TYPE": "Tot Cycle Track",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": null,
-        "LAT": 43.032306,
-        "LONG": -76.146081,
+        "latitude": 43.032306,
+        "longitude": -76.146081,
         "ObjectId": 12
       },
       "geometry": { "type": "Point", "coordinates": [-76.146081, 43.032306] }
@@ -165,12 +165,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Dunbar Park",
+        "Park": "Dunbar Park",
         "COURT_TYPE": "Shuffleboard",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": null,
-        "LAT": 43.032288,
-        "LONG": -76.146236,
+        "latitude": 43.032288,
+        "longitude": -76.146236,
         "ObjectId": 13
       },
       "geometry": { "type": "Point", "coordinates": [-76.146236, 43.032288] }
@@ -178,12 +178,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Eastwood Heights Park",
+        "Park": "Eastwood Heights Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.063367,
-        "LONG": -76.101226,
+        "latitude": 43.063367,
+        "longitude": -76.101226,
         "ObjectId": 14
       },
       "geometry": { "type": "Point", "coordinates": [-76.101226, 43.063367] }
@@ -191,12 +191,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Homer-Wheaton Park",
+        "Park": "Homer-Wheaton Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2019",
-        "LAT": 43.050971,
-        "LONG": -76.099371,
+        "latitude": 43.050971,
+        "longitude": -76.099371,
         "ObjectId": 15
       },
       "geometry": { "type": "Point", "coordinates": [-76.099371, 43.050971] }
@@ -204,12 +204,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Homer-Wheaton Park",
+        "Park": "Homer-Wheaton Park",
         "COURT_TYPE": "Tennis/PickleBall",
         "COURT_SIZE___QUANTITY": "Lined (2)",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.050912,
-        "LONG": -76.100672,
+        "latitude": 43.050912,
+        "longitude": -76.100672,
         "ObjectId": 16
       },
       "geometry": { "type": "Point", "coordinates": [-76.100672, 43.050912] }
@@ -217,12 +217,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Huntington Park",
+        "Park": "Huntington Park",
         "COURT_TYPE": "Basketball (Hexagonal)",
         "COURT_SIZE___QUANTITY": "3-pt Shooting Court",
         "IMPROV__YEAR": "2023",
-        "LAT": null,
-        "LONG": null,
+        "latitude": null,
+        "longitude": null,
         "ObjectId": 17
       },
       "geometry": null
@@ -230,12 +230,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Kirk Park",
+        "Park": "Kirk Park",
         "COURT_TYPE": "Basketball (Covered)",
         "COURT_SIZE___QUANTITY": "Full Court (4)",
         "IMPROV__YEAR": null,
-        "LAT": 43.02671,
-        "LONG": -76.153392,
+        "latitude": 43.02671,
+        "longitude": -76.153392,
         "ObjectId": 18
       },
       "geometry": { "type": "Point", "coordinates": [-76.153392, 43.02671] }
@@ -243,12 +243,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Kirk Park",
+        "Park": "Kirk Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.024754,
-        "LONG": -76.154364,
+        "latitude": 43.024754,
+        "longitude": -76.154364,
         "ObjectId": 19
       },
       "geometry": { "type": "Point", "coordinates": [-76.154364, 43.024754] }
@@ -256,12 +256,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Kirk Park",
+        "Park": "Kirk Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined (3)",
         "IMPROV__YEAR": null,
-        "LAT": 43.027293,
-        "LONG": -76.153758,
+        "latitude": 43.027293,
+        "longitude": -76.153758,
         "ObjectId": 20
       },
       "geometry": { "type": "Point", "coordinates": [-76.153758, 43.027293] }
@@ -269,12 +269,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Kirk Park",
+        "Park": "Kirk Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Non-Lined (6)",
         "IMPROV__YEAR": null,
-        "LAT": 43.027293,
-        "LONG": -76.153758,
+        "latitude": 43.027293,
+        "longitude": -76.153758,
         "ObjectId": 21
       },
       "geometry": { "type": "Point", "coordinates": [-76.153758, 43.027293] }
@@ -282,12 +282,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Lewis Park",
+        "Park": "Lewis Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2019",
-        "LAT": 43.054859,
-        "LONG": -76.191949,
+        "latitude": 43.054859,
+        "longitude": -76.191949,
         "ObjectId": 22
       },
       "geometry": { "type": "Point", "coordinates": [-76.191949, 43.054859] }
@@ -295,12 +295,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Libba-Cotton Grove",
+        "Park": "Libba-Cotton Grove",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.034825,
-        "LONG": -76.14798,
+        "latitude": 43.034825,
+        "longitude": -76.14798,
         "ObjectId": 23
       },
       "geometry": { "type": "Point", "coordinates": [-76.14798, 43.034825] }
@@ -308,12 +308,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Lincoln Park",
+        "Park": "Lincoln Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.056078,
-        "LONG": -76.128151,
+        "latitude": 43.056078,
+        "longitude": -76.128151,
         "ObjectId": 24
       },
       "geometry": { "type": "Point", "coordinates": [-76.128151, 43.056078] }
@@ -321,12 +321,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Lincoln Park",
+        "Park": "Lincoln Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.057812,
-        "LONG": -76.126401,
+        "latitude": 43.057812,
+        "longitude": -76.126401,
         "ObjectId": 25
       },
       "geometry": { "type": "Point", "coordinates": [-76.126401, 43.057812] }
@@ -334,12 +334,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "McChesney Park",
+        "Park": "McChesney Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2019",
-        "LAT": 43.074216,
-        "LONG": -76.14643,
+        "latitude": 43.074216,
+        "longitude": -76.14643,
         "ObjectId": 26
       },
       "geometry": { "type": "Point", "coordinates": [-76.14643, 43.074216] }
@@ -347,12 +347,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "McChesney Park",
+        "Park": "McChesney Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.074498,
-        "LONG": -76.146346,
+        "latitude": 43.074498,
+        "longitude": -76.146346,
         "ObjectId": 27
       },
       "geometry": { "type": "Point", "coordinates": [-76.146346, 43.074498] }
@@ -360,12 +360,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "McKinley Park",
+        "Park": "McKinley Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "Unlined",
-        "LAT": 43.014647,
-        "LONG": -76.150781,
+        "latitude": 43.014647,
+        "longitude": -76.150781,
         "ObjectId": 28
       },
       "geometry": { "type": "Point", "coordinates": [-76.150781, 43.014647] }
@@ -373,12 +373,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "McKinley Park",
+        "Park": "McKinley Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.015283,
-        "LONG": -76.151151,
+        "latitude": 43.015283,
+        "longitude": -76.151151,
         "ObjectId": 29
       },
       "geometry": { "type": "Point", "coordinates": [-76.151151, 43.015283] }
@@ -386,12 +386,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Meachem Park",
+        "Park": "Meachem Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (3)",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.000709,
-        "LONG": -76.147494,
+        "latitude": 43.000709,
+        "longitude": -76.147494,
         "ObjectId": 30
       },
       "geometry": { "type": "Point", "coordinates": [-76.147494, 43.000709] }
@@ -399,12 +399,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Nottingham Courts",
+        "Park": "Nottingham Courts",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (6)",
         "IMPROV__YEAR": null,
-        "LAT": 43.040957,
-        "LONG": -76.095488,
+        "latitude": 43.040957,
+        "longitude": -76.095488,
         "ObjectId": 31
       },
       "geometry": { "type": "Point", "coordinates": [-76.095488, 43.040957] }
@@ -412,12 +412,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Onondaga Park Upper",
+        "Park": "Onondaga Park Upper",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (3)",
         "IMPROV__YEAR": "2018",
-        "LAT": 43.027369,
-        "LONG": -76.165081,
+        "latitude": 43.027369,
+        "longitude": -76.165081,
         "ObjectId": 32
       },
       "geometry": { "type": "Point", "coordinates": [-76.165081, 43.027369] }
@@ -425,12 +425,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Onondaga Park Upper",
+        "Park": "Onondaga Park Upper",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (8)",
         "IMPROV__YEAR": null,
-        "LAT": 43.023236,
-        "LONG": -76.167836,
+        "latitude": 43.023236,
+        "longitude": -76.167836,
         "ObjectId": 33
       },
       "geometry": { "type": "Point", "coordinates": [-76.167836, 43.023236] }
@@ -438,12 +438,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Ormand Spencer Park",
+        "Park": "Ormand Spencer Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Full Court/Skatepark (2)",
         "IMPROV__YEAR": null,
-        "LAT": 43.049964,
-        "LONG": -76.132456,
+        "latitude": 43.049964,
+        "longitude": -76.132456,
         "ObjectId": 34
       },
       "geometry": { "type": "Point", "coordinates": [-76.132456, 43.049964] }
@@ -451,12 +451,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Ormand Spencer Park",
+        "Park": "Ormand Spencer Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.049732,
-        "LONG": -76.132354,
+        "latitude": 43.049732,
+        "longitude": -76.132354,
         "ObjectId": 35
       },
       "geometry": { "type": "Point", "coordinates": [-76.132354, 43.049732] }
@@ -464,12 +464,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Roesler Park",
+        "Park": "Roesler Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": null,
-        "LAT": 43.040978,
-        "LONG": -76.149413,
+        "latitude": 43.040978,
+        "longitude": -76.149413,
         "ObjectId": 36
       },
       "geometry": { "type": "Point", "coordinates": [-76.149413, 43.040978] }
@@ -477,12 +477,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Roesler Park",
+        "Park": "Roesler Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.041304,
-        "LONG": -76.149411,
+        "latitude": 43.041304,
+        "longitude": -76.149411,
         "ObjectId": 37
       },
       "geometry": { "type": "Point", "coordinates": [-76.149411, 43.041304] }
@@ -490,12 +490,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Schiller Park",
+        "Park": "Schiller Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.065707,
-        "LONG": -76.137009,
+        "latitude": 43.065707,
+        "longitude": -76.137009,
         "ObjectId": 38
       },
       "geometry": { "type": "Point", "coordinates": [-76.137009, 43.065707] }
@@ -503,12 +503,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Schiller Park",
+        "Park": "Schiller Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (3)",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.066334,
-        "LONG": -76.137165,
+        "latitude": 43.066334,
+        "longitude": -76.137165,
         "ObjectId": 39
       },
       "geometry": { "type": "Point", "coordinates": [-76.137165, 43.066334] }
@@ -516,12 +516,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Schiller Park",
+        "Park": "Schiller Park",
         "COURT_TYPE": "Futsal",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.066021,
-        "LONG": -76.137148,
+        "latitude": 43.066021,
+        "longitude": -76.137148,
         "ObjectId": 40
       },
       "geometry": { "type": "Point", "coordinates": [-76.137148, 43.066021] }
@@ -529,12 +529,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Skiddy Park",
+        "Park": "Skiddy Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.044757,
-        "LONG": -76.163339,
+        "latitude": 43.044757,
+        "longitude": -76.163339,
         "ObjectId": 41
       },
       "geometry": { "type": "Point", "coordinates": [-76.163339, 43.044757] }
@@ -542,12 +542,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Skiddy Park",
+        "Park": "Skiddy Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (Save the Rain)",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.045361,
-        "LONG": -76.163529,
+        "latitude": 43.045361,
+        "longitude": -76.163529,
         "ObjectId": 42
       },
       "geometry": { "type": "Point", "coordinates": [-76.163529, 43.045361] }
@@ -555,12 +555,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Skiddy Park",
+        "Park": "Skiddy Park",
         "COURT_TYPE": "Futsal",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": "2022",
-        "LAT": 43.045039,
-        "LONG": -76.163469,
+        "latitude": 43.045039,
+        "longitude": -76.163469,
         "ObjectId": 43
       },
       "geometry": { "type": "Point", "coordinates": [-76.163469, 43.045039] }
@@ -568,12 +568,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Spirit of Jubilee Park",
+        "Park": "Spirit of Jubilee Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.036945,
-        "LONG": -76.15803,
+        "latitude": 43.036945,
+        "longitude": -76.15803,
         "ObjectId": 44
       },
       "geometry": { "type": "Point", "coordinates": [-76.15803, 43.036945] }
@@ -581,12 +581,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Spirit of Jubilee Park",
+        "Park": "Spirit of Jubilee Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.036925,
-        "LONG": -76.15829,
+        "latitude": 43.036925,
+        "longitude": -76.15829,
         "ObjectId": 45
       },
       "geometry": { "type": "Point", "coordinates": [-76.15829, 43.036925] }
@@ -594,12 +594,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Sunnycrest Park",
+        "Park": "Sunnycrest Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.06019,
-        "LONG": -76.118291,
+        "latitude": 43.06019,
+        "longitude": -76.118291,
         "ObjectId": 46
       },
       "geometry": { "type": "Point", "coordinates": [-76.118291, 43.06019] }
@@ -607,12 +607,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Sunnycrest Park",
+        "Park": "Sunnycrest Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (6)",
         "IMPROV__YEAR": null,
-        "LAT": 43.059931,
-        "LONG": -76.11798,
+        "latitude": 43.059931,
+        "longitude": -76.11798,
         "ObjectId": 47
       },
       "geometry": { "type": "Point", "coordinates": [-76.11798, 43.059931] }
@@ -620,12 +620,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Thornden Park",
+        "Park": "Thornden Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (3)",
         "IMPROV__YEAR": "2017",
-        "LAT": 43.041995,
-        "LONG": -76.127548,
+        "latitude": 43.041995,
+        "longitude": -76.127548,
         "ObjectId": 48
       },
       "geometry": { "type": "Point", "coordinates": [-76.127548, 43.041995] }
@@ -633,12 +633,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Thornden Park",
+        "Park": "Thornden Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (5)",
         "IMPROV__YEAR": "2017",
-        "LAT": 43.042299,
-        "LONG": -76.127677,
+        "latitude": 43.042299,
+        "longitude": -76.127677,
         "ObjectId": 49
       },
       "geometry": { "type": "Point", "coordinates": [-76.127677, 43.042299] }
@@ -646,12 +646,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Wadsworth Park",
+        "Park": "Wadsworth Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": "2018",
-        "LAT": 43.026375,
-        "LONG": -76.181752,
+        "latitude": 43.026375,
+        "longitude": -76.181752,
         "ObjectId": 50
       },
       "geometry": { "type": "Point", "coordinates": [-76.181752, 43.026375] }
@@ -659,12 +659,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Washington Square Park",
+        "Park": "Washington Square Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.070207,
-        "LONG": -76.162658,
+        "latitude": 43.070207,
+        "longitude": -76.162658,
         "ObjectId": 51
       },
       "geometry": { "type": "Point", "coordinates": [-76.162658, 43.070207] }
@@ -672,12 +672,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Washington Square Park",
+        "Park": "Washington Square Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
-        "LAT": 43.07005,
-        "LONG": -76.162779,
+        "latitude": 43.07005,
+        "longitude": -76.162779,
         "ObjectId": 52
       },
       "geometry": { "type": "Point", "coordinates": [-76.162779, 43.07005] }
@@ -685,12 +685,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Westmoreland Park",
+        "Park": "Westmoreland Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2021",
-        "LAT": 43.050242,
-        "LONG": -76.115164,
+        "latitude": 43.050242,
+        "longitude": -76.115164,
         "ObjectId": 53
       },
       "geometry": { "type": "Point", "coordinates": [-76.115164, 43.050242] }
@@ -698,12 +698,12 @@
     {
       "type": "Feature",
       "properties": {
-        "PARK": "Wilson Park",
+        "Park": "Wilson Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": null,
-        "LAT": 43.040208,
-        "LONG": -76.142775,
+        "latitude": 43.040208,
+        "longitude": -76.142775,
         "ObjectId": 54
       },
       "geometry": { "type": "Point", "coordinates": [-76.142775, 43.040208] }
