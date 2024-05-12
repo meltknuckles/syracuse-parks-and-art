@@ -725,6 +725,10 @@
         "May 1 - Sept 4, 2023: 7am-8pm",
         "Sept 5 - Oct 15, 2023: 8am-7pm"
       ],
+      "gallery": {
+        "count": 5,
+        "folder": "burnet-park/golf"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [-76.18720969180706, 43.04020032081219]
@@ -747,6 +751,10 @@
         "Gender-Neutral Bathrooms",
         "WiFi"
       ],
+      "gallery": {
+        "count": 5,
+        "folder": "sunnycrest-park/golf"
+      },
       "url": "https://www.syr.gov/Venues/Sunnycrest-Park-Golf-Course",
       "hours": "Beginning Wednesday, May 8, 2024: 7am-8pm",
       "geometry": {
@@ -765,6 +773,10 @@
         "longitude": -76.11050838431348,
         "ObjectId": 57
       },
+      "gallery": {
+        "count": 5,
+        "folder": "east-woods-skate-plaza"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [-76.11050838431348, 43.058606564253]
@@ -780,6 +792,10 @@
         "latitude": 43.04973951311515,
         "longitude": -76.13257625820819,
         "ObjectId": 58
+      },
+      "gallery": {
+        "count": 3,
+        "folder": "ormand-spencer-park/skateboard"
       },
       "geometry": {
         "type": "Point",

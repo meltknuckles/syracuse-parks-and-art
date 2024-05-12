@@ -122,6 +122,8 @@ const App = () => {
                 courtType: selectable.properties['COURT_TYPE'],
                 courtSize_quantity:
                   selectable.properties['COURT_SIZE___QUANTITY'],
+                hours: selectable['hours'],
+                features: selectable['features'],
                 accessibilityInfo: selectable['accessibility'],
               };
             } else if (['mural', 'mosaic', 'sculpture'].includes(type)) {
@@ -143,11 +145,14 @@ const App = () => {
                 _labels: {},
                 park: selectable['Park'],
                 accessibilityInfo: selectable['accessibility'],
+                features: selectable['features'],
+                hours: selectable['hours'],
               };
             } else if (type === 'playground') {
               data = {
                 _labels: {},
                 park: selectable['Park'],
+                features: selectable['features'],
                 accessibilityInfo: selectable['accessibility'],
               };
             } else if (type === 'pool') {
@@ -163,6 +168,7 @@ const App = () => {
                 lengthwidth: selectable.properties['Length_x_Width'],
                 depth: selectable.properties['Depth'],
                 accessibilityInfo: selectable['accessibility'],
+                features: selectable['features'],
                 hours: selectable['hours'],
               };
             } else if (type === 'park') {
@@ -198,12 +204,15 @@ const App = () => {
             const lat = d.properties?.latitude || d.latitude;
             const lng = d.properties?.longitude || d.longitude;
             let title = d.title || d.name || d.properties?.name;
-            if (d.type === 'pool') {
-              title = `${d.properties?.Park || ''} Pool`.trim();
+            if (d.properties?.Park && d.type === 'pool') {
+              title = `${d.properties.Park || ''} Pool`.trim();
             }
-            if (!title && d.properties?.COURT_TYPE) {
+            if (d.properties?.Park && !title && d.properties?.COURT_TYPE) {
               title =
-                `${d.properties?.Park || ''} ${d.properties.COURT_TYPE} Court`.trim();
+                `${d.properties.Park || ''} ${d.properties.COURT_TYPE} Court`.trim();
+            }
+            if (d.properties?.Park && !title && d.properties?.type) {
+              title = `${d.properties.Park || ''} ${d.properties.type}`.trim();
             }
             if (lat && lng) {
               addMarker({
@@ -317,6 +326,7 @@ const App = () => {
     }
   }, [interests, map, maps]);
 
+  console.log('selectedMarker', selectedMarker);
   const kvPairData = selectedMarker?.data
     ? {
         ...selectedMarker.data,
