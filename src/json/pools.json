@@ -97,6 +97,7 @@
     },
     {
       "type": "Feature",
+      "address": "Schiller Park Pool, 1100 Rugby Rd, Syracuse, NY 13203",
       "properties": {
         "Park": "Schiller Park",
         "Pool": "Yes",

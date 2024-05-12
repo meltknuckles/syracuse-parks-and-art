@@ -2,42 +2,36 @@
   {
     "name": "Grace Messina Playlot",
     "Park": "Grace & Massena Park",
-    "address": "1146 E Water St, Syracuse, NY 13210",
     "latitude": 43.03853143199562,
     "longitude": -76.16651810470975
   },
   {
     "name": "Lincoln Park Playlot",
     "Park": "Lincoln Park",
-    "address": "Lincoln Park Dr, Syracuse, NY 13203",
     "latitude": 43.05719195588854,
     "longitude": -76.12582725897666
   },
   {
     "name": "Libba Cotten Grove Playlot",
     "Park": "Libba Cotten Grove",
-    "address": "S State St, Syracuse, NY 13202",
     "latitude": 43.034380357075946,
     "longitude": -76.1475078251421
   },
   {
     "name": "Sheridan Park Playlot",
     "Park": "Sheridan Park",
-    "address": "S State St, Syracuse, NY 13202",
     "latitude": 43.05918756380618,
     "longitude": -76.10341245794532
   },
   {
     "name": "Lower Union Park Playground",
     "Park": "Union Park",
-    "address": "1001 S Salina St, Syracuse, NY 13202",
     "latitude": 43.06430987493252,
     "longitude": -76.15663522383383
   },
   {
     "name": "Clark Spaulding Field Playlot",
     "Park": "Clark Spaulding Field",
-    "address": "199 Spaulding Ave, Syracuse, NY 13205",
     "latitude": 42.986293987239385,
     "longitude": -76.14764037572662
   }

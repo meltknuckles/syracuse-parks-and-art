@@ -1,25 +1,25 @@
-import parkdata from './json/parks.json';
-import pooldata from './json/pools.json';
-import centerdata from './json/community-centers.json';
-import courtdata from './json/athletic-courts.json';
-import artdata from './json/public-art.json';
-import dogparkdata from './json/dog-parks.json';
-import playgrounddata from './json/playgrounds.json';
+import parks from './json/parks.json';
+import pools from './json/pools.json';
+import centers from './json/community-centers.json';
+import courts from './json/athletic-courts.json';
+import art from './json/public-art.json';
+import dogparks from './json/dog-parks.json';
+import playgrounds from './json/playgrounds.json';
 import trailsAndLanes from './json/bike.json';
 
 import parkIcon from './Map/icons/park.svg';
 import poolIcon from './Map/icons/pool.svg';
 import centerIcon from './Map/icons/center.svg';
-import bbIcon from './Map/icons/basketball.svg';
+import basketballIcon from './Map/icons/basketball.svg';
 import soccerIcon from './Map/icons/soccer.svg';
 import tennisIcon from './Map/icons/tennis.svg';
-import dogIcon from './Map/icons/dog.svg';
+import dogparkIcon from './Map/icons/dog.svg';
 import artIcon from './Map/icons/mural.svg';
 import sculptureIcon from './Map/icons/sculpture.svg';
 import mosaicIcon from './Map/icons/mosaic.svg';
 import shuffleboardIcon from './Map/icons/shuffleboard.svg';
 import playgroundIcon from './Map/icons/playground.svg';
-import bikeIcon from './Map/icons/biking.svg';
+import bikingIcon from './Map/icons/biking.svg';
 
 export const ICON_SIZE = 20;
 
@@ -54,28 +54,28 @@ export const DATA: Record<
 > = {
   park: {
     type: 'park',
-    data: parkdata.map((d) => ({ ...d, type: 'park' })),
+    data: parks.map((d) => ({ ...d, type: 'park' })),
     icon: parkIcon,
     interest: [DataTypes.park],
     color: Colors.green,
   },
   pool: {
     type: 'pool',
-    data: pooldata.features.map((d) => ({ ...d, type: 'pool' })),
+    data: pools.features.map((d) => ({ ...d, type: 'pool' })),
     icon: poolIcon,
     interest: [DataTypes.pool],
     color: Colors.blue,
   },
   center: {
     type: 'center',
-    data: centerdata.features.map((d) => ({ ...d, type: 'center' })),
+    data: centers.features.map((d) => ({ ...d, type: 'center' })),
     icon: centerIcon,
     interest: [DataTypes.center],
     color: Colors.green,
   },
   mural: {
     type: 'mural',
-    data: artdata.features
+    data: art.features
       .filter(({ properties }: any) => properties.type.includes('Mural'))
       .map((d) => ({ ...d, type: 'mural' })),
     icon: artIcon,
@@ -84,25 +84,25 @@ export const DATA: Record<
   },
   basketball: {
     type: 'basketball',
-    data: courtdata.features
+    data: courts.features
       .filter(({ properties }: any) =>
         properties.COURT_TYPE.includes('Basketball'),
       )
       .map((d) => ({ ...d, type: 'basketball' })),
-    icon: bbIcon,
+    icon: basketballIcon,
     interest: [DataTypes.basketball, DataTypes.sports],
     color: Colors.blue,
   },
   dogpark: {
     type: 'dogpark',
-    data: dogparkdata.map((d) => ({ ...d, type: 'dogpark' })),
-    icon: dogIcon,
+    data: dogparks.map((d) => ({ ...d, type: 'dogpark' })),
+    icon: dogparkIcon,
     interest: [DataTypes.dogpark, DataTypes.park],
     color: Colors.green,
   },
   tennis: {
     type: 'tennis',
-    data: courtdata.features
+    data: courts.features
       .filter(({ properties }: any) => properties.COURT_TYPE.includes('Tennis'))
       .map((d) => ({ ...d, type: 'tennis' })),
     icon: tennisIcon,
@@ -111,7 +111,7 @@ export const DATA: Record<
   },
   sculpture: {
     type: 'sculpture',
-    data: artdata.features
+    data: art.features
       .filter(
         ({ properties }: any) =>
           properties.type.includes('Sculpture') ||
@@ -124,7 +124,7 @@ export const DATA: Record<
   },
   mosaic: {
     type: 'mosaic',
-    data: artdata.features
+    data: art.features
       .filter(({ properties }: any) => properties.type.includes('Mosaic'))
       .map((d) => ({ ...d, type: 'mosaic' })),
     icon: mosaicIcon,
@@ -133,7 +133,7 @@ export const DATA: Record<
   },
   shuffleboard: {
     type: 'shuffleboard',
-    data: courtdata.features
+    data: courts.features
       .filter(({ properties }: any) =>
         properties.COURT_TYPE.includes('Shuffleboard'),
       )
@@ -144,23 +144,23 @@ export const DATA: Record<
   },
   playground: {
     type: 'playground',
-    data: playgrounddata.map((d) => ({ ...d, type: 'playground' })),
+    data: playgrounds.map((d) => ({ ...d, type: 'playground' })),
     icon: playgroundIcon,
     interest: [DataTypes.playground, DataTypes.park],
     color: Colors.green,
   },
   biking: {
     type: 'biking',
-    data: courtdata.features
+    data: courts.features
       .filter(({ properties }: any) => properties.COURT_TYPE.includes('Cycle'))
       .map((d) => ({ ...d, type: 'biking' })),
-    icon: bikeIcon,
+    icon: bikingIcon,
     interest: [DataTypes.biking, DataTypes.sports],
     color: Colors.blue,
   },
   soccer: {
     type: 'soccer',
-    data: courtdata.features
+    data: courts.features
       .filter(({ properties }: any) => properties.COURT_TYPE.includes('Futsal'))
       .map((d) => ({ ...d, type: 'soccer' })),
     icon: soccerIcon,
@@ -199,7 +199,9 @@ export const TREE_NODE_DATA = [
   {
     label: 'Sports',
     key: 'sports',
-    icon: <img src={bbIcon} style={{ width: ICON_SIZE, marginRight: 6 }} />,
+    icon: (
+      <img src={basketballIcon} style={{ width: ICON_SIZE, marginRight: 6 }} />
+    ),
     color: Colors.blue,
     children: [
       DATA.basketball,

@@ -9,10 +9,12 @@ import { Galleria } from 'primereact/galleria';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Menubar } from 'primereact/menubar';
+import { Tag } from 'primereact/tag';
 import navIcon from './Map/icons/you1.svg';
 import boundary from './json/boundary.json';
 import { DATA, DataTypes, TREE_NODE_DATA } from './constants';
 import { TreeSelect } from 'primereact/treeselect';
+import { SortOrder } from 'primereact/api';
 
 export const ICON_SIZE = 60;
 
@@ -79,6 +81,7 @@ const App = () => {
         lat,
         lng,
         selectable,
+        category,
       }: {
         type: string;
         title: string;
@@ -86,6 +89,7 @@ const App = () => {
         lat: number;
         lng: number;
         selectable: any;
+        category: string;
       }) => {
         const _marker = new maps.Marker({
           position: { lat, lng },
@@ -150,6 +154,12 @@ const App = () => {
                 depth: selectable.properties['Depth'],
                 accessibilityInfo: selectable['accessibility'],
               };
+            } else if (type === 'park') {
+              data = {
+                _labels: {},
+                features: selectable['features'],
+                accessibilityInfo: selectable['accessibility'],
+              };
             } else {
               data = { _labels: {} };
             }
@@ -162,6 +172,7 @@ const App = () => {
             icon,
             lat,
             lng,
+            category,
           };
           setSelectedMarker(newSelectedMarker);
           map.panTo(_marker.getPosition());
@@ -175,10 +186,19 @@ const App = () => {
             const d = data.data[_d];
             const lat = d.properties?.latitude || d.latitude;
             const lng = d.properties?.longitude || d.longitude;
+            let title = d.title || d.name || d.properties?.name;
+            if (d.type === 'pool') {
+              title = `${d.properties?.Park || ''} Pool`.trim();
+            }
+            if (!title && d.properties?.COURT_TYPE) {
+              title =
+                `${d.properties?.Park || ''} ${d.properties.COURT_TYPE} Court`.trim();
+            }
             if (lat && lng) {
               addMarker({
                 type: d.type,
-                title: DATA[d.type as any].interest[0],
+                title,
+                category: DATA[d.type as any].interest[0],
                 icon: data.icon,
                 lat,
                 lng,
@@ -291,13 +311,21 @@ const App = () => {
       }
     : { _labels: {}, hours: 'Daily from Dawn to Dusk' };
   const kvPairs = Object.keys(kvPairData)
-    .filter((l) => l !== '_labels' && !!kvPairData[l])
+    .filter(
+      (l) =>
+        l !== '_labels' &&
+        !!kvPairData[l] &&
+        (!Array.isArray(kvPairData[l]) || kvPairData[l].length > 0),
+    )
     .map((key) => ({
       key: Object.keys(kvPairData._labels).includes(key)
         ? kvPairData._labels[key]
         : _.startCase(key),
       value:
-        key.toLowerCase() === 'park' ? (
+        key.toLowerCase() === 'park' &&
+        DATA.park.data.find(
+          ({ name }: { name: string }) => name === kvPairData[key],
+        ) ? (
           <Button
             link
             label={kvPairData[key]}
@@ -306,6 +334,7 @@ const App = () => {
               const selectable = DATA.park.data.find(
                 ({ name }: { name: string }) => name === kvPairData[key],
               );
+
               if (selectable) {
                 setSelectedMarker({
                   ...selectable,
@@ -332,6 +361,40 @@ const App = () => {
   const thumbnailTemplate = (item: any) => {
     return <img src={item} alt={selectedMarker.title} style={{ height: 70 }} />;
   };
+  const selectedAddress =
+    selectedMarker?.properties?.address ||
+    selectedMarker?.address ||
+    (selectedMarker?.properties?.Park &&
+      DATA.park.data.find(
+        ({ name }: { name: string }) =>
+          name === selectedMarker?.properties?.Park,
+      )?.address);
+  const selectedtags = [];
+  if (selectedMarker) {
+    if (
+      selectedMarker.accessibility ||
+      selectedMarker.features?.find((f: string) => f === 'Accessible')
+    ) {
+      selectedtags.push('Accessible');
+    }
+    if (selectedMarker.features?.find((f: string) => f.includes('Parking'))) {
+      selectedtags.push('Parking');
+    }
+    if (
+      selectedMarker.features?.find(
+        (f: string) => !!['Playground', 'Swing'].find((i) => f.includes(i)),
+      )
+    ) {
+      selectedtags.push('Playground');
+    }
+    if (
+      selectedMarker.features?.find(
+        (f: string) => !!['Court', 'Field', 'Pool'].find((i) => f.includes(i)),
+      )
+    ) {
+      selectedtags.push('Sports');
+    }
+  }
 
   return (
     <div>
@@ -406,6 +469,15 @@ const App = () => {
           {selectedMarker && (
             <Card style={{ padding: 0, textAlign: 'left' }}>
               <h2 style={{ marginTop: 0 }}>{selectedMarker.title}</h2>
+              <div
+                style={{ textAlign: 'right', marginTop: -50, marginBottom: 12 }}
+              >
+                {selectedtags.map((tag) => (
+                  <Tag severity="info" style={{ marginRight: 4 }}>
+                    {tag}
+                  </Tag>
+                ))}
+              </div>
               {selectedMarker?.gallery && (
                 <div>
                   <Galleria
@@ -414,7 +486,7 @@ const App = () => {
                       .fill('')
                       .map(
                         (_g, idx) =>
-                          `/parks/${selectedMarker?.gallery.folder}/${_.padStart((idx + 1).toString(), 2, '0')}.jpg`,
+                          `/parks/${selectedMarker?.gallery.folder ?? _.kebabCase(selectedMarker.title)}/${_.padStart((idx + 1).toString(), 2, '0')}.jpg`,
                       )}
                     numVisible={4}
                     showThumbnails={selectedMarker?.gallery.count > 1}
@@ -425,18 +497,37 @@ const App = () => {
                 </div>
               )}
               <div style={{ marginTop: 16 }}>
-                {selectedMarker.address && (
-                  <Card style={{ background: '#eff4f4', marginBottom: 16 }}>
+                {selectedAddress && (
+                  <Card
+                    header={
+                      <div
+                        style={{
+                          padding: 8,
+                          paddingLeft: 16,
+                          paddingBottom: 0,
+                          opacity: 0.8,
+                          textAlign: 'left',
+                        }}
+                      >
+                        Address
+                      </div>
+                    }
+                    style={{
+                      background: '#eff4f4',
+                      marginBottom: 16,
+                      textAlign: 'right',
+                    }}
+                  >
                     <a
-                      href={generateMapsLink(selectedMarker.address)}
+                      href={generateMapsLink(selectedAddress)}
                       target="_blank"
                       rel="noreferrer"
                       style={{ fontSize: '1.1em' }}
                     >
-                      {selectedMarker.address}{' '}
+                      {selectedAddress}
                       <i
                         className="pi pi-external-link"
-                        style={{ marginLeft: 8 }}
+                        style={{ marginLeft: 12 }}
                       />
                     </a>
                   </Card>
@@ -455,11 +546,39 @@ const App = () => {
                   <DataTable
                     stripedRows
                     value={kvPairs}
+                    sortField="key"
+                    sortOrder={SortOrder.ASC}
                     className="info-table"
                     size="small"
                   >
                     <Column field="key" header=""></Column>
-                    <Column field="value" header=""></Column>
+                    <Column
+                      field="value"
+                      header=""
+                      body={(info) => {
+                        let value = info.value;
+                        const regexp = new RegExp(
+                          /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
+                        );
+                        if (Array.isArray(value)) {
+                          console.log('value', value);
+                          value = (
+                            <ul style={{ margin: 0 }}>
+                              {value.map((v) => (
+                                <li>{v}</li>
+                              ))}
+                            </ul>
+                          );
+                        } else if (regexp.test(value)) {
+                          value = (
+                            <a href={value} target="_blank" rel="noreferrer">
+                              <i className="pi pi-external-link" />
+                            </a>
+                          );
+                        }
+                        return <div>{value}</div>;
+                      }}
+                    ></Column>
                   </DataTable>
                 </div>
               )}

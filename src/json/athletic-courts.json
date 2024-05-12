@@ -699,6 +699,7 @@
       "type": "Feature",
       "properties": {
         "Park": "Wilson Park",
+        "address": "Wilson Park basketball courts, 8451 81, Syracuse, NY 13202",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": null,
