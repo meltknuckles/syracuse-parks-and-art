@@ -20,6 +20,9 @@ import mosaicIcon from './Map/icons/mosaic.svg';
 import shuffleboardIcon from './Map/icons/shuffleboard.svg';
 import playgroundIcon from './Map/icons/playground.svg';
 import bikingIcon from './Map/icons/biking.svg';
+import walkIcon from './Map/icons/walking.svg';
+import skateboardIcon from './Map/icons/skateboard.svg';
+import golfIcon from './Map/icons/golf.svg';
 
 export const ICON_SIZE = 20;
 
@@ -40,6 +43,8 @@ export enum DataTypes {
   walking = 'Walking',
   soccer = 'Soccer',
   biking = 'Biking',
+  skateboard = 'Skateboarding',
+  golf = 'Golf',
 }
 
 export enum Colors {
@@ -86,7 +91,7 @@ export const DATA: Record<
     type: 'basketball',
     data: courts.features
       .filter(({ properties }: any) =>
-        properties.COURT_TYPE.includes('Basketball'),
+        properties.COURT_TYPE?.includes('Basketball'),
       )
       .map((d) => ({ ...d, type: 'basketball' })),
     icon: basketballIcon,
@@ -103,7 +108,9 @@ export const DATA: Record<
   tennis: {
     type: 'tennis',
     data: courts.features
-      .filter(({ properties }: any) => properties.COURT_TYPE.includes('Tennis'))
+      .filter(({ properties }: any) =>
+        properties.COURT_TYPE?.includes('Tennis'),
+      )
       .map((d) => ({ ...d, type: 'tennis' })),
     icon: tennisIcon,
     interest: [DataTypes.tennis, DataTypes.sports],
@@ -125,7 +132,7 @@ export const DATA: Record<
   mosaic: {
     type: 'mosaic',
     data: art.features
-      .filter(({ properties }: any) => properties.type.includes('Mosaic'))
+      .filter(({ properties }: any) => properties.type?.includes('Mosaic'))
       .map((d) => ({ ...d, type: 'mosaic' })),
     icon: mosaicIcon,
     interest: [DataTypes.mosaic, DataTypes.art],
@@ -135,7 +142,7 @@ export const DATA: Record<
     type: 'shuffleboard',
     data: courts.features
       .filter(({ properties }: any) =>
-        properties.COURT_TYPE.includes('Shuffleboard'),
+        properties.COURT_TYPE?.includes('Shuffleboard'),
       )
       .map((d) => ({ ...d, type: 'shuffleboard' })),
     icon: shuffleboardIcon,
@@ -152,7 +159,7 @@ export const DATA: Record<
   biking: {
     type: 'biking',
     data: courts.features
-      .filter(({ properties }: any) => properties.COURT_TYPE.includes('Cycle'))
+      .filter(({ properties }: any) => properties.COURT_TYPE?.includes('Cycle'))
       .map((d) => ({ ...d, type: 'biking' })),
     icon: bikingIcon,
     interest: [DataTypes.biking, DataTypes.sports],
@@ -161,7 +168,9 @@ export const DATA: Record<
   soccer: {
     type: 'soccer',
     data: courts.features
-      .filter(({ properties }: any) => properties.COURT_TYPE.includes('Futsal'))
+      .filter(({ properties }: any) =>
+        properties.COURT_TYPE?.includes('Futsal'),
+      )
       .map((d) => ({ ...d, type: 'soccer' })),
     icon: soccerIcon,
     interest: [DataTypes.soccer, DataTypes.sports],
@@ -170,9 +179,27 @@ export const DATA: Record<
   walking: {
     type: 'walking',
     data: trailsAndLanes,
-    icon: parkIcon, // TODO: walk icon
+    icon: walkIcon,
     interest: [DataTypes.walking],
     color: Colors.green,
+  },
+  skateboard: {
+    type: 'skateboard',
+    data: courts.features
+      .filter(({ properties }: any) => properties.type?.includes('Skate'))
+      .map((d) => ({ ...d, type: 'skateboard' })),
+    icon: skateboardIcon,
+    interest: [DataTypes.skateboard, DataTypes.sports],
+    color: Colors.blue,
+  },
+  golf: {
+    type: 'golf',
+    data: courts.features
+      .filter(({ properties }: any) => properties.type?.includes('Golf'))
+      .map((d) => ({ ...d, type: 'golf' })),
+    icon: golfIcon,
+    interest: [DataTypes.golf, DataTypes.sports],
+    color: Colors.blue,
   },
 };
 
@@ -210,6 +237,8 @@ export const TREE_NODE_DATA = [
       DATA.biking,
       DATA.shuffleboard,
       DATA.pool,
+      DATA.golf,
+      DATA.skateboard,
     ].map(({ type, data, icon, interest, color }) => ({
       key: type,
       label: interest[0],

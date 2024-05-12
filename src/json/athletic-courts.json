@@ -178,7 +178,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Eastwood Heights Park",
+        "Park": "Eastwood Heights",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
@@ -708,6 +708,83 @@
         "ObjectId": 54
       },
       "geometry": { "type": "Point", "coordinates": [-76.142775, 43.040208] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Burnet Park",
+        "address": "Burnet Park Golf Course, 300 Coleridge Ave, Syracuse, NY 13204",
+        "type": "Golf Course",
+        "latitude": 43.04020032081219,
+        "longitude": -76.18720969180706,
+        "ObjectId": 55
+      },
+      "features": ["Private Parking Lot", "Gender-Neutral Bathrooms", "WiFi"],
+      "url": "https://www.syr.gov/Venues/Burnet-Park-Golf-Course",
+      "hours": [
+        "May 1 - Sept 4, 2023: 7am-8pm",
+        "Sept 5 - Oct 15, 2023: 8am-7pm"
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.18720969180706, 43.04020032081219]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Sunnycrest Park",
+        "address": "Sunnycrest Golf Course, Syracuse, NY 13206",
+        "type": "Golf Course",
+        "latitude": 43.05834421480645,
+        "longitude": -76.1149462064239,
+        "ObjectId": 56
+      },
+      "features": [
+        "Meeting Tables and Chairs",
+        "Heating",
+        "Private Parking Lot",
+        "Gender-Neutral Bathrooms",
+        "WiFi"
+      ],
+      "url": "https://www.syr.gov/Venues/Sunnycrest-Park-Golf-Course",
+      "hours": "Beginning Wednesday, May 8, 2024: 7am-8pm",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1149462064239, 43.05834421480645]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Eastwood Heights",
+        "name": "East Woods Skate Plaza",
+        "address": "East Woods Skate Plaza, Huntington Park, 300 Caleb Ave, Syracuse, NY 13206",
+        "type": "Skatepark",
+        "latitude": 43.058606564253,
+        "longitude": -76.11050838431348,
+        "ObjectId": 57
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11050838431348, 43.058606564253]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Ormand Spencer Park",
+        "name": "The Spot",
+        "address": "1121 E Washington St, Syracuse, NY 13210",
+        "type": "Skatepark",
+        "latitude": 43.04973951311515,
+        "longitude": -76.13257625820819,
+        "ObjectId": 58
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.13257625820819, 43.04973951311515]
+      }
     }
   ]
 }

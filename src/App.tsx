@@ -104,7 +104,16 @@ const App = () => {
           // map.setZoom(15);
           let data;
           if (selectable) {
-            if (['basketball', 'tennis', 'soccer', 'biking'].includes(type)) {
+            if (
+              [
+                'basketball',
+                'tennis',
+                'soccer',
+                'biking',
+                'golf',
+                'sakteboard',
+              ].includes(type)
+            ) {
               data = {
                 _labels: {
                   courtSize_quantity: 'Court Size (Quantity)',
@@ -142,6 +151,7 @@ const App = () => {
                 accessibilityInfo: selectable['accessibility'],
               };
             } else if (type === 'pool') {
+              console.log('selectable', selectable);
               data = {
                 _labels: {
                   hasRamp: 'Accessible Pool Ramp',
@@ -153,6 +163,7 @@ const App = () => {
                 lengthwidth: selectable.properties['Length_x_Width'],
                 depth: selectable.properties['Depth'],
                 accessibilityInfo: selectable['accessibility'],
+                hours: selectable['hours'],
               };
             } else if (type === 'park') {
               data = {
@@ -235,6 +246,8 @@ const App = () => {
         filterMarkers(DATA.soccer);
         filterMarkers(DATA.biking);
         filterMarkers(DATA.shuffleboard);
+        filterMarkers(DATA.skateboard);
+        filterMarkers(DATA.golf);
         filterMarkers(DATA.park);
 
         const bounds = new maps.LatLngBounds(
@@ -469,15 +482,28 @@ const App = () => {
           {selectedMarker && (
             <Card style={{ padding: 0, textAlign: 'left' }}>
               <h2 style={{ marginTop: 0 }}>{selectedMarker.title}</h2>
-              <div
-                style={{ textAlign: 'right', marginTop: -50, marginBottom: 12 }}
-              >
-                {selectedtags.map((tag) => (
-                  <Tag severity="info" style={{ marginRight: 4 }}>
-                    {tag}
-                  </Tag>
-                ))}
-              </div>
+              {selectedtags.length > 0 && (
+                <div
+                  style={{
+                    textAlign: 'right',
+                    marginTop: -50,
+                    marginBottom: 12,
+                  }}
+                >
+                  {selectedtags.map((tag) => (
+                    <Tag
+                      severity="info"
+                      style={{
+                        marginLeft: 6,
+                        borderRadius: 16,
+                        padding: '4px 10px',
+                      }}
+                    >
+                      {tag}
+                    </Tag>
+                  ))}
+                </div>
+              )}
               {selectedMarker?.gallery && (
                 <div>
                   <Galleria

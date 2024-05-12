@@ -21,6 +21,7 @@
         "website": "https://syr.gov/swimming",
         "FID": 1
       },
+      "hours": ["Open Swim: Monday-Saturday 12-6pm", "Open Swim: Sunday 1-6pm"],
       "geometry": { "type": "Point", "coordinates": [-76.1868552, 43.0422915] }
     },
     {

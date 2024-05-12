@@ -36,6 +36,7 @@
     "address": "Burnet Park, Syracuse, NY 13204",
     "description": "Burnet Park, located in Syracuse's historic Tipperary Hill, is a multi-use park that spans 88 acres featuring a golf course, swimming pool, multiple athletic fields, a tennis court and basketball court.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "wiki": "https://en.wikipedia.org/wiki/Burnet_Park",
     "features": [
       "Accessible",
       "Baseball Field(s)",
@@ -460,7 +461,8 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 6
+      "count": 6,
+      "folder": "mckinley-park"
     },
     "latitude": 43.016545,
     "longitude": -76.150892
