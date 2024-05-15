@@ -169,5 +169,12 @@
     "address": "Spirit of Jubilee Park playground, South Ave &, White St, Syracuse, NY 13204",
     "latitude": 43.037307983610965,
     "longitude": -76.15866775728514
+  },
+  {
+    "name": "Skiddy Park Playground",
+    "Park": "Skiddy Park",
+    "address": "Skiddy Park Playground, 300 Tioga St, Syracuse, NY 13204",
+    "latitude": 43.04513858591291,
+    "longitude": -76.1633333448874
   }
 ]

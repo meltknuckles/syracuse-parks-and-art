@@ -24,6 +24,7 @@ import walkIcon from './Map/icons/walking.svg';
 import skateboardIcon from './Map/icons/skateboard.svg';
 import golfIcon from './Map/icons/golf.svg';
 import baseballIcon from './Map/icons/baseball.svg';
+import iceskateIcon from './Map/icons/iceskate.svg';
 
 export const ICON_SIZE = 20;
 
@@ -45,6 +46,7 @@ export enum DataTypes {
   soccer = 'Soccer',
   biking = 'Biking',
   skateboard = 'Skateboarding',
+  iceskate = 'Ice Skating',
   golf = 'Golf',
   baseball = 'Baseball',
 }
@@ -53,6 +55,7 @@ export enum Colors {
   red = '#FF595E',
   yellow = '#FFCA3A',
   blue = '#1982C4',
+  lgreen = '#8ac926',
   green = '#6da317',
   purple = '#6A4C93',
 }
@@ -73,7 +76,7 @@ export const DATA: Record<
     data: pools.features.map((d) => ({ ...d, type: 'pool' })),
     icon: poolIcon,
     interest: [DataTypes.pool],
-    color: Colors.blue,
+    color: Colors.green,
   },
   center: {
     type: 'center',
@@ -170,11 +173,15 @@ export const DATA: Record<
   biking: {
     type: 'biking',
     data: courts.features
-      .filter(({ properties }: any) => properties.COURT_TYPE?.includes('Cycle'))
+      .filter(
+        ({ properties }: any) =>
+          properties.COURT_TYPE?.includes('Cycle') ||
+          properties.type?.includes('BMX'),
+      )
       .map((d) => ({ ...d, type: 'biking' })),
     icon: bikingIcon,
     interest: [DataTypes.biking, DataTypes.sports],
-    color: Colors.blue,
+    color: Colors.green,
   },
   soccer: {
     type: 'soccer',
@@ -212,6 +219,15 @@ export const DATA: Record<
     interest: [DataTypes.golf, DataTypes.sports],
     color: Colors.blue,
   },
+  iceskate: {
+    type: 'iceskate',
+    data: courts.features
+      .filter(({ properties }: any) => properties.type?.includes('Ice Rink'))
+      .map((d) => ({ ...d, type: 'iceskate' })),
+    icon: iceskateIcon,
+    interest: [DataTypes.iceskate, DataTypes.sports],
+    color: Colors.blue,
+  },
   baseball: {
     type: 'baseball',
     data: courts.features
@@ -232,6 +248,8 @@ export const TREE_NODE_DATA = [
     children: [
       DATA.park,
       DATA.walking,
+      DATA.biking,
+      DATA.pool,
       DATA.dogpark,
       DATA.playground,
       DATA.center,
@@ -254,12 +272,11 @@ export const TREE_NODE_DATA = [
       DATA.basketball,
       DATA.tennis,
       DATA.soccer,
-      DATA.biking,
       DATA.shuffleboard,
-      DATA.pool,
       DATA.golf,
       DATA.baseball,
       DATA.skateboard,
+      DATA.iceskate,
     ].map(({ type, data, icon, interest, color }) => ({
       key: type,
       label: interest[0],

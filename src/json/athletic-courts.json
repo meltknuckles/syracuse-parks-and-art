@@ -89,6 +89,54 @@
     },
     {
       "type": "Feature",
+      "address": "Sunnycrest Arena, 699 Robinson St, Syracuse, NY 13206",
+      "features": ["Concession Stand", "Heating", "Private Parking Lot"],
+      "properties": {
+        "Park": "Sunnycrest Park",
+        "type": "Ice Rink",
+        "latitude": 43.05820408426673,
+        "longitude": -76.11720186628702
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11720186628702, 43.05820408426673]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "Clinton Square Ice Rink, 2 S Clinton St, Syracuse, NY 13202",
+      "features": ["Concession Stand", "On-Street Parking"],
+      "properties": {
+        "Park": "Clinton Square",
+        "type": "Ice Rink",
+        "latitude": 43.05088897853138,
+        "longitude": -76.15288461151074
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.15288461151074, 43.05088897853138]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "Tennity Ice Pavilion, 511 Skytop Rd, Syracuse, NY 13244",
+      "properties": {
+        "name": "Tennity Ice Pavilion",
+        "type": "Ice Rink",
+        "latitude": 43.014470784029335,
+        "longitude": -76.11614765600176
+      },
+      "url": "https://en.wikipedia.org/wiki/Tennity_Ice_Skating_Pavilion",
+      "gallery": {
+        "count": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11614765600176, 43.014470784029335]
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
         "Park": "Meachem Field",
         "type": "Baseball Field",
@@ -941,6 +989,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [-76.1149462064239, 43.05834421480645]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "PumpTrackSyr, 1010 W Fayette St, Syracuse, NY 13204",
+      "properties": {
+        "Park": "Lipe Art Park",
+        "name": "PumpTrackSYR",
+        "type": "BMX Track",
+        "latitude": 43.04660148678081,
+        "longitude": -76.17040983063544
+      },
+      "gallery": {
+        "count": 2,
+        "folder": "pump-track-syr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.17040983063544, 43.04660148678081]
       }
     },
     {

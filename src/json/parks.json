@@ -80,6 +80,9 @@
       "Drinking Fountains",
       "Multi-Purpose Field(s)"
     ],
+    "gallery": {
+      "count": 1
+    },
     "latitude": 42.987084,
     "longitude": -76.147915
   },
@@ -98,6 +101,7 @@
       "Water Feature (Natural/Decorative)"
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6106",
+    "url": "https://en.wikipedia.org/wiki/Clinton_Square",
     "gallery": {
       "count": 11
     },
@@ -115,6 +119,10 @@
       "Monument/Memorial",
       "Water Feature (Natural/Decorative)"
     ],
+    "gallery": {
+      "count": 5
+    },
+    "url": "https://en.wikipedia.org/wiki/Columbus_Circle,_Syracuse",
     "latitude": 43.046857,
     "longitude": -76.1491
   },
@@ -169,6 +177,9 @@
       "Basketball Court(s)",
       "Specialty Garden (I.e. Rain Garden/Rose Garden)"
     ],
+    "gallery": {
+      "count": 1
+    },
     "latitude": 43.062695,
     "longitude": -76.101659
   },
@@ -261,6 +272,10 @@
       "Playground (5-12 Years Old)",
       "Swings"
     ],
+    "gallery": {
+      "count": 4,
+      "folder": "grace-messina-park"
+    },
     "latitude": 43.038505,
     "longitude": -76.166615
   },
@@ -271,6 +286,10 @@
     "tags": ["Downtown Park"],
     "accessibility": "https://search.inclusiverec.org/agencies/6105",
     "features": ["Water Feature (Natural/Decorative)"],
+    "gallery": {
+      "count": 8
+    },
+    "url": "https://en.wikipedia.org/wiki/Hanover_Square,_Syracuse",
     "latitude": 43.050402,
     "longitude": -76.150988
   },
@@ -307,6 +326,9 @@
       "Pavilion (No Rental Availability)",
       "Skate Park"
     ],
+    "gallery": {
+      "count": 3
+    },
     "latitude": 43.059396,
     "longitude": -76.110449
   },
@@ -387,6 +409,9 @@
       "Playground (5-12 Years Old)",
       "Swings"
     ],
+    "gallery": {
+      "count": 3
+    },
     "latitude": 43.034789267498134,
     "longitude": -76.14748519585063
   },
@@ -658,6 +683,9 @@
     "description": "Nestled in a university neighborhood, Sherman Park features two little league fields and comes in at just over 2 acres.",
     "tags": ["Athletic Field"],
     "features": ["Baseball Field(s)", "Multi-Purpose Field(s)"],
+    "gallery": {
+      "count": 4
+    },
     "latitude": 43.026427,
     "longitude": -76.113003
   },
@@ -869,6 +897,9 @@
     "description": "",
     "tags": [],
     "features": ["Playground"],
+    "gallery": {
+      "count": 3
+    },
     "latitude": 43.02599273148895,
     "longitude": -76.18212055787517
   }

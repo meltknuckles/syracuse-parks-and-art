@@ -1,26 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
-import './App.css';
-import { useGeolocated } from 'react-geolocated';
-import MapContainer from './Map/Map';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+import { useLocalStorage } from '@uidotdev/usehooks';
 import * as _ from 'lodash';
-import { Galleria } from 'primereact/galleria';
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
-import { Menubar } from 'primereact/menubar';
-import { Tag } from 'primereact/tag';
-import { Image as PrimereactImage } from 'primereact/image';
-import navIcon from './Map/icons/you1.svg';
-import boundary from './json/boundary.json';
-import { Colors, DATA, TREE_NODE_DATA } from './constants';
-import { TreeSelect } from 'primereact/treeselect';
 import { SortOrder } from 'primereact/api';
 import { Badge } from 'primereact/badge';
-import { GiKidSlide } from 'react-icons/gi';
-import { MdAccessible } from 'react-icons/md';
+import { Button } from 'primereact/button';
+import { Card } from 'primereact/card';
+import { Column } from 'primereact/column';
+import { DataTable } from 'primereact/datatable';
+import { Galleria } from 'primereact/galleria';
+import { Image as PrimereactImage } from 'primereact/image';
+import { Menubar } from 'primereact/menubar';
+import { SelectButton } from 'primereact/selectbutton';
+import { Tag } from 'primereact/tag';
+import { TreeSelect } from 'primereact/treeselect';
+import { useEffect, useRef, useState } from 'react';
+import { useGeolocated } from 'react-geolocated';
 import { FaParking } from 'react-icons/fa';
-import { MdSportsBasketball } from 'react-icons/md';
+import { GiKidSlide } from 'react-icons/gi';
+import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
+import './App.css';
+import MapContainer from './Map/Map';
+import navIcon from './Map/icons/you1.svg';
+import { Colors, DATA, TREE_NODE_DATA } from './constants';
+import boundary from './json/boundary.json';
 
 export const ICON_SIZE = 60;
 
@@ -46,7 +47,15 @@ const App = () => {
   const [selectedPath, setSelectedPath] = useState<any>();
   const [map, setMap] = useState<any>();
   const [maps, setMaps] = useState<any>();
-  const [interests, setInterests] = useState<string[]>([]);
+  const [interests, setInterests] = useLocalStorage<{
+    center?: { checked: boolean; partialChecked: boolean };
+    dogpark?: { checked: boolean; partialChecked: boolean };
+    park?: { checked: boolean; partialChecked: boolean };
+    parksandrec?: { checked: boolean; partialChecked: boolean };
+    playground?: { checked: boolean; partialChecked: boolean };
+    walking?: { checked: boolean; partialChecked: boolean };
+  }>('interests', {});
+  const interestedIn = Object.keys(interests);
   const { coords, isGeolocationAvailable, getPosition } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false,
@@ -65,8 +74,6 @@ const App = () => {
   }, [coords]);
 
   const [googlaApiLoaded, setGoogleApiLoaded] = useState(false);
-  const [showBikePaths, setShowBikePaths] = useState(true);
-  const [showMarkers, setShowMarkers] = useState(true);
   const [mapType, setMapType] = useState<string>('roadmap');
   const clearMarkers = (markers: any[]) => {
     for (let m of markers) {
@@ -117,8 +124,10 @@ const App = () => {
                 'tennis',
                 'soccer',
                 'biking',
+                'baseball',
                 'golf',
-                'sakteboard',
+                'skateboard',
+                'iceskate',
               ].includes(type)
             ) {
               data = {
@@ -132,6 +141,7 @@ const App = () => {
                 hours: selectable['hours'],
                 features: selectable['features'],
                 accessibilityInfo: selectable['accessibility'],
+                wikipedia: selectable['url'],
               };
             } else if (['mural', 'mosaic', 'sculpture'].includes(type)) {
               data = {
@@ -154,6 +164,7 @@ const App = () => {
                 accessibilityInfo: selectable['accessibility'],
                 features: selectable['features'],
                 hours: selectable['hours'],
+                wikipedia: selectable['url'],
               };
             } else if (type === 'playground') {
               data = {
@@ -161,6 +172,7 @@ const App = () => {
                 park: selectable['Park'],
                 features: selectable['features'],
                 accessibilityInfo: selectable['accessibility'],
+                wikipedia: selectable['url'],
               };
             } else if (type === 'pool') {
               data = {
@@ -176,6 +188,7 @@ const App = () => {
                 accessibilityInfo: selectable['accessibility'],
                 features: selectable['features'],
                 hours: selectable['hours'],
+                wikipedia: selectable['url'],
                 rules:
                   'https://www.syr.gov/Departments/Parks-Recreation/Pool-Rules',
               };
@@ -184,6 +197,7 @@ const App = () => {
                 _labels: {},
                 features: selectable['features'],
                 accessibilityInfo: selectable['accessibility'],
+                wikipedia: selectable['url'],
               };
             } else {
               data = { _labels: {} };
@@ -206,7 +220,6 @@ const App = () => {
         });
         (prevMarkersRef.current as any).push(_marker);
       };
-      const interestedIn = Object.keys(interests);
       const filterMarkers = (data: any) => {
         if (interestedIn.includes(data.type)) {
           for (const _d in data.data) {
@@ -240,113 +253,112 @@ const App = () => {
           }
         }
       };
-      if (showMarkers) {
-        // if (
-        //   isGeolocationAvailable &&
-        //   location?.latitude &&
-        //   location?.longitude
-        // ) {
-        //   addMarker({
-        //     type: 'you',
-        //     title: 'You are Here',
-        //     icon: navIcon,
-        //     lat: location.latitude,
-        //     lng: location.longitude,
-        //     selectable: location,
-        //   });
-        // }
-        filterMarkers(DATA.dogpark);
-        filterMarkers(DATA.playground);
-        filterMarkers(DATA.pool);
-        filterMarkers(DATA.center);
-        filterMarkers(DATA.mural);
-        filterMarkers(DATA.mosaic);
-        filterMarkers(DATA.sculpture);
-        filterMarkers(DATA.basketball);
-        filterMarkers(DATA.tennis);
-        filterMarkers(DATA.soccer);
-        filterMarkers(DATA.biking);
-        filterMarkers(DATA.shuffleboard);
-        filterMarkers(DATA.skateboard);
-        filterMarkers(DATA.golf);
-        filterMarkers(DATA.baseball);
-        filterMarkers(DATA.park);
+      // if (
+      //   isGeolocationAvailable &&
+      //   location?.latitude &&
+      //   location?.longitude
+      // ) {
+      //   addMarker({
+      //     type: 'you',
+      //     title: 'You are Here',
+      //     icon: navIcon,
+      //     lat: location.latitude,
+      //     lng: location.longitude,
+      //     selectable: location,
+      //   });
+      // }
+      filterMarkers(DATA.dogpark);
+      filterMarkers(DATA.playground);
+      filterMarkers(DATA.pool);
+      filterMarkers(DATA.center);
+      filterMarkers(DATA.mural);
+      filterMarkers(DATA.mosaic);
+      filterMarkers(DATA.sculpture);
+      filterMarkers(DATA.basketball);
+      filterMarkers(DATA.tennis);
+      filterMarkers(DATA.soccer);
+      filterMarkers(DATA.biking);
+      filterMarkers(DATA.shuffleboard);
+      filterMarkers(DATA.skateboard);
+      filterMarkers(DATA.golf);
+      filterMarkers(DATA.baseball);
+      filterMarkers(DATA.iceskate);
+      filterMarkers(DATA.park);
 
-        const bounds = new maps.LatLngBounds(
-          new maps.LatLng(42.97132928046586, -76.25925946941094),
-          new maps.LatLng(43.099950460544136, -76.02245601734865),
-        );
-        map.setOptions({
-          restriction: { latLngBounds: bounds, strictBounds: true },
-        });
-      }
-      if (interestedIn.includes('biking')) {
-        const bikeLayer = new google.maps.BicyclingLayer();
-        bikeLayer.setMap(map);
-      }
-
-      map.data.addGeoJson(boundary);
-      if (interestedIn.includes('walking') || interestedIn.includes('biking')) {
-        map.data.addGeoJson(DATA.walking.data);
-      }
-      map.data.addListener('click', (event: any) => {
-        if (
-          !['boundary', 'Bike Lane'].includes(
-            event.feature.getProperty('name') as string,
-          )
-        ) {
-          setSelectedPath({
-            name: event.feature.getProperty('name'),
-            description: event.feature.getProperty('description'),
-            url: event.feature.getProperty('url'),
-          });
-          setSelectedMarker(null);
-          setActiveIndex(0);
-        }
-      });
-
-      map.data.setStyle((feature: any) => {
-        if (feature.getProperty('name') === 'boundary') {
-          return {
-            fillColor: 'transparent',
-            strokeColor: '#788',
-            strokeWeight: 2,
-          };
-        } else if (
-          [
-            'Onondaga Creekwalk',
-            'Empire State Trail',
-            'Ley Creek Trail',
-            'Coldbrook Creek Trail',
-          ].includes(feature.getProperty('name'))
-        ) {
-          return {
-            fillColor: interestedIn.includes('walking')
-              ? '#9E86C1'
-              : 'transparent',
-            strokeColor: interestedIn.includes('walking')
-              ? '#9E86C1'
-              : 'transparent',
-            strokeWeight: 5,
-          };
-        } else if (feature.getProperty('name') === 'Bike Lane') {
-          return {
-            fillColor: interestedIn.includes('biking')
-              ? '#3d7742'
-              : 'transparent',
-            strokeColor: interestedIn.includes('biking')
-              ? '#3d7742'
-              : 'transparent',
-            strokeWeight: 2,
-          };
-        }
-        return {
-          fillColor: '#faa',
-          strokeColor: '#faa',
-          strokeWeight: 8,
-        };
+      const bounds = new maps.LatLngBounds(
+        new maps.LatLng(42.97132928046586, -76.25925946941094),
+        new maps.LatLng(43.099950460544136, -76.02245601734865),
+      );
+      map.setOptions({
+        restriction: { latLngBounds: bounds, strictBounds: true },
       });
     }
+    if (interestedIn.includes('biking')) {
+      const bikeLayer = new google.maps.BicyclingLayer();
+      bikeLayer.setMap(map);
+    }
+
+    map.data.addGeoJson(boundary);
+    if (interestedIn.includes('walking') || interestedIn.includes('biking')) {
+      map.data.addGeoJson(DATA.walking.data);
+    }
+    map.data.addListener('click', (event: any) => {
+      if (
+        !['boundary', 'Bike Lane'].includes(
+          event.feature.getProperty('name') as string,
+        )
+      ) {
+        setSelectedPath({
+          name: event.feature.getProperty('name'),
+          description: event.feature.getProperty('description'),
+          url: event.feature.getProperty('url'),
+        });
+        setSelectedMarker(null);
+        setActiveIndex(0);
+      }
+    });
+
+    map.data.setStyle((feature: any) => {
+      if (feature.getProperty('name') === 'boundary') {
+        return {
+          fillColor: 'transparent',
+          strokeColor: '#788',
+          strokeWeight: 2,
+        };
+      } else if (
+        [
+          'Onondaga Creekwalk',
+          'Empire State Trail',
+          'Ley Creek Trail',
+          'Coldbrook Creek Trail',
+        ].includes(feature.getProperty('name'))
+      ) {
+        return {
+          fillColor: interestedIn.includes('walking')
+            ? Colors.lgreen
+            : 'transparent',
+          strokeColor: interestedIn.includes('walking')
+            ? Colors.lgreen
+            : 'transparent',
+          strokeWeight: 5,
+        };
+      } else if (feature.getProperty('name') === 'Bike Lane') {
+        return {
+          fillColor: interestedIn.includes('biking')
+            ? '#3d7742'
+            : 'transparent',
+          strokeColor: interestedIn.includes('biking')
+            ? '#3d7742'
+            : 'transparent',
+          strokeWeight: 2,
+        };
+      }
+      return {
+        fillColor: '#faa',
+        strokeColor: '#faa',
+        strokeWeight: 8,
+      };
+    });
   };
   useEffect(() => {
     if (map && maps) {
@@ -366,7 +378,6 @@ const App = () => {
     : [];
   const item = photos[activeIndex];
   const [width, setWidth] = useState(0);
-  console.log('width', width);
   const ref: any = useRef(null);
   useEffect(() => {
     if (ref.current?.offsetWidth) {
@@ -378,9 +389,9 @@ const App = () => {
   const kvPairData = selectedMarker?.data
     ? {
         ...selectedMarker.data,
-        hours: selectedMarker.data.hours ?? 'Daily from Dawn to Dusk',
+        hours: selectedMarker.data.hours,
       }
-    : { _labels: {}, hours: 'Daily from Dawn to Dusk' };
+    : { _labels: {} };
   const kvPairs = Object.keys(kvPairData)
     .filter(
       (l) =>
@@ -507,6 +518,16 @@ const App = () => {
             </span>
           </div>
         }
+        end={
+          mapType && (
+            <SelectButton
+              allowEmpty={false}
+              value={_.startCase(mapType)}
+              onChange={(e) => setMapType(e.value.toLowerCase())}
+              options={['Roadmap', 'Satellite']}
+            />
+          )
+        }
       />
       <div className="grid" style={{ margin: 0 }}>
         <div
@@ -572,6 +593,7 @@ const App = () => {
                 >
                   {selectedtags.map((tag) => (
                     <Tag
+                      key={tag.label}
                       style={{
                         backgroundColor: tag.color,
                         marginLeft: 6,
@@ -780,7 +802,7 @@ const App = () => {
             isGeolocationAvailable={isGeolocationAvailable}
             getPosition={getPosition}
             onGoogleApiLoaded={onGoogleApiLoaded}
-            interests={interests}
+            interests={interests as any}
             mapType={mapType}
           />
         </div>

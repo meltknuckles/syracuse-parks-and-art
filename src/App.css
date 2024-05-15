@@ -75,7 +75,6 @@ a:hover, a:focus, a:active,
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
-
 .img-container {
     background-color: transparent !important;
     background-position: center center !important;
@@ -129,4 +128,23 @@ a:hover, a:focus, a:active,
 .img-button:focus .p-button-icon {
   background: rgba rgba(255, 255, 255, 0.9) !important;
   transition: all 0.4s ease-in-out !important;
+}
+
+.p-selectbutton .p-button.p-highlight {
+    background: #2f3186;
+    border-color: #2f3186;
+    color: #ffffff;
+}
+
+.p-selectbutton .p-button{
+    border-radius: 20px;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+.p-selectbutton .p-button:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.p-selectbutton .p-button:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
