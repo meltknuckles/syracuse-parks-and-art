@@ -20,8 +20,9 @@ import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
 import './App.css';
 import MapContainer from './Map/Map';
 import navIcon from './Map/icons/you1.svg';
-import { Colors, DATA, TREE_NODE_DATA } from './constants';
+import { Colors, DATA, DataTypes, TREE_NODE_DATA } from './constants';
 import boundary from './json/boundary.json';
+import { getFieldData } from './utils/getFieldData';
 
 export const ICON_SIZE = 60;
 
@@ -118,90 +119,7 @@ const App = () => {
           // map.setZoom(15);
           let data;
           if (selectable) {
-            if (
-              [
-                'basketball',
-                'tennis',
-                'soccer',
-                'biking',
-                'baseball',
-                'golf',
-                'skateboard',
-                'iceskate',
-              ].includes(type)
-            ) {
-              data = {
-                _labels: {
-                  courtSize_quantity: 'Court Size (Quantity)',
-                },
-                park: selectable.properties['park'],
-                courtType: selectable.properties['COURT_TYPE'],
-                courtSize_quantity:
-                  selectable.properties['COURT_SIZE___QUANTITY'],
-                hours: selectable['hours'],
-                features: selectable['features'],
-                accessibilityInfo: selectable['accessibility'],
-                wikipedia: selectable['url'],
-              };
-            } else if (['mural', 'mosaic', 'sculpture'].includes(type)) {
-              data = {
-                _labels: {},
-                artType: selectable.properties['type'],
-                artist:
-                  `${selectable.properties['Artist_First'] || ''} ${selectable.properties['Artist_Last_'] || ''}`.trim(),
-                additionalArtists: selectable.properties['Additional_Artists'],
-                media: selectable.properties['Media'],
-                yearCreated: selectable.properties['Year_Created'],
-                yearErected: selectable.properties['Year_Erected'],
-                neighborhood: selectable.properties['Neighborhood'],
-                specificLocation: selectable.properties['Specific_Location'],
-                accessibilityInfo: selectable['accessibility'],
-              };
-            } else if (type === 'center') {
-              data = {
-                _labels: {},
-                park: selectable['park'] ?? selectable.properties?.['park'],
-                accessibilityInfo: selectable['accessibility'],
-                features: selectable['features'],
-                hours: selectable['hours'],
-                wikipedia: selectable['url'],
-              };
-            } else if (type === 'playground') {
-              data = {
-                _labels: {},
-                park: selectable['park'],
-                features: selectable['features'],
-                accessibilityInfo: selectable['accessibility'],
-                wikipedia: selectable['url'],
-              };
-            } else if (type === 'pool') {
-              data = {
-                _labels: {
-                  hasRamp: 'Accessible Pool Ramp',
-                  lengthwidth: 'Length x Width',
-                },
-                park: selectable.properties['park'],
-                poolType: selectable.properties['type'],
-                hasRamp: selectable.properties['Accessible_Pool_Ramp'],
-                lengthwidth: selectable.properties['Length_x_Width'],
-                depth: selectable.properties['Depth'],
-                accessibilityInfo: selectable['accessibility'],
-                features: selectable['features'],
-                hours: selectable['hours'],
-                wikipedia: selectable['url'],
-                rules:
-                  'https://www.syr.gov/Departments/Parks-Recreation/Pool-Rules',
-              };
-            } else if (type === 'park') {
-              data = {
-                _labels: {},
-                features: selectable['features'],
-                accessibilityInfo: selectable['accessibility'],
-                wikipedia: selectable['url'],
-              };
-            } else {
-              data = { _labels: {} };
-            }
+            data = getFieldData(selectable, type);
           }
           const newSelectedMarker = {
             ...selectable,
@@ -213,6 +131,7 @@ const App = () => {
             lng,
             category,
           };
+          console.log('newSelectedMarker', newSelectedMarker);
           setSelectedMarker(newSelectedMarker);
           setSelectedPath(null);
           setActiveIndex(0);
@@ -386,8 +305,7 @@ const App = () => {
     : [];
   if (photos.length === 0 && selectedMarker?.gallery?.parent?.length > 0) {
     const parentPark = selectedMarker?.properties?.park ?? selectedMarker?.park;
-    const park =
-      DATA.park.data?.find(({ name }: any) => name === parentPark) ?? [];
+    const park = DATA.park.data?.find(({ name }: any) => name === parentPark);
     const folderName = park?.gallery.folder ?? _.kebabCase(park.name);
     photos = selectedMarker.gallery.parent.map(
       (i: number) =>
@@ -435,12 +353,17 @@ const App = () => {
               const selectable = DATA.park.data.find(
                 ({ name }: { name: string }) => name === kvPairData[key],
               );
+              const parentPark =
+                selectedMarker?.properties?.park ?? selectedMarker?.park;
+              const park = DATA.park.data?.find(
+                ({ name }: any) => name === parentPark,
+              );
 
               if (selectable) {
                 setSelectedPath(null);
                 setSelectedMarker({
                   ...selectable,
-                  data: null, // TODO:
+                  data: getFieldData(park, DataTypes.park),
                   type: 'park',
                   title: selectable.name,
                   icon: null,
