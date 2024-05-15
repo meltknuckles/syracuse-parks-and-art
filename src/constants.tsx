@@ -5,7 +5,7 @@ import courts from './json/athletic-courts.json';
 import art from './json/public-art.json';
 import dogparks from './json/dog-parks.json';
 import playgrounds from './json/playgrounds.json';
-import trailsAndLanes from './json/bike.json';
+import trails from './json/bike.json';
 
 import parkIcon from './Map/icons/park.svg';
 import poolIcon from './Map/icons/pool.svg';
@@ -23,6 +23,7 @@ import bikingIcon from './Map/icons/biking.svg';
 import walkIcon from './Map/icons/walking.svg';
 import skateboardIcon from './Map/icons/skateboard.svg';
 import golfIcon from './Map/icons/golf.svg';
+import baseballIcon from './Map/icons/baseball.svg';
 
 export const ICON_SIZE = 20;
 
@@ -40,17 +41,20 @@ export enum DataTypes {
   sports = 'Sports',
   shuffleboard = 'Shuffleboard',
   playground = 'Playgrounds',
-  walking = 'Walking',
+  walking = 'Trails',
   soccer = 'Soccer',
   biking = 'Biking',
   skateboard = 'Skateboarding',
   golf = 'Golf',
+  baseball = 'Baseball',
 }
 
 export enum Colors {
   red = '#FF595E',
+  yellow = '#FFCA3A',
   blue = '#1982C4',
   green = '#6da317',
+  purple = '#6A4C93',
 }
 
 export const DATA: Record<
@@ -77,6 +81,13 @@ export const DATA: Record<
     icon: centerIcon,
     interest: [DataTypes.center],
     color: Colors.green,
+  },
+  art: {
+    type: 'art',
+    data: art.features,
+    icon: artIcon,
+    interest: [DataTypes.art],
+    color: Colors.red,
   },
   mural: {
     type: 'mural',
@@ -169,7 +180,7 @@ export const DATA: Record<
     type: 'soccer',
     data: courts.features
       .filter(({ properties }: any) =>
-        properties.COURT_TYPE?.includes('Futsal'),
+        properties.COURT_TYPE?.includes('Soccer'),
       )
       .map((d) => ({ ...d, type: 'soccer' })),
     icon: soccerIcon,
@@ -178,7 +189,7 @@ export const DATA: Record<
   },
   walking: {
     type: 'walking',
-    data: trailsAndLanes,
+    data: trails,
     icon: walkIcon,
     interest: [DataTypes.walking],
     color: Colors.green,
@@ -199,6 +210,15 @@ export const DATA: Record<
       .map((d) => ({ ...d, type: 'golf' })),
     icon: golfIcon,
     interest: [DataTypes.golf, DataTypes.sports],
+    color: Colors.blue,
+  },
+  baseball: {
+    type: 'baseball',
+    data: courts.features
+      .filter(({ properties }: any) => properties.type?.includes('Baseball'))
+      .map((d) => ({ ...d, type: 'baseball' })),
+    icon: baseballIcon,
+    interest: [DataTypes.baseball, DataTypes.sports],
     color: Colors.blue,
   },
 };
@@ -238,6 +258,7 @@ export const TREE_NODE_DATA = [
       DATA.shuffleboard,
       DATA.pool,
       DATA.golf,
+      DATA.baseball,
       DATA.skateboard,
     ].map(({ type, data, icon, interest, color }) => ({
       key: type,

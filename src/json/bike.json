@@ -85,7 +85,9 @@
         "Infrastruc": "Trail",
         "name": "Empire State Trail",
         "Length_Mi": 7.6070585807200004,
-        "Shape__Length": 16742.754285004699
+        "Shape__Length": 16742.754285004699,
+        "description": "The Empire State Trail is a multi-use trail in New York State that was proposed by Governor Andrew Cuomo in January 2017 and completed in December 2020. The trail runs from Manhattan north to the Canada–United States border in Rouses Point near the northern tip of Lake Champlain, and also from Buffalo to Albany.",
+        "url": "https://empiretrail.ny.gov/"
       },
       "geometry": {
         "type": "MultiLineString",

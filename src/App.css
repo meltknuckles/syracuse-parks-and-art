@@ -50,9 +50,12 @@ a:hover, a:focus, a:active,
     border-color: #2d2f82 !important;
 }
 .p-checkbox.p-highlight .p-checkbox-box {
-    border-color: #2d2f82 !important;
-    background: #2d2f82 !important;
+    border-color: #646d70 !important;
+    background: #646d70 !important;
     color: #ffffff;
+}
+.p-checkbox.p-highlight .p-checkbox-box svg {
+    color: white;
 }
 .p-treenode-content {
     padding: 6px;
@@ -70,4 +73,60 @@ a:hover, a:focus, a:active,
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.img-container {
+    background-color: transparent !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    width: 100% !important;
+    display: flex !important;
+    position: relative !important;
+    overflow: hidden;
+    border: none !important;
+    justify-content: flex-end;
+    align-items: flex-start !important;
+}
+.img-container:hover {
+    cursor: zoom-in;
+}
+.img-count {
+  float: right !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  user-select: none  !important;
+  margin-top: 16px !important;
+  margin-right: 16px !important;
+  font-size: 1.2em !important;
+  font-family: monospace;
+  padding: 12px !important;
+  box-sizing: content-box;
+  color: #333 !important;
+  display: flex !important;
+  height: auto !important;
+  border-radius: 100px  !important;
+  font-weight: bold !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+}
+.img-button {
+  margin-top: 12px !important;
+  height: 96% !important;
+  background: none !important;
+  border: none !important;
+}
+.img-button .p-button-icon {
+  background: rgba(255, 255, 0255, 0.86) !important;
+  border-radius: 100px !important;
+  padding: 10px !important;
+  color: #222 !important;
+  transition: all 0.4s ease-in-out !important;
+  font-size: 1.25em  !important;
+}
+.img-button:hover .p-button-icon,
+.img-button:active .p-button-icon,
+.img-button:focus .p-button-icon {
+  background: rgba rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.4s ease-in-out !important;
 }

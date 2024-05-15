@@ -21,6 +21,7 @@
         "website": "https://syr.gov/swimming",
         "FID": 1
       },
+      "address": "Burnet Park Pool, 301 Coleridge Ave, Syracuse, NY 13204",
       "hours": ["Open Swim: Monday-Saturday 12-6pm", "Open Swim: Sunday 1-6pm"],
       "geometry": { "type": "Point", "coordinates": [-76.1868552, 43.0422915] }
     },
@@ -30,8 +31,8 @@
         "Park": "Kirk Park",
         "Pool": "Yes",
         "type": "Oudoor \"L\"",
-        "latitude": 43.0268659,
-        "longitude": -76.1566506,
+        "latitude": 43.02636734275732,
+        "longitude": -76.15322342448468,
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 63'",
         "Depth": "3' to 11'",
@@ -39,7 +40,10 @@
         "website": "https://syr.gov/swimming",
         "FID": 2
       },
-      "geometry": { "type": "Point", "coordinates": [-76.1566506, 43.0268659] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.15322342448468, 43.02636734275732]
+      }
     },
     {
       "type": "Feature",
@@ -81,12 +85,13 @@
     },
     {
       "type": "Feature",
+      "address": "Onondaga Park Pool, 160-174 Onondaga Park Dr, Syracuse, NY 13207",
       "properties": {
         "Park": "Onondaga Park",
         "Pool": "Yes",
         "type": "Oudoor \"L\"",
-        "latitude": 43.0241038,
-        "longitude": -76.1712197,
+        "latitude": 43.024365999871975,
+        "longitude": -76.16848473632713,
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "50 M x 42'",
         "Depth": "3'6\" to 12'",
@@ -94,7 +99,10 @@
         "website": "https://syr.gov/swimming",
         "FID": 5
       },
-      "geometry": { "type": "Point", "coordinates": [-76.1712197, 43.0241038] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.16848473632713, 43.024365999871975]
+      }
     },
     {
       "type": "Feature",
@@ -134,6 +142,7 @@
     },
     {
       "type": "Feature",
+      "address": "Thornden Park Pool, Thornden Park Dr, Syracuse, NY 13210",
       "properties": {
         "Park": "Thornden Park",
         "Pool": "Yes",
@@ -151,6 +160,7 @@
     },
     {
       "type": "Feature",
+      "address": "Valley Pool, 4942 S Salina St, Syracuse, NY 13205",
       "properties": {
         "Park": "Valley Pool",
         "Pool": "Yes",
@@ -164,7 +174,12 @@
         "website": "https://syr.gov/swimming",
         "FID": 9
       },
+      "gallery": {
+        "count": 1
+      },
+      "features": ["Toilets/Shower", "Heating", "Private Parking Lot"],
       "accessibility": "https://search.inclusiverec.org/agencies/5746",
+      "url": "https://www.syr.gov/Venues/Valley-Pool",
       "geometry": { "type": "Point", "coordinates": [-76.1489819, 42.997232] }
     },
     {
@@ -173,8 +188,8 @@
         "Park": "Wilson Park",
         "Pool": "Yes",
         "type": "Outdoor",
-        "latitude": 43.0399134,
-        "longitude": -76.1452366,
+        "latitude": 43.039885222647065,
+        "longitude": -76.14323700364709,
         "Accessible_Pool_Ramp": "Yes",
         "Length_x_Width": "25 yds x 42'",
         "Depth": "3'6\"",
@@ -182,7 +197,10 @@
         "website": "https://syr.gov/swimming",
         "FID": 10
       },
-      "geometry": { "type": "Point", "coordinates": [-76.1452366, 43.0399134] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.14323700364709, 43.039885222647065]
+      }
     }
   ]
 }

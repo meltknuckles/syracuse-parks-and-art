@@ -62,10 +62,10 @@
     },
     {
       "type": "Feature",
+      "address": "Cecile Community Center, 174 W Seneca Turnpike, Syracuse, NY 13205",
       "properties": {
-        "Park": "Bob Cecile Community Center",
+        "Park": "Cecile Community Center",
         "COMMUNITY_CENTER": "Yes",
-        "address": "174 W. Seneca Turnpike",
         "latitude": 43.001564,
         "longitude": -76.146325,
         "FID": 5
@@ -75,9 +75,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Westmoreland Community Center",
+        "Park": "Westmoreland Park",
+        "name": "Westmoreland Park Community Center",
         "COMMUNITY_CENTER": "Yes",
-        "address": "130 Westmoreland Ave. ",
         "latitude": 43.050298,
         "longitude": -76.115442,
         "FID": 6
@@ -86,6 +86,7 @@
     },
     {
       "type": "Feature",
+      "address": "Burnet Arts & Crafts Facility, 521-549 Burnet Park Dr, Syracuse, NY 13204",
       "properties": {
         "Park": "Burnet Park Arts & Crafts Center",
         "COMMUNITY_CENTER": "Yes",

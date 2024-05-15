@@ -64,8 +64,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6108",
     "gallery": {
-      "count": 10,
-      "folder": "burnet-park"
+      "count": 19
     },
     "latitude": 43.042274,
     "longitude": -76.183936
@@ -100,7 +99,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6106",
     "gallery": {
-      "count": 6
+      "count": 11
     },
     "latitude": 43.050975,
     "longitude": -76.152846
@@ -136,7 +135,7 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 4
+      "count": 7
     },
     "latitude": 43.02289,
     "longitude": -76.129316
@@ -153,6 +152,9 @@
       "Field House",
       "Parking Lot"
     ],
+    "gallery": {
+      "count": 1
+    },
     "latitude": 43.070529,
     "longitude": -76.114924
   },
@@ -207,8 +209,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6102",
     "gallery": {
-      "count": 7,
-      "folder": "fayette-firefighters-memorial-park"
+      "count": 7
     },
     "tags": ["Downtown Park"],
     "latitude": 43.048354,
@@ -242,7 +243,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6087",
     "gallery": {
-      "count": 7
+      "count": 10
     },
     "announcement": "The Franklin Square fountain has been removed for restoration. We anticipate the restoration will be complete by mid-2024.",
     "tags": ["Downtown Park"],
@@ -332,7 +333,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6092",
     "gallery": {
-      "count": 6
+      "count": 12
     },
     "latitude": 43.026792,
     "longitude": -76.154486
@@ -365,6 +366,9 @@
       "Swings",
       "Water Feature (Play)"
     ],
+    "gallery": {
+      "count": 1
+    },
     "latitude": 43.054076,
     "longitude": -76.192185
   },
@@ -383,8 +387,8 @@
       "Playground (5-12 Years Old)",
       "Swings"
     ],
-    "latitude": 43.03447,
-    "longitude": -76.147408
+    "latitude": 43.034789267498134,
+    "longitude": -76.14748519585063
   },
   {
     "name": "Lincoln Park",
@@ -407,7 +411,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6095",
     "gallery": {
-      "count": 2
+      "count": 3
     },
     "latitude": 43.056873,
     "longitude": -76.126814
@@ -418,6 +422,9 @@
     "description": "Lipe Art Park is an intriguing blend of public art project, outdoor venue, and recreational space, sprawling across approximately 2 acres in the city's Warehouse District.",
     "tags": ["Downtown Park"],
     "features": ["Accessible"],
+    "gallery": {
+      "count": 7
+    },
     "latitude": 43.046464,
     "longitude": -76.169608
   },
@@ -440,7 +447,7 @@
       "Tennis Court(s)"
     ],
     "gallery": {
-      "count": 3,
+      "count": 4,
       "folder": "mcchesney-park"
     },
     "latitude": 43.07399,
@@ -461,7 +468,7 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 6,
+      "count": 7,
       "folder": "mckinley-park"
     },
     "latitude": 43.016545,
@@ -489,6 +496,9 @@
       "Softball Field(s)",
       "Tennis Court(s)"
     ],
+    "gallery": {
+      "count": 4
+    },
     "accessibility": "https://search.inclusiverec.org/agencies/6094",
     "latitude": 43.000026,
     "longitude": -76.146268
@@ -507,6 +517,9 @@
       "Playground (2-5 Years Old)",
       "Playground (5-12 Years Old)"
     ],
+    "gallery": {
+      "count": 3
+    },
     "latitude": 43.077105,
     "longitude": -76.109578
   },
@@ -545,6 +558,9 @@
       "Water Feature (Natural/Decorative)",
       "Water Feature (Play)"
     ],
+    "gallery": {
+      "count": 5
+    },
     "latitude": 43.02872,
     "longitude": -76.162606
   },
@@ -571,7 +587,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6091",
     "gallery": {
-      "count": 12,
+      "count": 17,
       "folder": "onondaga-park-upper"
     },
     "latitude": 43.026796,
@@ -587,6 +603,9 @@
       "Basketball Court(s)",
       "Playground (5-12 Years Old)"
     ],
+    "gallery": {
+      "count": 11
+    },
     "latitude": 43.049764,
     "longitude": -76.133157
   },
@@ -616,7 +635,7 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 11
+      "count": 13
     },
     "latitude": 43.066534,
     "longitude": -76.13852
@@ -628,7 +647,7 @@
     "tags": ["Playlot"],
     "features": ["Accessible"],
     "gallery": {
-      "count": 1
+      "count": 2
     },
     "latitude": 43.059183,
     "longitude": -76.103409
@@ -662,7 +681,7 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 1
+      "count": 2
     },
     "latitude": 43.044966,
     "longitude": -76.163669
@@ -678,6 +697,9 @@
       "Playground (2-5 Years Old)",
       "Tennis Court(s)"
     ],
+    "gallery": {
+      "count": 2
+    },
     "latitude": 43.037403,
     "longitude": -76.158379
   },
@@ -707,7 +729,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6097",
     "gallery": {
-      "count": 6
+      "count": 12
     },
     "latitude": 43.058909,
     "longitude": -76.116918
@@ -742,7 +764,7 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 9
+      "count": 10
     },
     "accessibility": "https://search.inclusiverec.org/agencies/6084",
     "latitude": 43.04222,
@@ -755,7 +777,7 @@
     "tags": ["Playlot"],
     "features": ["Accessible"],
     "gallery": {
-      "count": 4
+      "count": 5
     },
     "latitude": 43.064213,
     "longitude": -76.156655
@@ -776,6 +798,9 @@
       "Playground (5-12 Years Old)",
       "Water Feature (Play)"
     ],
+    "gallery": {
+      "count": 5
+    },
     "latitude": 43.070437,
     "longitude": -76.162851
   },
@@ -796,6 +821,9 @@
       "Playground (2-5 Years Old)",
       "Playground (5-12 Years Old)"
     ],
+    "gallery": {
+      "count": 3
+    },
     "latitude": 43.049808,
     "longitude": -76.115491
   },
@@ -816,7 +844,32 @@
       "Swimming Pool (Outdoor)",
       "Water Feature (Play)"
     ],
+    "gallery": {
+      "count": 6
+    },
+    "acreage": 1.523,
     "latitude": 43.039905,
     "longitude": -76.142923
+  },
+  {
+    "name": "Loguen Park",
+    "address": "Loguen Park, 300 Columbus Ave, Syracuse, NY 13210",
+    "description": "",
+    "tags": [],
+    "features": ["Playground"],
+    "gallery": {
+      "count": 3
+    },
+    "latitude": 43.04680976008796,
+    "longitude": -76.1222705467334
+  },
+  {
+    "name": "Wadsworth Park",
+    "address": "Wadsworth Park, 1234 Glenwood Ave, Syracuse, NY 13207",
+    "description": "",
+    "tags": [],
+    "features": ["Playground"],
+    "latitude": 43.02599273148895,
+    "longitude": -76.18212055787517
   }
 ]

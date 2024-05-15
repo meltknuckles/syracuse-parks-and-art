@@ -19,7 +19,6 @@ export const MapContainer = ({
   // isGeolocationAvailable,
   // getPosition,
   // selectedMarker,
-  // setSelectedMarker,
   onGoogleApiLoaded,
   mapType,
   interests,
@@ -28,8 +27,6 @@ export const MapContainer = ({
   setMapLocation: any;
   isGeolocationAvailable: boolean;
   getPosition: any;
-  selectedMarker: any;
-  setSelectedMarker: any;
   onGoogleApiLoaded: any;
   interests: any[];
   mapType: string;

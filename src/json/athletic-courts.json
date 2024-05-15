@@ -21,6 +21,7 @@
     },
     {
       "type": "Feature",
+      "address": "Basketball Courts, Meadowbrook Dr, Syracuse, NY 13210",
       "properties": {
         "Park": "Barry Park",
         "COURT_TYPE": "Basketball",
@@ -34,6 +35,7 @@
     },
     {
       "type": "Feature",
+      "address": "Basketball Courts, Meadowbrook Dr, Syracuse, NY 13210",
       "properties": {
         "Park": "Barry Park",
         "COURT_TYPE": "Basketball",
@@ -57,6 +59,164 @@
         "ObjectId": 4
       },
       "geometry": { "type": "Point", "coordinates": [-76.117332, 43.030181] }
+    },
+    {
+      "type": "Feature",
+      "address": "Soccer Field, Meadowbrook Dr, Syracuse, NY 13210",
+      "properties": {
+        "Park": "Barry Park",
+        "COURT_TYPE": "Soccer",
+        "latitude": 43.029603872736246,
+        "longitude": -76.11732312930819
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11732312930819, 43.029603872736246]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Lewis Park",
+        "type": "Baseball Field",
+        "latitude": 43.053698724807944,
+        "longitude": -76.19211069937387
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.19211069937387, 43.053698724807944]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Meachem Field",
+        "type": "Baseball Field",
+        "latitude": 43.00033380257437,
+        "longitude": -76.1451251494725
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1451251494725, 43.00033380257437]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "Onondaga Valley Lacrosse, 10 Amidon Dr, Syracuse, NY 13205",
+      "properties": {
+        "Park": "Meachem Field",
+        "type": "Lacrosse Field",
+        "latitude": 42.9983890802036,
+        "longitude": -76.14675243907317
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.14675243907317, 42.9983890802036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Elmwood Park",
+        "type": "Baseball Field",
+        "latitude": 43.01871303834532,
+        "longitude": -76.1635728655907
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1635728655907, 43.01871303834532]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Sherman Park",
+        "type": "Baseball Field",
+        "latitude": 43.02682101045697,
+        "longitude": -76.11286749549244
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11286749549244, 43.02682101045697]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Meachem Field",
+        "type": "Baseball Field",
+        "latitude": 42.99942386880035,
+        "longitude": -76.14651725961409
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.14651725961409, 42.99942386880035]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Meachem Field",
+        "type": "Baseball Field",
+        "latitude": 43.00069721746893,
+        "longitude": -76.14673347302343
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.14673347302343, 43.00069721746893]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Kirk Park",
+        "type": "Baseball Field",
+        "latitude": 43.02728157510841,
+        "longitude": -76.15452306867104
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.15452306867104, 43.02728157510841]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Cummings Field",
+        "type": "Baseball Field",
+        "latitude": 43.07078527817973,
+        "longitude": -76.11494574917276
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11494574917276, 43.07078527817973]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Homer Wheaton Park",
+        "type": "Baseball Field",
+        "latitude": 43.05128088794165,
+        "longitude": -76.10001651702154
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.10001651702154, 43.05128088794165]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Barry Park",
+        "type": "Baseball Field",
+        "latitude": 43.02909086846044,
+        "longitude": -76.11693931718408
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11693931718408, 43.02909086846044]
+      }
     },
     {
       "type": "Feature",
@@ -125,6 +285,7 @@
     },
     {
       "type": "Feature",
+      "address": "Comfort Tyler Park tennis court, Comfort Tyler Park, 1212-44, E Colvin St, Syracuse, NY 13210",
       "properties": {
         "Park": "Comfort Tyler Park",
         "COURT_TYPE": "Tennis",
@@ -411,21 +572,26 @@
     },
     {
       "type": "Feature",
+      "address": "Basketball Courts, Upper Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
       "properties": {
-        "Park": "Onondaga Park Upper",
+        "Park": "Onondaga Park  - Upper",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (3)",
         "IMPROV__YEAR": "2018",
-        "latitude": 43.027369,
-        "longitude": -76.165081,
+        "latitude": 43.027356260427325,
+        "longitude": -76.16506110455748,
         "ObjectId": 32
       },
-      "geometry": { "type": "Point", "coordinates": [-76.165081, 43.027369] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.16506110455748, 43.027356260427325]
+      }
     },
     {
       "type": "Feature",
+      "address": "Tennis Courts, Onondaga Park Dr, Syracuse, NY 13207",
       "properties": {
-        "Park": "Onondaga Park Upper",
+        "Park": "Onondaga Park  - Upper",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (8)",
         "IMPROV__YEAR": null,
@@ -517,7 +683,7 @@
       "type": "Feature",
       "properties": {
         "Park": "Schiller Park",
-        "COURT_TYPE": "Futsal",
+        "COURT_TYPE": "Soccer",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": "2022",
         "latitude": 43.066021,
@@ -556,7 +722,7 @@
       "type": "Feature",
       "properties": {
         "Park": "Skiddy Park",
-        "COURT_TYPE": "Futsal",
+        "COURT_TYPE": "Soccer",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": "2022",
         "latitude": 43.045039,
@@ -632,6 +798,7 @@
     },
     {
       "type": "Feature",
+      "address": "Tennis Courts, Ostrom Ave, Syracuse, NY 13210",
       "properties": {
         "Park": "Thornden Park",
         "COURT_TYPE": "Tennis",
@@ -642,6 +809,20 @@
         "ObjectId": 49
       },
       "geometry": { "type": "Point", "coordinates": [-76.127677, 43.042299] }
+    },
+    {
+      "type": "Feature",
+      "address": "Thornden Park Football Field, Thornden Park Dr, Syracuse, NY 13210",
+      "properties": {
+        "Park": "Thornden Park",
+        "type": "Football Field",
+        "latitude": 43.040550449276274,
+        "longitude": -76.12637108593043
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.12637108593043, 43.040550449276274]
+      }
     },
     {
       "type": "Feature",

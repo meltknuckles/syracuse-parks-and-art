@@ -10,11 +10,17 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Menubar } from 'primereact/menubar';
 import { Tag } from 'primereact/tag';
+import { Image as PrimereactImage } from 'primereact/image';
 import navIcon from './Map/icons/you1.svg';
 import boundary from './json/boundary.json';
-import { DATA, DataTypes, TREE_NODE_DATA } from './constants';
+import { Colors, DATA, TREE_NODE_DATA } from './constants';
 import { TreeSelect } from 'primereact/treeselect';
 import { SortOrder } from 'primereact/api';
+import { Badge } from 'primereact/badge';
+import { GiKidSlide } from 'react-icons/gi';
+import { MdAccessible } from 'react-icons/md';
+import { FaParking } from 'react-icons/fa';
+import { MdSportsBasketball } from 'react-icons/md';
 
 export const ICON_SIZE = 60;
 
@@ -37,6 +43,7 @@ const App = () => {
 
   const prevMarkersRef = useRef([]);
   const [selectedMarker, setSelectedMarker] = useState<any>();
+  const [selectedPath, setSelectedPath] = useState<any>();
   const [map, setMap] = useState<any>();
   const [maps, setMaps] = useState<any>();
   const [interests, setInterests] = useState<string[]>([]);
@@ -143,7 +150,7 @@ const App = () => {
             } else if (type === 'center') {
               data = {
                 _labels: {},
-                park: selectable['Park'],
+                park: selectable['Park'] ?? selectable.properties?.['Park'],
                 accessibilityInfo: selectable['accessibility'],
                 features: selectable['features'],
                 hours: selectable['hours'],
@@ -156,7 +163,6 @@ const App = () => {
                 accessibilityInfo: selectable['accessibility'],
               };
             } else if (type === 'pool') {
-              console.log('selectable', selectable);
               data = {
                 _labels: {
                   hasRamp: 'Accessible Pool Ramp',
@@ -170,6 +176,8 @@ const App = () => {
                 accessibilityInfo: selectable['accessibility'],
                 features: selectable['features'],
                 hours: selectable['hours'],
+                rules:
+                  'https://www.syr.gov/Departments/Parks-Recreation/Pool-Rules',
               };
             } else if (type === 'park') {
               data = {
@@ -192,6 +200,8 @@ const App = () => {
             category,
           };
           setSelectedMarker(newSelectedMarker);
+          setSelectedPath(null);
+          setActiveIndex(0);
           map.panTo(_marker.getPosition());
         });
         (prevMarkersRef.current as any).push(_marker);
@@ -205,7 +215,9 @@ const App = () => {
             const lng = d.properties?.longitude || d.longitude;
             let title = d.title || d.name || d.properties?.name;
             if (d.properties?.Park && d.type === 'pool') {
-              title = `${d.properties.Park || ''} Pool`.trim();
+              title = `${d.properties.Park || ''} Pool`
+                .replace('Pool Pool', 'Pool')
+                .trim();
             }
             if (d.properties?.Park && !title && d.properties?.COURT_TYPE) {
               title =
@@ -257,6 +269,7 @@ const App = () => {
         filterMarkers(DATA.shuffleboard);
         filterMarkers(DATA.skateboard);
         filterMarkers(DATA.golf);
+        filterMarkers(DATA.baseball);
         filterMarkers(DATA.park);
 
         const bounds = new maps.LatLngBounds(
@@ -276,11 +289,26 @@ const App = () => {
       if (interestedIn.includes('walking') || interestedIn.includes('biking')) {
         map.data.addGeoJson(DATA.walking.data);
       }
+      map.data.addListener('click', (event: any) => {
+        if (
+          !['boundary', 'Bike Lane'].includes(
+            event.feature.getProperty('name') as string,
+          )
+        ) {
+          setSelectedPath({
+            name: event.feature.getProperty('name'),
+            description: event.feature.getProperty('description'),
+            url: event.feature.getProperty('url'),
+          });
+          setSelectedMarker(null);
+          setActiveIndex(0);
+        }
+      });
 
       map.data.setStyle((feature: any) => {
         if (feature.getProperty('name') === 'boundary') {
           return {
-            fillColor: '#cdd',
+            fillColor: 'transparent',
             strokeColor: '#788',
             strokeWeight: 2,
           };
@@ -299,7 +327,7 @@ const App = () => {
             strokeColor: interestedIn.includes('walking')
               ? '#9E86C1'
               : 'transparent',
-            strokeWeight: 4,
+            strokeWeight: 5,
           };
         } else if (feature.getProperty('name') === 'Bike Lane') {
           return {
@@ -325,8 +353,28 @@ const App = () => {
       onGoogleApiLoaded({ map, maps });
     }
   }, [interests, map, maps]);
+  const galleriaRef = useRef();
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  console.log('selectedMarker', selectedMarker);
+  const photos = selectedMarker?.gallery
+    ? Array(selectedMarker?.gallery.count)
+        .fill('')
+        .map(
+          (_g, idx) =>
+            `/parks/${selectedMarker?.gallery.folder ?? _.kebabCase(selectedMarker.title)}/${_.padStart((idx + 1).toString(), 2, '0')}.jpg`,
+        )
+    : [];
+  const item = photos[activeIndex];
+  const [width, setWidth] = useState(0);
+  console.log('width', width);
+  const ref: any = useRef(null);
+  useEffect(() => {
+    if (ref.current?.offsetWidth) {
+      setWidth(ref.current.offsetWidth);
+    }
+  }, [ref, item, activeIndex, photos]);
+  const imgRef = useRef();
+
   const kvPairData = selectedMarker?.data
     ? {
         ...selectedMarker.data,
@@ -350,6 +398,7 @@ const App = () => {
           ({ name }: { name: string }) => name === kvPairData[key],
         ) ? (
           <Button
+            key={kvPairData[key]}
             link
             label={kvPairData[key]}
             style={{ background: 'transparent', border: 'none', padding: 4 }}
@@ -359,6 +408,7 @@ const App = () => {
               );
 
               if (selectable) {
+                setSelectedPath(null);
                 setSelectedMarker({
                   ...selectable,
                   data: null, // TODO:
@@ -368,6 +418,7 @@ const App = () => {
                   lat: selectable.latitude,
                   lng: selectable.longitude,
                 });
+                setActiveIndex(0);
               }
             }}
           />
@@ -376,14 +427,14 @@ const App = () => {
         ),
     }));
 
-  const itemTemplate = (item: any) => {
-    return (
-      <img src={item} alt={selectedMarker.title} style={{ width: '100%' }} />
-    );
-  };
-  const thumbnailTemplate = (item: any) => {
-    return <img src={item} alt={selectedMarker.title} style={{ height: 70 }} />;
-  };
+  // const itemTemplate = (item: any) => {
+  //   return (
+  //     <img src={item} alt={selectedMarker.title} style={{ width: '100%' }} />
+  //   );
+  // };
+  // const thumbnailTemplate = (item: any) => {
+  //   return <img src={item} alt={selectedMarker.title} style={{ height: 70 }} />;
+  // };
   const selectedAddress =
     selectedMarker?.properties?.address ||
     selectedMarker?.address ||
@@ -393,29 +444,48 @@ const App = () => {
           name === selectedMarker?.properties?.Park,
       )?.address);
   const selectedtags = [];
+  let TagIcon = null;
+
   if (selectedMarker) {
     if (
       selectedMarker.accessibility ||
       selectedMarker.features?.find((f: string) => f === 'Accessible')
     ) {
-      selectedtags.push('Accessible');
+      selectedtags.push({
+        label: 'Accessible',
+        icon: MdAccessible,
+        color: Colors.blue,
+      });
+      TagIcon = MdAccessible;
     }
     if (selectedMarker.features?.find((f: string) => f.includes('Parking'))) {
-      selectedtags.push('Parking');
+      selectedtags.push({
+        label: 'Parking',
+        icon: FaParking,
+        color: Colors.purple,
+      });
     }
     if (
       selectedMarker.features?.find(
         (f: string) => !!['Playground', 'Swing'].find((i) => f.includes(i)),
       )
     ) {
-      selectedtags.push('Playground');
+      selectedtags.push({
+        label: 'Playground',
+        icon: GiKidSlide,
+        color: Colors.green,
+      });
     }
     if (
       selectedMarker.features?.find(
         (f: string) => !!['Court', 'Field', 'Pool'].find((i) => f.includes(i)),
       )
     ) {
-      selectedtags.push('Sports');
+      selectedtags.push({
+        label: 'Sports',
+        icon: MdSportsBasketball,
+        color: Colors.red,
+      });
     }
   }
 
@@ -502,34 +572,111 @@ const App = () => {
                 >
                   {selectedtags.map((tag) => (
                     <Tag
-                      severity="info"
                       style={{
+                        backgroundColor: tag.color,
                         marginLeft: 6,
                         borderRadius: 16,
                         padding: '4px 10px',
                       }}
+                      icon={<tag.icon style={{ marginRight: 6 }} />}
                     >
-                      {tag}
+                      {tag.label}
                     </Tag>
                   ))}
                 </div>
               )}
               {selectedMarker?.gallery && (
-                <div>
-                  <Galleria
-                    circular
-                    value={Array(selectedMarker?.gallery.count)
-                      .fill('')
-                      .map(
-                        (_g, idx) =>
-                          `/parks/${selectedMarker?.gallery.folder ?? _.kebabCase(selectedMarker.title)}/${_.padStart((idx + 1).toString(), 2, '0')}.jpg`,
+                <div
+                  className="grid img-container"
+                  style={{ margin: 0, position: 'relative' }}
+                >
+                  <div
+                    className="col-fixed"
+                    style={{
+                      width: 45,
+                      height: '100%',
+                      position: 'absolute',
+                      left: 6,
+                      zIndex: 999,
+                    }}
+                  >
+                    {activeIndex > 0 && (
+                      <Button
+                        type="button"
+                        className="img-button"
+                        icon="pi pi-chevron-left"
+                        onClick={() => setActiveIndex(activeIndex - 1)}
+                      ></Button>
+                    )}
+                  </div>
+                  <div className="col">
+                    <Button
+                      type="button"
+                      ref={ref}
+                      className="img-container"
+                      onClick={() => {
+                        (imgRef.current as any)?.show();
+                        (galleriaRef.current as any)?.stopSlideShow();
+                      }}
+                      style={{
+                        height: `${Math.floor(width * (2 / 3))}px`,
+                        backgroundImage: `url("${item}")`,
+                      }}
+                    >
+                      {photos.length > 1 && (
+                        <Badge
+                          className="img-count"
+                          value={`${activeIndex + 1}/${photos.length}`}
+                        ></Badge>
                       )}
+                    </Button>
+                  </div>
+                  <div
+                    className="col-fixed"
+                    style={{
+                      width: 45,
+                      height: '100%',
+                      position: 'absolute',
+                      right: 14,
+                      zIndex: 999,
+                    }}
+                  >
+                    {photos.length > 1 && activeIndex < photos.length - 1 && (
+                      <Button
+                        type="button"
+                        className="img-button"
+                        icon="pi pi-chevron-right"
+                        onClick={() => setActiveIndex(activeIndex + 1)}
+                      ></Button>
+                    )}
+                  </div>
+
+                  <PrimereactImage
+                    ref={imgRef as any}
+                    src={item}
+                    alt="Image"
+                    style={{ display: 'none' }}
+                    preview
+                  />
+                  <Galleria
+                    ref={galleriaRef as any}
+                    value={photos}
+                    circular
+                    style={{ display: 'none' }}
+                    showItemNavigators={false}
+                    activeIndex={activeIndex}
+                    showThumbnails={false}
+                  />
+
+                  {/* <Galleria
+                    circular
+                    value={}
                     numVisible={4}
                     showThumbnails={selectedMarker?.gallery.count > 1}
                     style={{ width: '100%' }}
                     item={itemTemplate}
                     thumbnail={thumbnailTemplate}
-                  />
+                  /> */}
                 </div>
               )}
               <div style={{ marginTop: 16 }}>
@@ -597,11 +744,10 @@ const App = () => {
                           /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
                         );
                         if (Array.isArray(value)) {
-                          console.log('value', value);
                           value = (
                             <ul style={{ margin: 0 }}>
                               {value.map((v) => (
-                                <li>{v}</li>
+                                <li key={v}>{v}</li>
                               ))}
                             </ul>
                           );
@@ -620,6 +766,12 @@ const App = () => {
               )}
             </Card>
           )}
+          {selectedPath && (
+            <Card>
+              <h2>{selectedPath.name}</h2>
+              <pre>{JSON.stringify(selectedPath, null, 2)}</pre>
+            </Card>
+          )}
         </div>
         <div className="col" style={{ padding: 0 }}>
           <MapContainer
@@ -627,8 +779,6 @@ const App = () => {
             setMapLocation={setLocation}
             isGeolocationAvailable={isGeolocationAvailable}
             getPosition={getPosition}
-            selectedMarker={selectedMarker}
-            setSelectedMarker={setSelectedMarker}
             onGoogleApiLoaded={onGoogleApiLoaded}
             interests={interests}
             mapType={mapType}
