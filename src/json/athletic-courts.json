@@ -9,7 +9,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Barker Square",
+        "park": "Barker Square",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": "2021",
@@ -23,7 +23,7 @@
       "type": "Feature",
       "address": "Basketball Courts, Meadowbrook Dr, Syracuse, NY 13210",
       "properties": {
-        "Park": "Barry Park",
+        "park": "Barry Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2022",
@@ -37,7 +37,7 @@
       "type": "Feature",
       "address": "Basketball Courts, Meadowbrook Dr, Syracuse, NY 13210",
       "properties": {
-        "Park": "Barry Park",
+        "park": "Barry Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": null,
@@ -50,7 +50,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Barry Park",
+        "park": "Barry Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": "2021",
@@ -64,7 +64,7 @@
       "type": "Feature",
       "address": "Soccer Field, Meadowbrook Dr, Syracuse, NY 13210",
       "properties": {
-        "Park": "Barry Park",
+        "park": "Barry Park",
         "COURT_TYPE": "Soccer",
         "latitude": 43.029603872736246,
         "longitude": -76.11732312930819
@@ -77,7 +77,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Lewis Park",
+        "park": "Lewis Park",
         "type": "Baseball Field",
         "latitude": 43.053698724807944,
         "longitude": -76.19211069937387
@@ -92,7 +92,7 @@
       "address": "Sunnycrest Arena, 699 Robinson St, Syracuse, NY 13206",
       "features": ["Concession Stand", "Heating", "Private Parking Lot"],
       "properties": {
-        "Park": "Sunnycrest Park",
+        "park": "Sunnycrest Park",
         "type": "Ice Rink",
         "latitude": 43.05820408426673,
         "longitude": -76.11720186628702
@@ -107,7 +107,7 @@
       "address": "Clinton Square Ice Rink, 2 S Clinton St, Syracuse, NY 13202",
       "features": ["Concession Stand", "On-Street Parking"],
       "properties": {
-        "Park": "Clinton Square",
+        "park": "Clinton Square",
         "type": "Ice Rink",
         "latitude": 43.05088897853138,
         "longitude": -76.15288461151074
@@ -138,7 +138,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Meachem Field",
+        "park": "Meachem Field",
         "type": "Baseball Field",
         "latitude": 43.00033380257437,
         "longitude": -76.1451251494725
@@ -152,7 +152,7 @@
       "type": "Feature",
       "address": "Onondaga Valley Lacrosse, 10 Amidon Dr, Syracuse, NY 13205",
       "properties": {
-        "Park": "Meachem Field",
+        "park": "Meachem Field",
         "type": "Lacrosse Field",
         "latitude": 42.9983890802036,
         "longitude": -76.14675243907317
@@ -165,7 +165,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Elmwood Park",
+        "park": "Elmwood Park",
         "type": "Baseball Field",
         "latitude": 43.01871303834532,
         "longitude": -76.1635728655907
@@ -178,7 +178,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Sherman Park",
+        "park": "Sherman Park",
         "type": "Baseball Field",
         "latitude": 43.02682101045697,
         "longitude": -76.11286749549244
@@ -191,7 +191,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Meachem Field",
+        "park": "Meachem Field",
         "type": "Baseball Field",
         "latitude": 42.99942386880035,
         "longitude": -76.14651725961409
@@ -204,7 +204,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Meachem Field",
+        "park": "Meachem Field",
         "type": "Baseball Field",
         "latitude": 43.00069721746893,
         "longitude": -76.14673347302343
@@ -217,7 +217,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Kirk Park",
+        "park": "Kirk Park",
         "type": "Baseball Field",
         "latitude": 43.02728157510841,
         "longitude": -76.15452306867104
@@ -230,7 +230,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Cummings Field",
+        "park": "Cummings Field",
         "type": "Baseball Field",
         "latitude": 43.07078527817973,
         "longitude": -76.11494574917276
@@ -243,7 +243,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Homer Wheaton Park",
+        "park": "Homer Wheaton Park",
         "type": "Baseball Field",
         "latitude": 43.05128088794165,
         "longitude": -76.10001651702154
@@ -256,7 +256,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Barry Park",
+        "park": "Barry Park",
         "type": "Baseball Field",
         "latitude": 43.02909086846044,
         "longitude": -76.11693931718408
@@ -269,7 +269,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Burnet Park",
+        "park": "Burnet Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
@@ -282,7 +282,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Burnet Park",
+        "park": "Burnet Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": null,
@@ -295,7 +295,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Cannon Street Community Center",
+        "park": "Cannon Street Community Center",
         "COURT_TYPE": "Backboard & Hoop",
         "COURT_SIZE___QUANTITY": "No Lines",
         "IMPROV__YEAR": "Unlined",
@@ -308,7 +308,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Clinton Playlot",
+        "park": "Clinton Playlot",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
@@ -321,7 +321,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Comfort Tyler Park",
+        "park": "Comfort Tyler Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": null,
@@ -335,7 +335,7 @@
       "type": "Feature",
       "address": "Comfort Tyler Park tennis court, Comfort Tyler Park, 1212-44, E Colvin St, Syracuse, NY 13210",
       "properties": {
-        "Park": "Comfort Tyler Park",
+        "park": "Comfort Tyler Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": null,
@@ -348,7 +348,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Dunbar Park",
+        "park": "Dunbar Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
@@ -361,7 +361,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Dunbar Park",
+        "park": "Dunbar Park",
         "COURT_TYPE": "Tot Cycle Track",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": null,
@@ -374,7 +374,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Dunbar Park",
+        "park": "Dunbar Park",
         "COURT_TYPE": "Shuffleboard",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": null,
@@ -387,7 +387,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Eastwood Heights",
+        "park": "Eastwood Heights",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
@@ -400,7 +400,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Homer-Wheaton Park",
+        "park": "Homer-Wheaton Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2019",
@@ -413,7 +413,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Homer-Wheaton Park",
+        "park": "Homer-Wheaton Park",
         "COURT_TYPE": "Tennis/PickleBall",
         "COURT_SIZE___QUANTITY": "Lined (2)",
         "IMPROV__YEAR": "2022",
@@ -426,7 +426,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Huntington Park",
+        "park": "Huntington Park",
         "COURT_TYPE": "Basketball (Hexagonal)",
         "COURT_SIZE___QUANTITY": "3-pt Shooting Court",
         "IMPROV__YEAR": "2023",
@@ -439,7 +439,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Kirk Park",
+        "park": "Kirk Park",
         "COURT_TYPE": "Basketball (Covered)",
         "COURT_SIZE___QUANTITY": "Full Court (4)",
         "IMPROV__YEAR": null,
@@ -452,7 +452,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Kirk Park",
+        "park": "Kirk Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
@@ -465,7 +465,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Kirk Park",
+        "park": "Kirk Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined (3)",
         "IMPROV__YEAR": null,
@@ -478,7 +478,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Kirk Park",
+        "park": "Kirk Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Non-Lined (6)",
         "IMPROV__YEAR": null,
@@ -491,7 +491,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Lewis Park",
+        "park": "Lewis Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2019",
@@ -504,7 +504,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Libba-Cotton Grove",
+        "park": "Libba-Cotton Grove",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2021",
@@ -517,7 +517,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Lincoln Park",
+        "park": "Lincoln Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": "2022",
@@ -525,12 +525,15 @@
         "longitude": -76.128151,
         "ObjectId": 24
       },
+      "gallery": {
+        "parent": [5, 6, 7]
+      },
       "geometry": { "type": "Point", "coordinates": [-76.128151, 43.056078] }
     },
     {
       "type": "Feature",
       "properties": {
-        "Park": "Lincoln Park",
+        "park": "Lincoln Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": "2021",
@@ -538,12 +541,15 @@
         "longitude": -76.126401,
         "ObjectId": 25
       },
+      "gallery": {
+        "parent": [2]
+      },
       "geometry": { "type": "Point", "coordinates": [-76.126401, 43.057812] }
     },
     {
       "type": "Feature",
       "properties": {
-        "Park": "McChesney Park",
+        "park": "McChesney Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2019",
@@ -556,7 +562,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "McChesney Park",
+        "park": "McChesney Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": "2021",
@@ -569,7 +575,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "McKinley Park",
+        "park": "McKinley Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "Unlined",
@@ -582,7 +588,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "McKinley Park",
+        "park": "McKinley Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
@@ -595,7 +601,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Meachem Park",
+        "park": "Meachem Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (3)",
         "IMPROV__YEAR": "2022",
@@ -608,7 +614,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Nottingham Courts",
+        "park": "Nottingham Courts",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (6)",
         "IMPROV__YEAR": null,
@@ -622,7 +628,7 @@
       "type": "Feature",
       "address": "Basketball Courts, Upper Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
       "properties": {
-        "Park": "Onondaga Park  - Upper",
+        "park": "Onondaga Park  - Upper",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (3)",
         "IMPROV__YEAR": "2018",
@@ -639,7 +645,7 @@
       "type": "Feature",
       "address": "Tennis Courts, Onondaga Park Dr, Syracuse, NY 13207",
       "properties": {
-        "Park": "Onondaga Park  - Upper",
+        "park": "Onondaga Park  - Upper",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (8)",
         "IMPROV__YEAR": null,
@@ -652,7 +658,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Ormand Spencer Park",
+        "park": "Ormand Spencer Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Full Court/Skatepark (2)",
         "IMPROV__YEAR": null,
@@ -665,7 +671,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Ormand Spencer Park",
+        "park": "Ormand Spencer Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2021",
@@ -678,7 +684,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Roesler Park",
+        "park": "Roesler Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": null,
@@ -691,7 +697,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Roesler Park",
+        "park": "Roesler Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": null,
@@ -704,7 +710,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Schiller Park",
+        "park": "Schiller Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2022",
@@ -717,7 +723,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Schiller Park",
+        "park": "Schiller Park",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (3)",
         "IMPROV__YEAR": "2022",
@@ -730,7 +736,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Schiller Park",
+        "park": "Schiller Park",
         "COURT_TYPE": "Soccer",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": "2022",
@@ -743,7 +749,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Skiddy Park",
+        "park": "Skiddy Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2022",
@@ -756,7 +762,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Skiddy Park",
+        "park": "Skiddy Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (Save the Rain)",
         "IMPROV__YEAR": "2022",
@@ -769,7 +775,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Skiddy Park",
+        "park": "Skiddy Park",
         "COURT_TYPE": "Soccer",
         "COURT_SIZE___QUANTITY": "Lined",
         "IMPROV__YEAR": "2022",
@@ -782,7 +788,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Spirit of Jubilee Park",
+        "park": "Spirit of Jubilee Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
@@ -795,7 +801,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Spirit of Jubilee Park",
+        "park": "Spirit of Jubilee Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court",
         "IMPROV__YEAR": null,
@@ -808,7 +814,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Sunnycrest Park",
+        "park": "Sunnycrest Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
@@ -821,7 +827,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Sunnycrest Park",
+        "park": "Sunnycrest Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (6)",
         "IMPROV__YEAR": null,
@@ -834,7 +840,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Thornden Park",
+        "park": "Thornden Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (3)",
         "IMPROV__YEAR": "2017",
@@ -848,7 +854,7 @@
       "type": "Feature",
       "address": "Tennis Courts, Ostrom Ave, Syracuse, NY 13210",
       "properties": {
-        "Park": "Thornden Park",
+        "park": "Thornden Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (5)",
         "IMPROV__YEAR": "2017",
@@ -862,7 +868,7 @@
       "type": "Feature",
       "address": "Thornden Park Football Field, Thornden Park Dr, Syracuse, NY 13210",
       "properties": {
-        "Park": "Thornden Park",
+        "park": "Thornden Park",
         "type": "Football Field",
         "latitude": 43.040550449276274,
         "longitude": -76.12637108593043
@@ -875,7 +881,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Wadsworth Park",
+        "park": "Wadsworth Park",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (2)",
         "IMPROV__YEAR": "2018",
@@ -888,7 +894,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Washington Square Park",
+        "park": "Washington Square Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
@@ -901,7 +907,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Washington Square Park",
+        "park": "Washington Square Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court",
         "IMPROV__YEAR": null,
@@ -914,7 +920,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Westmoreland Park",
+        "park": "Westmoreland Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
         "IMPROV__YEAR": "2021",
@@ -927,7 +933,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Wilson Park",
+        "park": "Wilson Park",
         "address": "Wilson Park basketball courts, 8451 81, Syracuse, NY 13202",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (2)",
@@ -941,7 +947,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Burnet Park",
+        "park": "Burnet Park",
         "address": "Burnet Park Golf Course, 300 Coleridge Ave, Syracuse, NY 13204",
         "type": "Golf Course",
         "latitude": 43.04020032081219,
@@ -954,10 +960,7 @@
         "May 1 - Sept 4, 2023: 7am-8pm",
         "Sept 5 - Oct 15, 2023: 8am-7pm"
       ],
-      "gallery": {
-        "count": 5,
-        "folder": "burnet-park/golf"
-      },
+      "gallery": {},
       "geometry": {
         "type": "Point",
         "coordinates": [-76.18720969180706, 43.04020032081219]
@@ -966,7 +969,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Sunnycrest Park",
+        "park": "Sunnycrest Park",
         "address": "Sunnycrest Golf Course, Syracuse, NY 13206",
         "type": "Golf Course",
         "latitude": 43.05834421480645,
@@ -980,10 +983,7 @@
         "Gender-Neutral Bathrooms",
         "WiFi"
       ],
-      "gallery": {
-        "count": 5,
-        "folder": "sunnycrest-park/golf"
-      },
+      "gallery": {},
       "url": "https://www.syr.gov/Venues/Sunnycrest-Park-Golf-Course",
       "hours": "Beginning Wednesday, May 8, 2024: 7am-8pm",
       "geometry": {
@@ -995,7 +995,7 @@
       "type": "Feature",
       "address": "PumpTrackSyr, 1010 W Fayette St, Syracuse, NY 13204",
       "properties": {
-        "Park": "Lipe Art Park",
+        "park": "Lipe Art Park",
         "name": "PumpTrackSYR",
         "type": "BMX Track",
         "latitude": 43.04660148678081,
@@ -1013,7 +1013,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Eastwood Heights",
+        "park": "Eastwood Heights",
         "name": "East Woods Skate Plaza",
         "address": "East Woods Skate Plaza, Huntington Park, 300 Caleb Ave, Syracuse, NY 13206",
         "type": "Skatepark",
@@ -1033,7 +1033,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Ormand Spencer Park",
+        "park": "Ormand Spencer Park",
         "name": "The Spot",
         "address": "1121 E Washington St, Syracuse, NY 13210",
         "type": "Skatepark",
@@ -1042,8 +1042,7 @@
         "ObjectId": 58
       },
       "gallery": {
-        "count": 3,
-        "folder": "ormand-spencer-park/skateboard"
+        "parent": [9, 10, 11, 12]
       },
       "geometry": {
         "type": "Point",

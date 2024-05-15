@@ -9,7 +9,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Burnet Park",
+        "park": "Burnet Park",
         "Pool": "Yes",
         "type": "Outdoor",
         "latitude": 43.0422915,
@@ -28,7 +28,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Kirk Park",
+        "park": "Kirk Park",
         "Pool": "Yes",
         "type": "Oudoor \"L\"",
         "latitude": 43.02636734275732,
@@ -48,7 +48,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Lincoln Park",
+        "park": "Lincoln Park",
         "address": "Lincoln Park, 140 Robinson St, Syracuse, NY 13203",
         "Pool": "Yes",
         "type": "Outdoor",
@@ -61,6 +61,9 @@
         "website": "https://syr.gov/swimming",
         "FID": 3
       },
+      "gallery": {
+        "parent": [4]
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [-76.12548581743046, 43.05672712443621]
@@ -69,7 +72,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "McKinley Park",
+        "park": "McKinley Park",
         "Pool": "Yes",
         "type": "Outdoor",
         "latitude": 43.0199537,
@@ -87,7 +90,7 @@
       "type": "Feature",
       "address": "Onondaga Park Pool, 160-174 Onondaga Park Dr, Syracuse, NY 13207",
       "properties": {
-        "Park": "Onondaga Park",
+        "park": "Onondaga Park",
         "Pool": "Yes",
         "type": "Oudoor \"L\"",
         "latitude": 43.024365999871975,
@@ -108,7 +111,7 @@
       "type": "Feature",
       "address": "Schiller Park Pool, 1100 Rugby Rd, Syracuse, NY 13203",
       "properties": {
-        "Park": "Schiller Park",
+        "park": "Schiller Park",
         "Pool": "Yes",
         "type": "Outdoor",
         "latitude": 43.0669885,
@@ -125,7 +128,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Southwest Community Center",
+        "park": "Southwest Community Center",
         "Pool": "Yes",
         "type": "Indoor",
         "latitude": 43.0342252,
@@ -144,7 +147,7 @@
       "type": "Feature",
       "address": "Thornden Park Pool, Thornden Park Dr, Syracuse, NY 13210",
       "properties": {
-        "Park": "Thornden Park",
+        "park": "Thornden Park",
         "Pool": "Yes",
         "type": "Outdoor",
         "latitude": 43.0427262,
@@ -162,7 +165,7 @@
       "type": "Feature",
       "address": "Valley Pool, 4942 S Salina St, Syracuse, NY 13205",
       "properties": {
-        "Park": "Valley Pool",
+        "park": "Valley Pool",
         "Pool": "Yes",
         "type": "Indoor",
         "latitude": 42.997232,
@@ -185,7 +188,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Park": "Wilson Park",
+        "park": "Wilson Park",
         "Pool": "Yes",
         "type": "Outdoor",
         "latitude": 43.039885222647065,

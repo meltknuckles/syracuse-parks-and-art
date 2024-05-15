@@ -1,179 +1,186 @@
 [
   {
     "name": "Grace Messina Playlot",
-    "Park": "Grace & Massena Park",
+    "park": "Grace & Massena Park",
     "latitude": 43.03853143199562,
     "longitude": -76.16651810470975
   },
   {
     "name": "Lincoln Park Playlot",
-    "Park": "Lincoln Park",
+    "park": "Lincoln Park",
+    "gallery": {
+      "parent": [1]
+    },
     "latitude": 43.05719195588854,
     "longitude": -76.12582725897666
   },
   {
     "name": "Libba Cotten Grove Playlot",
-    "Park": "Libba Cotten Grove",
+    "park": "Libba Cotten Grove",
     "latitude": 43.034380357075946,
     "longitude": -76.1475078251421
   },
   {
     "name": "Sheridan Park Playlot",
-    "Park": "Sheridan Park",
+    "park": "Sheridan Park",
     "latitude": 43.05918756380618,
     "longitude": -76.10341245794532
   },
   {
     "name": "Lower Union Park Playground",
-    "Park": "Union Park",
+    "park": "Union Park",
     "latitude": 43.06430987493252,
     "longitude": -76.15663522383383
   },
   {
     "name": "Clark Spaulding Field Playlot",
-    "Park": "Clark Spaulding Field",
+    "park": "Clark Spaulding Field",
     "latitude": 42.986293987239385,
     "longitude": -76.14764037572662
   },
   {
     "name": "Upper Onondaga Park Playground",
-    "Park": "Onondoga Park - Upper",
+    "park": "Onondoga Park - Upper",
     "latitude": 43.02382887901292,
     "longitude": -76.16825628033135
   },
   {
     "name": "Lower Onondaga Park Playground",
-    "Park": "Onondoga Park - Lower",
+    "park": "Onondoga Park - Lower",
     "latitude": 43.02920397259555,
     "longitude": -76.16226279508162
   },
   {
     "name": "Comfort Tyler Park Playground",
-    "Park": "Comfort Tyler Park",
+    "park": "Comfort Tyler Park",
     "address": "Comfort Tyler Park Playground, 1100 Comstock Ave, Syracuse, NY 13210",
     "latitude": 43.02275541814875,
     "longitude": -76.12888916161386
   },
   {
     "name": "Burnet Park Playground",
-    "Park": "Burnet Park",
+    "park": "Burnet Park",
     "address": "Playground at Burnet Park, Syracuse, NY 13204",
     "latitude": 43.041903831381866,
     "longitude": -76.18512406885901
   },
   {
     "name": "Barry Park Playground",
-    "Park": "Barry Park",
+    "park": "Barry Park",
     "address": "Playground at Barry Park, Syracuse, NY 13210",
     "latitude": 43.030258742387794,
     "longitude": -76.11662575504594
   },
   {
     "name": "Kirk Park Playground",
-    "Park": "Kirk Park",
+    "park": "Kirk Park",
     "address": "Kirk Park Playground, 300 W Borden Ave, Syracuse, NY 13205",
     "latitude": 43.0257484057715,
     "longitude": -76.15355591793012
   },
   {
     "name": "Wilson Park Playground",
-    "Park": "Wilson Park",
+    "park": "Wilson Park",
     "latitude": 43.04017821710141,
     "longitude": -76.14354565155952
   },
   {
     "name": "Leavenworth Park Playground",
-    "Park": "Leavenworth Park",
+    "park": "Leavenworth Park",
     "latitude": 43.051319986377635,
     "longitude": -76.16235819512296
   },
   {
     "name": "McKinley Park Playground",
-    "Park": "McKinley Park",
+    "park": "McKinley Park",
     "latitude": 43.01609875909572,
     "longitude": -76.1510909761443
   },
   {
     "name": "Elmwood Park Playground",
-    "Park": "Elmwood Park",
+    "park": "Elmwood Park",
     "latitude": 43.01879722760227,
     "longitude": -76.16748772427137
   },
   {
     "name": "Wadsworth Park Playground",
-    "Park": "Wadsworth Park",
+    "park": "Wadsworth Park",
     "latitude": 43.02604763423936,
     "longitude": -76.18147146336953
   },
   {
     "name": "Ormand Spencer Park Playground",
-    "Park": "Ormand Spencer Park",
+    "park": "Ormand Spencer Park",
+    "gallery": { "parent": [12] },
     "latitude": 43.049780106323745,
     "longitude": -76.13291762670836
   },
   {
     "name": "Westmoreland Park Playground",
-    "Park": "Westmoreland Park",
+    "park": "Westmoreland Park",
     "latitude": 43.05012646688127,
     "longitude": -76.11545840669135
   },
   {
     "name": "McChesney Park Playground",
-    "Park": "McChesney Park",
+    "park": "McChesney Park",
     "latitude": 43.073965357772046,
     "longitude": -76.14514527387172
   },
   {
     "name": "Thornden Park Playground",
-    "Park": "Thornden Park",
+    "park": "Thornden Park",
     "address": "Thornden Park playground, Thornden Park Dr, Syracuse, NY 13210",
     "latitude": 43.04257598868644,
     "longitude": -76.12685513019612
   },
   {
     "name": "Homer Wheaton Park Playground",
-    "Park": "Homer Wheaton Park",
+    "park": "Homer Wheaton Park",
     "latitude": 43.05101959583402,
     "longitude": -76.09849573576925
   },
   {
     "name": "Norwood Park Playground",
-    "Park": "Norwood Park",
+    "park": "Norwood Park",
     "latitude": 43.076322123046,
     "longitude": -76.10990899081375
   },
   {
     "name": "Loguen Park Playground",
-    "Park": "Loguen Park",
+    "park": "Loguen Park",
     "address": "Loguen Park Playground, 300 Columbus Ave, Syracuse, NY 13210",
     "latitude": 43.0468233238884,
     "longitude": -76.12242303312743
   },
   {
     "name": "Lewis Park Playground",
-    "Park": "Lewis Park",
+    "park": "Lewis Park",
     "address": "Lewis Park Playground, 825 Milton Ave, Syracuse, NY 13204",
     "latitude": 43.05468456075809,
     "longitude": -76.19255326396059
   },
   {
     "name": "Washington Square Park Playground",
-    "Park": "Washington Square Park",
+    "park": "Washington Square Park",
     "address": "Washington Square Park Playground, 101 Washington Square, Syracuse, NY 13208",
     "latitude": 43.07042313903923,
     "longitude": -76.1622159355018
   },
   {
     "name": "Spirit of Jubilee Park Playground",
-    "Park": "Spirit of Jubilee Park",
+    "park": "Spirit of Jubilee Park",
     "address": "Spirit of Jubilee Park playground, South Ave &, White St, Syracuse, NY 13204",
     "latitude": 43.037307983610965,
     "longitude": -76.15866775728514
   },
   {
     "name": "Skiddy Park Playground",
-    "Park": "Skiddy Park",
+    "park": "Skiddy Park",
     "address": "Skiddy Park Playground, 300 Tioga St, Syracuse, NY 13204",
+    "gallery": {
+      "parent": [2]
+    },
     "latitude": 43.04513858591291,
     "longitude": -76.1633333448874
   }

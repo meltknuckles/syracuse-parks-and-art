@@ -137,7 +137,8 @@ a:hover, a:focus, a:active,
 }
 
 .p-selectbutton .p-button{
-    border-radius: 20px;
+    border-radius: 16px;
+    padding: 6px 24px;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 .p-selectbutton .p-button:first-of-type {

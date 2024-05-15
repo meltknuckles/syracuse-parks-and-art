@@ -2,15 +2,19 @@
   {
     "name": "Carm's Dog House Park",
     "address": "1146 E Water St, Syracuse, NY 13210",
+    "park": "Ormand Spencer Park",
+    "gallery": {
+      "parent": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
     "latitude": 43.049650681923886,
     "longitude": -76.1338209572284
   },
   {
     "name": "Lincoln Park Dog Park",
     "address": "Lincoln Park Dr, Syracuse, NY 13203",
+    "park": "Lincoln Park",
     "gallery": {
-      "count": 1,
-      "folder": "lincoln-park-dog-park"
+      "parent": [3]
     },
     "latitude": 43.05766550159357,
     "longitude": -76.12570124995909

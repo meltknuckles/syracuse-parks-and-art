@@ -134,7 +134,7 @@ const App = () => {
                 _labels: {
                   courtSize_quantity: 'Court Size (Quantity)',
                 },
-                park: selectable.properties['Park'],
+                park: selectable.properties['park'],
                 courtType: selectable.properties['COURT_TYPE'],
                 courtSize_quantity:
                   selectable.properties['COURT_SIZE___QUANTITY'],
@@ -160,7 +160,7 @@ const App = () => {
             } else if (type === 'center') {
               data = {
                 _labels: {},
-                park: selectable['Park'] ?? selectable.properties?.['Park'],
+                park: selectable['park'] ?? selectable.properties?.['park'],
                 accessibilityInfo: selectable['accessibility'],
                 features: selectable['features'],
                 hours: selectable['hours'],
@@ -169,7 +169,7 @@ const App = () => {
             } else if (type === 'playground') {
               data = {
                 _labels: {},
-                park: selectable['Park'],
+                park: selectable['park'],
                 features: selectable['features'],
                 accessibilityInfo: selectable['accessibility'],
                 wikipedia: selectable['url'],
@@ -180,7 +180,7 @@ const App = () => {
                   hasRamp: 'Accessible Pool Ramp',
                   lengthwidth: 'Length x Width',
                 },
-                park: selectable.properties['Park'],
+                park: selectable.properties['park'],
                 poolType: selectable.properties['type'],
                 hasRamp: selectable.properties['Accessible_Pool_Ramp'],
                 lengthwidth: selectable.properties['Length_x_Width'],
@@ -227,17 +227,17 @@ const App = () => {
             const lat = d.properties?.latitude || d.latitude;
             const lng = d.properties?.longitude || d.longitude;
             let title = d.title || d.name || d.properties?.name;
-            if (d.properties?.Park && d.type === 'pool') {
-              title = `${d.properties.Park || ''} Pool`
+            if (d.properties?.park && d.type === 'pool') {
+              title = `${d.properties.park || ''} Pool`
                 .replace('Pool Pool', 'Pool')
                 .trim();
             }
-            if (d.properties?.Park && !title && d.properties?.COURT_TYPE) {
+            if (d.properties?.park && !title && d.properties?.COURT_TYPE) {
               title =
-                `${d.properties.Park || ''} ${d.properties.COURT_TYPE} Court`.trim();
+                `${d.properties.park || ''} ${d.properties.COURT_TYPE} Court`.trim();
             }
-            if (d.properties?.Park && !title && d.properties?.type) {
-              title = `${d.properties.Park || ''} ${d.properties.type}`.trim();
+            if (d.properties?.park && !title && d.properties?.type) {
+              title = `${d.properties.park || ''} ${d.properties.type}`.trim();
             }
             if (lat && lng) {
               addMarker({
@@ -335,20 +335,28 @@ const App = () => {
       ) {
         return {
           fillColor: interestedIn.includes('walking')
-            ? Colors.lgreen
+            ? mapType === 'roadmap'
+              ? Colors.lgreen
+              : Colors.lgreen
             : 'transparent',
           strokeColor: interestedIn.includes('walking')
-            ? Colors.lgreen
+            ? mapType === 'roadmap'
+              ? Colors.lgreen
+              : Colors.lgreen
             : 'transparent',
           strokeWeight: 5,
         };
       } else if (feature.getProperty('name') === 'Bike Lane') {
         return {
           fillColor: interestedIn.includes('biking')
-            ? '#3d7742'
+            ? mapType === 'roadmap'
+              ? '#3d7742'
+              : Colors.yellow
             : 'transparent',
           strokeColor: interestedIn.includes('biking')
-            ? '#3d7742'
+            ? mapType === 'roadmap'
+              ? '#3d7742'
+              : Colors.yellow
             : 'transparent',
           strokeWeight: 2,
         };
@@ -368,14 +376,24 @@ const App = () => {
   const galleriaRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const photos = selectedMarker?.gallery
-    ? Array(selectedMarker?.gallery.count)
+  let photos = selectedMarker?.gallery?.count
+    ? Array(selectedMarker?.gallery.count ?? 0)
         .fill('')
         .map(
           (_g, idx) =>
             `/parks/${selectedMarker?.gallery.folder ?? _.kebabCase(selectedMarker.title)}/${_.padStart((idx + 1).toString(), 2, '0')}.jpg`,
         )
     : [];
+  if (photos.length === 0 && selectedMarker?.gallery?.parent?.length > 0) {
+    const parentPark = selectedMarker?.properties?.park ?? selectedMarker?.park;
+    const park =
+      DATA.park.data?.find(({ name }: any) => name === parentPark) ?? [];
+    const folderName = park?.gallery.folder ?? _.kebabCase(park.name);
+    photos = selectedMarker.gallery.parent.map(
+      (i: number) =>
+        `/parks/${folderName}/${_.padStart(i.toString(), 2, '0')}.jpg`,
+    );
+  }
   const item = photos[activeIndex];
   const [width, setWidth] = useState(0);
   const ref: any = useRef(null);
@@ -449,10 +467,10 @@ const App = () => {
   const selectedAddress =
     selectedMarker?.properties?.address ||
     selectedMarker?.address ||
-    (selectedMarker?.properties?.Park &&
+    (selectedMarker?.properties?.park &&
       DATA.park.data.find(
         ({ name }: { name: string }) =>
-          name === selectedMarker?.properties?.Park,
+          name === selectedMarker?.properties?.park,
       )?.address);
   const selectedtags = [];
   let TagIcon = null;
@@ -514,7 +532,7 @@ const App = () => {
               className="mr-2"
             />
             <span style={{ fontSize: '1.1em', paddingLeft: 4 }}>
-              Syracuse Touch Grass
+              Syracuse Parks & Art
             </span>
           </div>
         }
@@ -607,7 +625,7 @@ const App = () => {
                   ))}
                 </div>
               )}
-              {selectedMarker?.gallery && (
+              {photos.length > 0 && (
                 <div
                   className="grid img-container"
                   style={{ margin: 0, position: 'relative' }}
