@@ -15,7 +15,7 @@ import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import { Construct } from 'constructs';
 import * as path from 'path';
 
-export class SlimeCenterCdkStack extends cdk.Stack {
+export class SyracuseParksCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
     const bucket = new Bucket(this, 'syr-parks-bucket', {

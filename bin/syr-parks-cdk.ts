@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { SlimeCenterCdkStack } from '../lib/syr-parks-cdk-stack.ts';
+import { SyracuseParksCdkStack } from '../lib/syr-parks-cdk-stack.ts';
 
 const app = new cdk.App();
-new SlimeCenterCdkStack(app, 'SyracuseParksCdkStack', {
+new SyracuseParksCdkStack(app, 'SyracuseParksCdkStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
