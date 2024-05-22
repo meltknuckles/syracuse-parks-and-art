@@ -1,3 +1,3 @@
-# syr-touchgrass
+# syr-parks
 
 parx and reck
