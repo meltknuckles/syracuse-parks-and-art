@@ -1,5 +1,5 @@
 {
-  "app": "node bin/syr-parks-cdk.js",
+  "app": "npx ts-node-esm --prefer-ts-exts bin/syr-parks-cdk.ts",
   "watch": {
     "include": ["**"],
     "exclude": [

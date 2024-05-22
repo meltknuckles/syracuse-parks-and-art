@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import 'source-map-support/register.js';
+import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { SlimeCenterCdkStack } from '../lib/syr-parks-cdk-stack.ts';
+import { SlimeCenterCdkStack } from '../lib/syr-parks-cdk-stack';
 
 const app = new cdk.App();
 new SlimeCenterCdkStack(app, 'SyracuseParksCdkStack', {
