@@ -6,12 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: create-json
-        uses: jsdaniell/create-json@v1.2.3
-        with:
-          name: 'config.json'
-          json: ${{ secrets.CREDENTIALS_JSON }}
-          dir: 'src/'
       - run: npm install
       - run: npm run build
       - run: cp ./tsconfig.cdk.json ./tsconfig.json
