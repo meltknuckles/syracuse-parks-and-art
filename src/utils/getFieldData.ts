@@ -1,10 +1,10 @@
 export const getFieldData = (data: any, type: string) => {
   const getSharedFields = (d: any) => ({
-    park: data['park'] ?? data.properties?.['park'],
-    hours: data['hours'],
-    features: data['features'],
-    accessibilityInfo: data['accessibility'],
-    wikipedia: data['url'],
+    park: d['park'] ?? d.properties?.['park'],
+    hours: d['hours'],
+    features: d['features'],
+    accessibilityInfo: d['accessibility'],
+    wikipedia: d['url'],
   });
 
   if (

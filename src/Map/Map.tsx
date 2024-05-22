@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import GoogleMap from 'google-map-react';
 // import GooglePlacesAutocomplete, {
 //   geocodeByAddress,

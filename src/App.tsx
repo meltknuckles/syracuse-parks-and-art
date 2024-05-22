@@ -19,7 +19,7 @@ import { GiKidSlide } from 'react-icons/gi';
 import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
 import './App.css';
 import MapContainer from './Map/Map';
-import navIcon from './Map/icons/you1.svg';
+// import navIcon from './Map/icons/you1.svg';
 import { Colors, DATA, DataTypes, TREE_NODE_DATA } from './constants';
 import boundary from './json/boundary.json';
 import { getFieldData } from './utils/getFieldData';
@@ -74,7 +74,7 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords]);
 
-  const [googlaApiLoaded, setGoogleApiLoaded] = useState(false);
+  const [_googlaApiLoaded, setGoogleApiLoaded] = useState(false);
   const [mapType, setMapType] = useState<string>('roadmap');
   const clearMarkers = (markers: any[]) => {
     for (let m of markers) {
@@ -396,7 +396,6 @@ const App = () => {
           name === selectedMarker?.properties?.park,
       )?.address);
   const selectedtags = [];
-  let TagIcon = null;
 
   if (selectedMarker) {
     if (
@@ -408,7 +407,6 @@ const App = () => {
         icon: MdAccessible,
         color: Colors.blue,
       });
-      TagIcon = MdAccessible;
     }
     if (selectedMarker.features?.find((f: string) => f.includes('Parking'))) {
       selectedtags.push({
