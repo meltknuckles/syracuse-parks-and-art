@@ -10,7 +10,7 @@ jobs:
       - run: npm run build
       - run: cp ./tsconfig.cdk.json ./tsconfig.json
       - name: tsc
-        uses: icrawl/action-tsc@v1
+        uses: stepek/tsc-action@master
       - name: cdk diff
         uses: youyo/aws-cdk-github-actions@v2
         with:
