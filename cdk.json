@@ -1,5 +1,5 @@
 {
-  "app": "node --loader ts-node bin/syr-parks-cdk.ts",
+  "app": "node --loader ts-node/esm bin/syr-parks-cdk.ts",
   "watch": {
     "include": ["**"],
     "exclude": [
