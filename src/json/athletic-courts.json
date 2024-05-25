@@ -483,11 +483,14 @@
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined (3)",
         "IMPROV__YEAR": null,
-        "latitude": 43.027293,
-        "longitude": -76.153758,
+        "latitude": 43.02698831205233,
+        "longitude": -76.1536089294125,
         "ObjectId": 20
       },
-      "geometry": { "type": "Point", "coordinates": [-76.153758, 43.027293] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1536089294125, 43.02698831205233]
+      }
     },
     {
       "type": "Feature",
@@ -496,11 +499,14 @@
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Non-Lined (6)",
         "IMPROV__YEAR": null,
-        "latitude": 43.027293,
-        "longitude": -76.153758,
+        "latitude": 43.027449650476655,
+        "longitude": -76.15384996702768,
         "ObjectId": 21
       },
-      "geometry": { "type": "Point", "coordinates": [-76.153758, 43.027293] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.15384996702768, 43.027449650476655]
+      }
     },
     {
       "type": "Feature",

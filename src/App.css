@@ -184,6 +184,21 @@ h2 {
 .p-button.p-button-icon-only {
     width: auto;
 }
+
+.park-header,
+.park-link.p-button.p-button-text {
+    color: #73b707;
+}
+.sport-link.p-button.p-button-text {
+    color: #1982c4;
+}
+
+.park-link.p-button.p-button-text:hover,
+.park-link.p-button.p-button-text:focus,
+.park-link.p-button.p-button-text:active {
+    background: #eef7de;
+}
+
 @media only screen and (max-width: 600px) {
     .map-container {
         height: 40vh;

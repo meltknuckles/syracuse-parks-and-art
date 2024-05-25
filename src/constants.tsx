@@ -239,6 +239,22 @@ export const DATA: Record<
   },
 };
 
+export const SUB_PARK_DATA = [
+  DATA.basketball,
+  DATA.baseball,
+  DATA.tennis,
+  DATA.golf,
+  DATA.pool,
+  DATA.iceskate,
+  DATA.skateboard,
+  DATA.soccer,
+  DATA.biking,
+  DATA.shuffleboard,
+  DATA.center,
+  DATA.dogpark,
+  DATA.playground,
+];
+
 export const TREE_NODE_DATA = [
   {
     label: 'Parks and Recreation',
