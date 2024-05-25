@@ -21,12 +21,13 @@ import { FaLocationCrosshairs } from 'react-icons/fa6';
 import pointInPolygon from 'robust-point-in-polygon';
 import MapContainer, { DEFAULT_ZOOM, DEFAULT_ZOOM_IN } from './Map/Map';
 import navIcon from './Map/icons/you.svg';
-import { Colors, DATA, DataTypes, TREE_NODE_DATA } from './constants';
+import { Colors, DATA, TREE_NODE_DATA } from './constants';
 import boundary from './json/boundary.json';
 import { getFieldData } from './utils/getFieldData';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import './App.css';
 import { ListView } from './ListView';
+import { formatTitle } from './utils/formatTitle';
 
 export const ICON_SIZE = 60;
 const boundaryPolygon = boundary.features[0].geometry.coordinates[0];
@@ -47,6 +48,7 @@ const App = () => {
     latitude: null,
     longitude: null,
   });
+  const [filter, setFilter] = useState('');
   const [zoom, setZoom] = useState(DEFAULT_ZOOM);
   const prevMarkersRef = useRef([]);
   const [selectedMarker, setSelectedMarker] = useState<any>();
@@ -93,6 +95,7 @@ const App = () => {
   }, [coords, location]);
 
   const [googleApiLoaded, setGoogleApiLoaded] = useState(false);
+  const [mapLoadedForFirstTime, setMapLoadedForFirstTime] = useState(false);
   const [mapType, setMapType] = useLocalStorage<string>('maptype', 'roadmap');
 
   const onGoogleApiLoaded = ({ map: gmap, maps: gmaps }: any) => {
@@ -172,19 +175,7 @@ const App = () => {
             const d = data.data[_d];
             const lat = d.properties?.latitude || d.latitude;
             const lng = d.properties?.longitude || d.longitude;
-            let title = d.title || d.name || d.properties?.name;
-            if (d.properties?.park && d.type === 'pool') {
-              title = `${d.properties.park || ''} Pool`
-                .replace('Pool Pool', 'Pool')
-                .trim();
-            }
-            if (d.properties?.park && !title && d.properties?.COURT_TYPE) {
-              title =
-                `${d.properties.park || ''} ${d.properties.COURT_TYPE} Court`.trim();
-            }
-            if (d.properties?.park && !title && d.properties?.type) {
-              title = `${d.properties.park || ''} ${d.properties.type}`.trim();
-            }
+            const title = formatTitle(d);
             if (lat && lng) {
               addMarker({
                 type: d.type,
@@ -200,34 +191,29 @@ const App = () => {
         }
       };
 
-      // if (
-      //   isGeolocationAvailable &&
-      //   location?.latitude &&
-      //   location?.longitude &&
-      //   pointInPolygon(boundaryPolygon as any, [
-      //     location.latitude,
-      //     location.longitude,
-      //   ])
-      // ) {
-      //   addMarker({
-      //     type: 'you',
-      //     title: 'You are Here',
-      //     icon: navIcon,
-      //     lat: location.latitude,
-      //     lng: location.longitude,
-      //     selectable: location,
-      //     category: '',
-      //   });
-      //   if (
-      //     !googleApiLoaded &&
-      //     map &&
-      //     location.latitude &&
-      //     location.longitude
-      //   ) {
-      //     gmap.panTo({ lat: location.latitude, lng: location.longitude });
-      //     // gmap.setZoom(16);
-      //   }
-      // }
+      if (
+        isGeolocationAvailable &&
+        location?.latitude &&
+        location?.longitude &&
+        pointInPolygon(boundaryPolygon as any, [
+          location.latitude,
+          location.longitude,
+        ])
+      ) {
+        addMarker({
+          type: 'you',
+          title: 'You are Here',
+          icon: navIcon,
+          lat: location.latitude,
+          lng: location.longitude,
+          selectable: location,
+          category: '',
+        });
+        if (!mapLoadedForFirstTime && location.latitude && location.longitude) {
+          gmap.panTo({ lat: location.latitude, lng: location.longitude });
+          setMapLoadedForFirstTime(true);
+        }
+      }
       filterMarkers(DATA.dogpark);
       filterMarkers(DATA.playground);
       filterMarkers(DATA.pool);
@@ -423,7 +409,7 @@ const App = () => {
                 setSelectedPath(null);
                 setSelectedMarker({
                   ...selectable,
-                  data: getFieldData(park, DataTypes.park),
+                  data: getFieldData(park, 'park'),
                   type: 'park',
                   title: selectable.name,
                   icon: null,
@@ -440,14 +426,6 @@ const App = () => {
         ),
     }));
 
-  // const itemTemplate = (item: any) => {
-  //   return (
-  //     <img src={item} alt={selectedMarker.title} style={{ width: '100%' }} />
-  //   );
-  // };
-  // const thumbnailTemplate = (item: any) => {
-  //   return <img src={item} alt={selectedMarker.title} style={{ height: 70 }} />;
-  // };
   const selectedAddress =
     selectedMarker?.properties?.address ||
     selectedMarker?.address ||
@@ -529,6 +507,7 @@ const App = () => {
                 style={{ marginRight: 12, padding: '2px 16px' }}
                 onClick={() => {
                   setLocation({ latitude: null, longitude: null });
+                  setMapLoadedForFirstTime(false);
                   getPosition();
                 }}
               ></Button>
@@ -600,7 +579,6 @@ const App = () => {
                   setInterests(e.value || []);
                 }}
                 options={TREE_NODE_DATA}
-                // optionLabel="label"
                 metaKeySelection={false}
                 selectionMode="checkbox"
                 display="chip"
@@ -611,6 +589,8 @@ const App = () => {
           {!selectedMarker && !selectedPath && map && (
             <ListView
               zoom={zoom}
+              filter={filter}
+              setFilter={setFilter}
               scrollToRef={scrollToRef}
               map={map}
               setSelectedMarker={setSelectedMarker}
@@ -838,6 +818,7 @@ const App = () => {
               severity="secondary"
               onClick={() => {
                 setLocation({ latitude: null, longitude: null });
+                setMapLoadedForFirstTime(false);
                 getPosition();
               }}
             ></Button>
