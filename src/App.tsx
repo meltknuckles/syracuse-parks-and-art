@@ -17,14 +17,19 @@ import { useGeolocated } from 'react-geolocated';
 import { FaParking } from 'react-icons/fa';
 import { GiKidSlide } from 'react-icons/gi';
 import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
-import './App.css';
+import { FaLocationCrosshairs } from 'react-icons/fa6';
+import pointInPolygon from 'robust-point-in-polygon';
 import MapContainer from './Map/Map';
-// import navIcon from './Map/icons/you1.svg';
+import navIcon from './Map/icons/you.svg';
 import { Colors, DATA, DataTypes, TREE_NODE_DATA } from './constants';
 import boundary from './json/boundary.json';
 import { getFieldData } from './utils/getFieldData';
+import { useMediaQuery } from '@uidotdev/usehooks';
+import './App.css';
+import { ListView } from './ListView';
 
 export const ICON_SIZE = 60;
+const boundaryPolygon = boundary.features[0].geometry.coordinates[0];
 
 const generateMapsLink = (address: string, directions = false) => {
   const encodedAddress = encodeURIComponent(address);
@@ -33,6 +38,12 @@ const generateMapsLink = (address: string, directions = false) => {
     : `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
   return googleMapsUrl;
 };
+
+const HQMarkerTemplate: React.FC = () => (
+  <>
+    <div>Test Marker</div>
+  </>
+);
 
 const App = () => {
   const [location, setLocation] = useState<{
@@ -57,37 +68,49 @@ const App = () => {
     walking?: { checked: boolean; partialChecked: boolean };
   }>('interests', {});
   const interestedIn = Object.keys(interests);
-  const { coords, isGeolocationAvailable, getPosition } = useGeolocated({
-    positionOptions: {
-      enableHighAccuracy: false,
-    },
-    isOptimisticGeolocationEnabled: false,
-  });
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
+  const { coords, isGeolocationAvailable, isGeolocationEnabled, getPosition } =
+    useGeolocated({
+      positionOptions: {
+        enableHighAccuracy: false,
+      },
+      isOptimisticGeolocationEnabled: false,
+    });
   useEffect(() => {
-    if (coords && !location?.latitude) {
+    if (
+      coords?.latitude &&
+      !location?.latitude &&
+      pointInPolygon(boundaryPolygon as any, [
+        coords.latitude,
+        coords.longitude,
+      ])
+    ) {
       setLocation({
         ...location,
         latitude: coords.latitude,
         longitude: coords.longitude,
       });
+
+      if (map) {
+        map.panTo({ lat: coords.latitude, lng: coords.longitude });
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [coords]);
+  }, [coords, location]);
 
-  const [_googlaApiLoaded, setGoogleApiLoaded] = useState(false);
+  const [googleApiLoaded, setGoogleApiLoaded] = useState(false);
   const [mapType, setMapType] = useState<string>('roadmap');
-  const clearMarkers = (markers: any[]) => {
-    for (let m of markers) {
-      m.setMap(null);
-    }
-  };
 
-  const onGoogleApiLoaded = ({ map, maps }: any) => {
-    if (map && maps) {
-      clearMarkers(prevMarkersRef.current);
-      setGoogleApiLoaded(true);
-      setMaps(maps);
-      setMap(map);
+  const onGoogleApiLoaded = ({ map: gmap, maps: gmaps }: any) => {
+    if (gmap && gmaps && !googleApiLoaded) {
+      for (let m of prevMarkersRef.current) {
+        const marker: any = m;
+        console.log('clearing marker');
+        marker.setMap(null);
+      }
+      prevMarkersRef.current = [];
+      setMaps(gmaps);
+      setMap(gmap);
 
       const addMarker = ({
         type,
@@ -106,17 +129,19 @@ const App = () => {
         selectable: any;
         category: string;
       }) => {
-        const _marker = new maps.Marker({
+        const _marker = new gmaps.Marker({
           position: { lat, lng },
-          map,
+          key: title,
+          category,
+          map: gmap,
           title,
           icon: {
             url: icon,
-            scaledSize: new maps.Size(ICON_SIZE, ICON_SIZE),
+            scaledSize: new gmaps.Size(ICON_SIZE, ICON_SIZE),
           },
         });
-        maps.event.addListener(_marker, 'click', () => {
-          // map.setZoom(15);
+        gmaps.event.addListener(_marker, 'click', () => {
+          // gmap.setZoom(16);
           let data;
           if (selectable) {
             data = getFieldData(selectable, type);
@@ -131,15 +156,20 @@ const App = () => {
             lng,
             category,
           };
-          console.log('newSelectedMarker', newSelectedMarker);
           setSelectedMarker(newSelectedMarker);
           setSelectedPath(null);
           setActiveIndex(0);
-          map.panTo(_marker.getPosition());
+          gmap.panTo(_marker.getPosition());
         });
         (prevMarkersRef.current as any).push(_marker);
       };
       const filterMarkers = (data: any) => {
+        for (let m of prevMarkersRef.current) {
+          const marker: any = m;
+          if (marker.category === data.type) {
+            marker.setMap(null);
+          }
+        }
         if (interestedIn.includes(data.type)) {
           for (const _d in data.data) {
             const d = data.data[_d];
@@ -172,20 +202,35 @@ const App = () => {
           }
         }
       };
-      // if (
-      //   isGeolocationAvailable &&
-      //   location?.latitude &&
-      //   location?.longitude
-      // ) {
-      //   addMarker({
-      //     type: 'you',
-      //     title: 'You are Here',
-      //     icon: navIcon,
-      //     lat: location.latitude,
-      //     lng: location.longitude,
-      //     selectable: location,
-      //   });
-      // }
+
+      if (
+        isGeolocationAvailable &&
+        location?.latitude &&
+        location?.longitude &&
+        pointInPolygon(boundaryPolygon as any, [
+          location.latitude,
+          location.longitude,
+        ])
+      ) {
+        addMarker({
+          type: 'you',
+          title: 'You are Here',
+          icon: navIcon,
+          lat: location.latitude,
+          lng: location.longitude,
+          selectable: location,
+          category: '',
+        });
+        if (
+          !googleApiLoaded &&
+          map &&
+          location.latitude &&
+          location.longitude
+        ) {
+          gmap.panTo({ lat: location.latitude, lng: location.longitude });
+          // gmap.setZoom(16);
+        }
+      }
       filterMarkers(DATA.dogpark);
       filterMarkers(DATA.playground);
       filterMarkers(DATA.pool);
@@ -204,11 +249,11 @@ const App = () => {
       filterMarkers(DATA.iceskate);
       filterMarkers(DATA.park);
 
-      const bounds = new maps.LatLngBounds(
-        new maps.LatLng(42.97132928046586, -76.25925946941094),
-        new maps.LatLng(43.099950460544136, -76.02245601734865),
+      const bounds = new gmaps.LatLngBounds(
+        new gmaps.LatLng(42.97132928046586, -76.25925946941094),
+        new gmaps.LatLng(43.099950460544136, -76.02245601734865),
       );
-      map.setOptions({
+      gmap.setOptions({
         restriction: { latLngBounds: bounds, strictBounds: true },
       });
     }
@@ -217,11 +262,11 @@ const App = () => {
       bikeLayer.setMap(map);
     }
 
-    map.data.addGeoJson(boundary);
+    gmap.data.addGeoJson(boundary);
     if (interestedIn.includes('walking') || interestedIn.includes('biking')) {
       map.data.addGeoJson(DATA.walking.data);
     }
-    map.data.addListener('click', (event: any) => {
+    gmap.data.addListener('click', (event: any) => {
       if (
         !['boundary', 'Bike Lane'].includes(
           event.feature.getProperty('name') as string,
@@ -237,7 +282,8 @@ const App = () => {
       }
     });
 
-    map.data.setStyle((feature: any) => {
+    setGoogleApiLoaded(true);
+    gmap.data.setStyle((feature: any) => {
       if (feature.getProperty('name') === 'boundary') {
         return {
           fillColor: 'transparent',
@@ -288,7 +334,7 @@ const App = () => {
     });
   };
   useEffect(() => {
-    if (map && maps) {
+    if (map && maps && !googleApiLoaded) {
       onGoogleApiLoaded({ map, maps });
     }
   }, [interests, map, maps]);
@@ -453,29 +499,40 @@ const App = () => {
               className="mr-2"
             />
             <span style={{ fontSize: '1.1em', paddingLeft: 4 }}>
-              Syracuse Parks & Art
+              {isSmallDevice ? 'SYR' : 'Syracuse'} Parks & Art
             </span>
           </div>
         }
         end={
-          mapType && (
-            <SelectButton
-              allowEmpty={false}
-              value={_.startCase(mapType)}
-              onChange={(e) => setMapType(e.value.toLowerCase())}
-              options={['Roadmap', 'Satellite']}
-            />
-          )
+          <div className="map-button-container">
+            {isGeolocationEnabled && !isSmallDevice && (
+              <Button
+                label="Re-center Map"
+                rounded
+                icon={<FaLocationCrosshairs style={{ marginRight: 6 }} />}
+                severity="secondary"
+                style={{ marginRight: 12, padding: '2px 16px' }}
+                onClick={() => {
+                  setLocation({ latitude: null, longitude: null });
+                  getPosition();
+                }}
+              ></Button>
+            )}
+            {mapType && (
+              <SelectButton
+                allowEmpty={false}
+                value={_.startCase(mapType)}
+                onChange={(e) => setMapType(e.value.toLowerCase())}
+                options={['Roadmap', 'Satellite']}
+              />
+            )}
+          </div>
         }
       />
       <div className="grid" style={{ margin: 0 }}>
         <div
-          className="col-5"
-          style={{
-            height: 'calc(100vh - 60px)',
-            overflow: 'auto',
-            padding: 16,
-          }}
+          className="info-container col-12 md:col-5 flex-order-1 md:flex-order-0"
+          style={{}}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Card
@@ -489,10 +546,24 @@ const App = () => {
             >
               <label
                 htmlFor="interests"
-                style={{ fontWeight: 'bold', fontSize: '1.2em' }}
+                style={{ fontWeight: 'bold', fontSize: '1.1em' }}
               >
                 I'm Interested In...
               </label>
+              {Object.keys(interests).length > 0 && (
+                <Button
+                  label="Clear"
+                  icon="pi pi-times"
+                  size="small"
+                  rounded
+                  link
+                  onClick={() => {
+                    setGoogleApiLoaded(false);
+                    setInterests({});
+                  }}
+                  style={{ float: 'right', marginTop: -8, marginBottom: 8 }}
+                ></Button>
+              )}
               <TreeSelect
                 id="interests"
                 nodeTemplate={({ label, color }: any) => {
@@ -509,7 +580,10 @@ const App = () => {
                 }}
                 filter
                 value={interests as any}
-                onChange={(e: any) => setInterests(e.value || [])}
+                onChange={(e: any) => {
+                  setGoogleApiLoaded(false);
+                  setInterests(e.value || []);
+                }}
                 options={TREE_NODE_DATA}
                 // optionLabel="label"
                 metaKeySelection={false}
@@ -519,17 +593,12 @@ const App = () => {
               />
             </Card>
           </div>
+          {!selectedMarker && !selectedPath && <ListView />}
           {selectedMarker && (
             <Card style={{ padding: 0, textAlign: 'left' }}>
               <h2 style={{ marginTop: 0 }}>{selectedMarker.title}</h2>
               {selectedtags.length > 0 && (
-                <div
-                  style={{
-                    textAlign: 'right',
-                    marginTop: -50,
-                    marginBottom: 12,
-                  }}
-                >
+                <div className="tag-container">
                   {selectedtags.map((tag) => (
                     <Tag
                       key={tag.label}
@@ -685,45 +754,43 @@ const App = () => {
                   ></p>
                 )}
               </div>
-              {kvPairs && (
-                <div>
-                  <DataTable
-                    stripedRows
-                    value={kvPairs}
-                    sortField="key"
-                    sortOrder={SortOrder.ASC}
-                    className="info-table"
-                    size="small"
-                  >
-                    <Column field="key" header=""></Column>
-                    <Column
-                      field="value"
-                      header=""
-                      body={(info) => {
-                        let value = info.value;
-                        const regexp = new RegExp(
-                          /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
+              {kvPairs && Object.keys(kvPairs).length > 0 && (
+                <DataTable
+                  stripedRows
+                  value={kvPairs}
+                  sortField="key"
+                  sortOrder={SortOrder.ASC}
+                  className="info-table"
+                  size="small"
+                >
+                  <Column field="key" header=""></Column>
+                  <Column
+                    field="value"
+                    header=""
+                    body={(info) => {
+                      let value = info.value;
+                      const regexp = new RegExp(
+                        /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
+                      );
+                      if (Array.isArray(value)) {
+                        value = (
+                          <ul style={{ margin: 0 }}>
+                            {value.map((v) => (
+                              <li key={v}>{v}</li>
+                            ))}
+                          </ul>
                         );
-                        if (Array.isArray(value)) {
-                          value = (
-                            <ul style={{ margin: 0 }}>
-                              {value.map((v) => (
-                                <li key={v}>{v}</li>
-                              ))}
-                            </ul>
-                          );
-                        } else if (regexp.test(value)) {
-                          value = (
-                            <a href={value} target="_blank" rel="noreferrer">
-                              <i className="pi pi-external-link" />
-                            </a>
-                          );
-                        }
-                        return <div>{value}</div>;
-                      }}
-                    ></Column>
-                  </DataTable>
-                </div>
+                      } else if (regexp.test(value)) {
+                        value = (
+                          <a href={value} target="_blank" rel="noreferrer">
+                            <i className="pi pi-external-link" />
+                          </a>
+                        );
+                      }
+                      return <div>{value}</div>;
+                    }}
+                  ></Column>
+                </DataTable>
               )}
             </Card>
           )}
@@ -734,7 +801,22 @@ const App = () => {
             </Card>
           )}
         </div>
-        <div className="col" style={{ padding: 0 }}>
+        <div
+          className="map-container col-12 md:col flex-order-0 md:flex-order-1"
+          style={{ padding: 0, position: 'relative' }}
+        >
+          {isGeolocationEnabled && isSmallDevice && (
+            <Button
+              className="recenter-button"
+              rounded
+              icon={<FaLocationCrosshairs />}
+              severity="secondary"
+              onClick={() => {
+                setLocation({ latitude: null, longitude: null });
+                getPosition();
+              }}
+            ></Button>
+          )}
           <MapContainer
             location={coords}
             setMapLocation={setLocation}

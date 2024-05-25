@@ -149,3 +149,85 @@ a:hover, a:focus, a:active,
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+.map-container {
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
+.map-button-container {
+    display: flex;
+    flex-direction: row;
+}
+.tag-container {
+    text-align: right;
+    margin-top: -50px;
+    margin-bottom: 12px;
+}
+.recenter-button {
+    margin-right: 12px;
+    padding: 2px 16px;
+}
+.info-container {
+    height: calc(100vh - 60px);
+}
+h2 {
+    margin: 0;
+}
+.listview {
+    padding-left: 12px;
+}
+.listview li {
+    list-style: none;
+}
+.listview li a {
+    padding: 6px;
+}
+@media only screen and (max-width: 600px) {
+    .map-container {
+        height: 40vh;
+    }
+    .p-card-body {
+        padding: 12px !important;
+    }
+    .p-treeselect-label {
+        padding: 4px;
+    }
+    .p-treenode-content {
+        padding: 4px;
+    }
+    .p-treeselect-token {
+        font-size: 0.8em;
+        padding: 2px 12px;
+    }
+    .p-button {
+        padding: 4px;
+    }
+    #root {
+        overflow-y: auto;
+    }
+    .p-selectbutton .p-button {
+        padding: 4px 12px !important;
+    }
+    .tag-container {
+        margin-top: 6px;
+    }
+    .recenter-button {
+        position: absolute;
+        z-index: 999;
+        top: 16px;
+        left: 16px;
+        background: white;
+        color: #797979;
+        border-color: #c5c5c5;
+        font-size: 1.2em;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+        user-select: none;
+    }
+    h2 {
+        margin-bottom: 0;
+        font-size: 1.2em;
+    }
+    .p-card-body {
+        padding: 0.5rem !important;
+    }
+}

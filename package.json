@@ -30,7 +30,8 @@
     "react-hook-form": "^7.51.4",
     "react-icons": "^5.2.1",
     "react-map-gl": "^7.1.7",
-    "react-router-dom": "^6.23.0"
+    "react-router-dom": "^6.23.0",
+    "robust-point-in-polygon": "^1.0.3"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.10",
@@ -40,6 +41,7 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/react-helmet": "^6.1.11",
+    "@types/robust-point-in-polygon": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",

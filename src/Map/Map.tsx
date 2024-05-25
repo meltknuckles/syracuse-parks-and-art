@@ -94,27 +94,11 @@ export const MapContainer = ({
         </div>
       </div>
       ) */}
-      {/* {isGeolocationAvailable && (
-        <div className="col-12 sm:col-5 lg:col-4 xl:col-3">
-          <Button
-            style={{ width: '100%' }}
-            className="green-button"
-            rounded
-            label="Re-center Map"
-            icon="pi pi-map-marker"
-            type="button"
-            onClick={() => {
-              getPosition();
-              setMapLocation({ latitude: null, longitude: null });
-            }}
-          />
-        </div>
-      )} */}
       {location?.latitude && location?.longitude && (
         <div
+          className="map-container"
           style={{
             display: 'flex',
-            height: 'calc(100vh - 48px)',
             overflow: 'hidden',
             width: '100%',
             position: 'relative',

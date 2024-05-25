@@ -8,11 +8,11 @@
   "features": [
     {
       "type": "Feature",
+      "address": "Kirk Park Seals Community Center, 300 W Borden Ave, Syracuse, NY 13205",
       "properties": {
         "park": "Kirk Park",
         "name": "Kirk Park Seals Community Center",
         "COMMUNITY_CENTER": "Yes",
-        "address": "Kirk Park Seals Community Center, 300 W Borden Ave, Syracuse, NY 13205",
         "latitude": 43.025991,
         "longitude": -76.153647,
         "FID": 1
@@ -21,11 +21,11 @@
     },
     {
       "type": "Feature",
+      "address": "Butternut Community Police Center at Schiller Park, 223 Whitwell Dr, Syracuse, NY 13203",
       "properties": {
         "park": "Schiller Park",
         "name": "Butternut Community Police Center",
         "COMMUNITY_CENTER": "Yes",
-        "address": "Butternut Community Police Center at Schiller Park, 223 Whitwell Dr, Syracuse, NY 13203",
         "latitude": 43.065739,
         "longitude": -76.138583,
         "FID": 2
@@ -35,11 +35,11 @@
     },
     {
       "type": "Feature",
+      "address": "Magnarelli Community Center, 2308 Grant Blvd, Syracuse, NY 13208",
       "properties": {
-        "park": " McChesney Park",
+        "park": "McChesney Park",
         "name": "Magnarelli Community Center",
         "COMMUNITY_CENTER": "Yes",
-        "address": "Magnarelli Community Center, 2308 Grant Blvd, Syracuse, NY 13208",
         "latitude": 43.074292,
         "longitude": -76.145929,
         "FID": 3
@@ -64,12 +64,14 @@
       "type": "Feature",
       "address": "Cecile Community Center, 174 W Seneca Turnpike, Syracuse, NY 13205",
       "properties": {
-        "park": "Cecile Community Center",
+        "park": "Meachem Field",
+        "name": "Bob Cecile Community Center",
         "COMMUNITY_CENTER": "Yes",
         "latitude": 43.001564,
         "longitude": -76.146325,
         "FID": 5
       },
+      "url": "https://www.syr.gov/Venues/Bob-Cecile-Community-Center",
       "geometry": { "type": "Point", "coordinates": [-76.146325, 43.001564] }
     },
     {
@@ -88,7 +90,8 @@
       "type": "Feature",
       "address": "Burnet Arts & Crafts Facility, 521-549 Burnet Park Dr, Syracuse, NY 13204",
       "properties": {
-        "park": "Burnet Park Arts & Crafts Center",
+        "park": "Burnet Park",
+        "name": "Burnet Park Arts & Crafts Center",
         "COMMUNITY_CENTER": "Yes",
         "address": "297 Coleridge Ave. ",
         "latitude": 43.042294,
@@ -96,30 +99,6 @@
         "FID": 7
       },
       "geometry": { "type": "Point", "coordinates": [-76.184737, 43.042294] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "park": null,
-        "COMMUNITY_CENTER": null,
-        "address": null,
-        "latitude": null,
-        "longitude": null,
-        "FID": 8
-      },
-      "geometry": { "type": "Point", "coordinates": [-76.187259, 43.040223] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "park": null,
-        "COMMUNITY_CENTER": null,
-        "address": null,
-        "latitude": null,
-        "longitude": null,
-        "FID": 9
-      },
-      "geometry": { "type": "Point", "coordinates": [-76.114377, 43.058912] }
     }
   ]
 }
