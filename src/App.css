@@ -152,15 +152,14 @@ a:hover, a:focus, a:active,
 
 .map-container {
     height: calc(100vh - 60px);
-    overflow: auto;
+    overflow: hidden;
 }
 .map-button-container {
     display: flex;
     flex-direction: row;
 }
 .tag-container {
-    text-align: right;
-    margin-top: -50px;
+    margin-top: -10px;
     margin-bottom: 12px;
 }
 .recenter-button {
@@ -169,18 +168,21 @@ a:hover, a:focus, a:active,
 }
 .info-container {
     height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 h2 {
     margin: 0;
 }
 .listview {
-    padding-left: 12px;
+    padding-left: 0;
+    margin-top: 16px;
 }
 .listview li {
     list-style: none;
 }
-.listview li a {
-    padding: 6px;
+.p-button.p-button-icon-only {
+    width: auto;
 }
 @media only screen and (max-width: 600px) {
     .map-container {

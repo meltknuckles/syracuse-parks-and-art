@@ -6,8 +6,9 @@ import GoogleMap from 'google-map-react';
 import './Map.css';
 // import { Button } from 'primereact/button';
 
-const DEFAULT_ZOOM = 13;
-const DEFAULT_CENTER = {
+export const DEFAULT_ZOOM = 13;
+export const DEFAULT_ZOOM_IN = 17;
+export const DEFAULT_CENTER = {
   latitude: 43.03698311154859,
   longitude: -76.14202734846212,
 };
@@ -21,12 +22,14 @@ export const MapContainer = ({
   onGoogleApiLoaded,
   mapType,
   interests,
+  setZoom,
 }: {
   location: any;
   setMapLocation: any;
   isGeolocationAvailable: boolean;
   getPosition: any;
   onGoogleApiLoaded: any;
+  setZoom: any;
   interests: any[];
   mapType: string;
 }) => {
@@ -122,6 +125,7 @@ export const MapContainer = ({
             }
             onGoogleApiLoaded={onGoogleApiLoaded}
             options={{ mapTypeId: mapType }}
+            onZoomAnimationEnd={(z) => setZoom(z)}
           ></GoogleMap>
         </div>
       )}

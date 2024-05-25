@@ -12,14 +12,14 @@ import { Menubar } from 'primereact/menubar';
 import { SelectButton } from 'primereact/selectbutton';
 import { Tag } from 'primereact/tag';
 import { TreeSelect } from 'primereact/treeselect';
-import { useEffect, useRef, useState } from 'react';
+import { Ref, useEffect, useRef, useState } from 'react';
 import { useGeolocated } from 'react-geolocated';
 import { FaParking } from 'react-icons/fa';
 import { GiKidSlide } from 'react-icons/gi';
 import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
 import { FaLocationCrosshairs } from 'react-icons/fa6';
 import pointInPolygon from 'robust-point-in-polygon';
-import MapContainer from './Map/Map';
+import MapContainer, { DEFAULT_ZOOM, DEFAULT_ZOOM_IN } from './Map/Map';
 import navIcon from './Map/icons/you.svg';
 import { Colors, DATA, DataTypes, TREE_NODE_DATA } from './constants';
 import boundary from './json/boundary.json';
@@ -39,12 +39,6 @@ const generateMapsLink = (address: string, directions = false) => {
   return googleMapsUrl;
 };
 
-const HQMarkerTemplate: React.FC = () => (
-  <>
-    <div>Test Marker</div>
-  </>
-);
-
 const App = () => {
   const [location, setLocation] = useState<{
     latitude: any;
@@ -53,7 +47,7 @@ const App = () => {
     latitude: null,
     longitude: null,
   });
-
+  const [zoom, setZoom] = useState(DEFAULT_ZOOM);
   const prevMarkersRef = useRef([]);
   const [selectedMarker, setSelectedMarker] = useState<any>();
   const [selectedPath, setSelectedPath] = useState<any>();
@@ -99,13 +93,12 @@ const App = () => {
   }, [coords, location]);
 
   const [googleApiLoaded, setGoogleApiLoaded] = useState(false);
-  const [mapType, setMapType] = useState<string>('roadmap');
+  const [mapType, setMapType] = useLocalStorage<string>('maptype', 'roadmap');
 
   const onGoogleApiLoaded = ({ map: gmap, maps: gmaps }: any) => {
     if (gmap && gmaps && !googleApiLoaded) {
       for (let m of prevMarkersRef.current) {
         const marker: any = m;
-        console.log('clearing marker');
         marker.setMap(null);
       }
       prevMarkersRef.current = [];
@@ -141,12 +134,14 @@ const App = () => {
           },
         });
         gmaps.event.addListener(_marker, 'click', () => {
-          // gmap.setZoom(16);
+          if (gmap.zoom < DEFAULT_ZOOM_IN) {
+            gmap.setZoom(DEFAULT_ZOOM_IN);
+          }
           let data;
           if (selectable) {
             data = getFieldData(selectable, type);
           }
-          const newSelectedMarker = {
+          setSelectedMarker({
             ...selectable,
             data,
             type,
@@ -155,8 +150,7 @@ const App = () => {
             lat,
             lng,
             category,
-          };
-          setSelectedMarker(newSelectedMarker);
+          });
           setSelectedPath(null);
           setActiveIndex(0);
           gmap.panTo(_marker.getPosition());
@@ -170,7 +164,10 @@ const App = () => {
             marker.setMap(null);
           }
         }
-        if (interestedIn.includes(data.type)) {
+        if (
+          interestedIn.includes(data.type) ||
+          (selectedMarker?.title && selectedMarker.title === data?.name)
+        ) {
           for (const _d in data.data) {
             const d = data.data[_d];
             const lat = d.properties?.latitude || d.latitude;
@@ -203,34 +200,34 @@ const App = () => {
         }
       };
 
-      if (
-        isGeolocationAvailable &&
-        location?.latitude &&
-        location?.longitude &&
-        pointInPolygon(boundaryPolygon as any, [
-          location.latitude,
-          location.longitude,
-        ])
-      ) {
-        addMarker({
-          type: 'you',
-          title: 'You are Here',
-          icon: navIcon,
-          lat: location.latitude,
-          lng: location.longitude,
-          selectable: location,
-          category: '',
-        });
-        if (
-          !googleApiLoaded &&
-          map &&
-          location.latitude &&
-          location.longitude
-        ) {
-          gmap.panTo({ lat: location.latitude, lng: location.longitude });
-          // gmap.setZoom(16);
-        }
-      }
+      // if (
+      //   isGeolocationAvailable &&
+      //   location?.latitude &&
+      //   location?.longitude &&
+      //   pointInPolygon(boundaryPolygon as any, [
+      //     location.latitude,
+      //     location.longitude,
+      //   ])
+      // ) {
+      //   addMarker({
+      //     type: 'you',
+      //     title: 'You are Here',
+      //     icon: navIcon,
+      //     lat: location.latitude,
+      //     lng: location.longitude,
+      //     selectable: location,
+      //     category: '',
+      //   });
+      //   if (
+      //     !googleApiLoaded &&
+      //     map &&
+      //     location.latitude &&
+      //     location.longitude
+      //   ) {
+      //     gmap.panTo({ lat: location.latitude, lng: location.longitude });
+      //     // gmap.setZoom(16);
+      //   }
+      // }
       filterMarkers(DATA.dogpark);
       filterMarkers(DATA.playground);
       filterMarkers(DATA.pool);
@@ -264,7 +261,7 @@ const App = () => {
 
     gmap.data.addGeoJson(boundary);
     if (interestedIn.includes('walking') || interestedIn.includes('biking')) {
-      map.data.addGeoJson(DATA.walking.data);
+      gmap.data.addGeoJson(DATA.walking.data);
     }
     gmap.data.addListener('click', (event: any) => {
       if (
@@ -285,9 +282,16 @@ const App = () => {
     setGoogleApiLoaded(true);
     gmap.data.setStyle((feature: any) => {
       if (feature.getProperty('name') === 'boundary') {
+        if (mapType === 'roadmap') {
+          return {
+            fillColor: 'transparent',
+            strokeColor: '#788',
+            strokeWeight: 2,
+          };
+        }
         return {
           fillColor: 'transparent',
-          strokeColor: '#788',
+          strokeColor: '#ffca3a',
           strokeWeight: 2,
         };
       } else if (
@@ -368,6 +372,16 @@ const App = () => {
   }, [ref, item, activeIndex, photos]);
   const imgRef = useRef();
 
+  const scrollRef: Ref<any> = useRef();
+  const scrollToRef = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scroll({
+        top: -100,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const kvPairData = selectedMarker?.data
     ? {
         ...selectedMarker.data,
@@ -415,6 +429,7 @@ const App = () => {
                   icon: null,
                   lat: selectable.latitude,
                   lng: selectable.longitude,
+                  category: selectable.type,
                 });
                 setActiveIndex(0);
               }
@@ -532,7 +547,7 @@ const App = () => {
       <div className="grid" style={{ margin: 0 }}>
         <div
           className="info-container col-12 md:col-5 flex-order-1 md:flex-order-0"
-          style={{}}
+          ref={scrollRef}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Card
@@ -556,7 +571,7 @@ const App = () => {
                   icon="pi pi-times"
                   size="small"
                   rounded
-                  link
+                  text
                   onClick={() => {
                     setGoogleApiLoaded(false);
                     setInterests({});
@@ -593,10 +608,31 @@ const App = () => {
               />
             </Card>
           </div>
-          {!selectedMarker && !selectedPath && <ListView />}
+          {!selectedMarker && !selectedPath && map && (
+            <ListView
+              zoom={zoom}
+              scrollToRef={scrollToRef}
+              map={map}
+              setSelectedMarker={setSelectedMarker}
+              markers={prevMarkersRef?.current ?? []}
+            />
+          )}
           {selectedMarker && (
             <Card style={{ padding: 0, textAlign: 'left' }}>
-              <h2 style={{ marginTop: 0 }}>{selectedMarker.title}</h2>
+              <div className="grid">
+                <div className="col">
+                  <h2>{selectedMarker.title}</h2>
+                </div>
+                <div className="col-fixed">
+                  <Button
+                    icon="pi pi-times"
+                    text
+                    size="small"
+                    rounded
+                    onClick={() => setSelectedMarker(null)}
+                  />
+                </div>
+              </div>
               {selectedtags.length > 0 && (
                 <div className="tag-container">
                   {selectedtags.map((tag) => (
@@ -680,7 +716,6 @@ const App = () => {
                       ></Button>
                     )}
                   </div>
-
                   <PrimereactImage
                     ref={imgRef as any}
                     src={item}
@@ -697,16 +732,6 @@ const App = () => {
                     activeIndex={activeIndex}
                     showThumbnails={false}
                   />
-
-                  {/* <Galleria
-                    circular
-                    value={}
-                    numVisible={4}
-                    showThumbnails={selectedMarker?.gallery.count > 1}
-                    style={{ width: '100%' }}
-                    item={itemTemplate}
-                    thumbnail={thumbnailTemplate}
-                  /> */}
                 </div>
               )}
               <div style={{ marginTop: 16 }}>
@@ -818,6 +843,7 @@ const App = () => {
             ></Button>
           )}
           <MapContainer
+            setZoom={setZoom}
             location={coords}
             setMapLocation={setLocation}
             isGeolocationAvailable={isGeolocationAvailable}
