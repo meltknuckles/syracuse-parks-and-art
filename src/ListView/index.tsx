@@ -139,9 +139,6 @@ export const ListView = ({
                           data?.properties?.park ??
                           data?.park ??
                           data.featureData.park;
-                        if (!parentPark) {
-                          console.log('data', data);
-                        }
                         return (
                           parentPark
                             ?.toLowerCase()

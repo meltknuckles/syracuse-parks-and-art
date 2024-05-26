@@ -229,6 +229,13 @@ h2 {
 }
 .clear-button {
     color: #2f3186;
+    padding: 0 16px;
+    margin-top: -6px;
+}
+.clear-button:hover,
+.clear-button:focus,
+.clear-button:active {
+    background: #f5f5f5;
 }
 .p-button,
 .p-card-content label {

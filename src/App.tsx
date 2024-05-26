@@ -154,7 +154,7 @@ const App = () => {
             ...selectable,
             data,
             type,
-            title,
+            title: formatTitle(selectable),
             icon,
             lat,
             lng,
@@ -548,7 +548,6 @@ const App = () => {
               </label>
               {Object.keys(interests).length > 0 && (
                 <Button
-                  className="clear-button"
                   label="Clear"
                   icon="pi pi-times"
                   size="small"
@@ -617,6 +616,7 @@ const App = () => {
                 </div>
                 <div className="col-fixed">
                   <Button
+                    className="clear-button"
                     icon="pi pi-times"
                     text
                     size="small"
@@ -819,6 +819,7 @@ const App = () => {
                 </div>
                 <div className="col-fixed">
                   <Button
+                    className="clear-button"
                     icon="pi pi-times"
                     text
                     size="small"

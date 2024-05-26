@@ -16,5 +16,8 @@ export const formatTitle = (d: any): string => {
       title = `${d.properties.park || ''} ${d.properties.type}`.trim();
     }
   }
+  if (['mural', 'mosaic', 'sculpture'].includes(d.type)) {
+    title = d.properties.title;
+  }
   return title;
 };

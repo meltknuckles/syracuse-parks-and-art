@@ -372,6 +372,9 @@
         "longitude": -76.129526,
         "ObjectId": 10
       },
+      "gallery": {
+        "parent": [1]
+      },
       "geometry": { "type": "Point", "coordinates": [-76.129526, 43.022657] }
     },
     {
