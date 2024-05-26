@@ -16,6 +16,7 @@ export const ListView = ({
   setInterests,
   interests,
   setGoogleApiLoaded,
+  setActiveIndex,
 }: any) => {
   return (
     <div style={{ marginTop: -12, padding: 4 }}>
@@ -25,6 +26,7 @@ export const ListView = ({
         </div>
         <div className="col p-inputgroup">
           <InputText
+            className="filter-text"
             size="small"
             onChange={(e: any) => setFilter(e.target.value)}
             value={filter}
@@ -79,6 +81,10 @@ export const ListView = ({
                             label = 'Baseball Field';
                             cssType = 'sport';
                             break;
+                          case 'water':
+                            label = 'Water Feature';
+                            cssType = 'park';
+                            break;
                           case 'pool':
                             label = 'Swimming Pool';
                             cssType = 'park';
@@ -98,6 +104,10 @@ export const ListView = ({
                           case 'center':
                             label = 'Community Center';
                             cssType = 'park';
+                            break;
+                          case 'iceskate':
+                            label = 'Ice Skating Rink';
+                            cssType = 'sport';
                             break;
                           case 'skating':
                             label = 'Skate Park';
@@ -125,8 +135,15 @@ export const ListView = ({
                         };
                       })
                       .filter((data: any) => {
+                        const parentPark =
+                          data?.properties?.park ??
+                          data?.park ??
+                          data.featureData.park;
+                        if (!parentPark) {
+                          console.log('data', data);
+                        }
                         return (
-                          data.properties?.park
+                          parentPark
                             ?.toLowerCase()
                             .includes(filter.toLowerCase()) ||
                           data.featureData?.name
@@ -139,8 +156,7 @@ export const ListView = ({
                             ?.toLowerCase()
                             .includes(filter.toLowerCase())
                         );
-                      })
-                      .sort((a: any, b: any) => a.label - b.label),
+                      }),
                   ];
                 }
               }
@@ -191,6 +207,7 @@ export const ListView = ({
                         lng: data.longitude,
                         category: data.type,
                       });
+                      setActiveIndex(0);
                       if (!interests.park?.checked) {
                         setInterests({
                           ...interests,
@@ -255,6 +272,7 @@ export const ListView = ({
                               lng,
                               category: type,
                             });
+                            setActiveIndex(0);
 
                             if (!interests[type]?.checked) {
                               const parent = DATA[type].group;

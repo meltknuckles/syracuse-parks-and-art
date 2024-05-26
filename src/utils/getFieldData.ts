@@ -4,10 +4,9 @@ export const getFieldData = (data: any, type: string) => {
     hours: d['hours'],
     features: d['features'],
     accessibilityInfo: d['accessibility'],
-    wikipedia: d['url'],
+    officialLink: d['link'],
   });
 
-  console.log('type', type);
   if (
     [
       'basketball',

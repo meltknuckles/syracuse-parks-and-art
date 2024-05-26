@@ -98,6 +98,9 @@
         "longitude": -76.184737,
         "FID": 7
       },
+      "gallery": {
+        "parent": [4]
+      },
       "geometry": { "type": "Point", "coordinates": [-76.184737, 43.042294] }
     }
   ]

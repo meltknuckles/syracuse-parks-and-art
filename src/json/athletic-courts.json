@@ -45,6 +45,9 @@
         "longitude": -76.116854,
         "ObjectId": 3
       },
+      "gallery": {
+        "parent": [4, 6]
+      },
       "geometry": { "type": "Point", "coordinates": [-76.116854, 43.028485] }
     },
     {
@@ -58,6 +61,9 @@
         "longitude": -76.117332,
         "ObjectId": 4
       },
+      "gallery": {
+        "parent": [5]
+      },
       "geometry": { "type": "Point", "coordinates": [-76.117332, 43.030181] }
     },
     {
@@ -68,6 +74,9 @@
         "COURT_TYPE": "Soccer",
         "latitude": 43.029603872736246,
         "longitude": -76.11732312930819
+      },
+      "gallery": {
+        "parent": [1]
       },
       "geometry": {
         "type": "Point",
@@ -111,6 +120,9 @@
         "type": "Ice Rink",
         "latitude": 43.05088897853138,
         "longitude": -76.15288461151074
+      },
+      "gallery": {
+        "parent": [2, 6, 10, 11]
       },
       "geometry": {
         "type": "Point",
@@ -342,6 +354,9 @@
         "latitude": 43.022453,
         "longitude": -76.129041,
         "ObjectId": 9
+      },
+      "gallery": {
+        "parent": []
       },
       "geometry": { "type": "Point", "coordinates": [-76.129041, 43.022453] }
     },
@@ -972,7 +987,10 @@
         "type": "Golf Course",
         "latitude": 43.04020032081219,
         "longitude": -76.18720969180706,
-        "ObjectId": 55
+        "ObjectId": 55,
+        "gallery": {
+          "parent": [6, 8, 9, 10]
+        }
       },
       "features": ["Private Parking Lot", "Gender-Neutral Bathrooms", "WiFi"],
       "url": "https://www.syr.gov/Venues/Burnet-Park-Golf-Course",

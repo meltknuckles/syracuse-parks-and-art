@@ -1,9 +1,12 @@
+import * as _ from 'lodash';
+
 import parks from './json/parks.json';
 import pools from './json/pools.json';
 import centers from './json/community-centers.json';
 import courts from './json/athletic-courts.json';
 import art from './json/public-art.json';
 import dogparks from './json/dog-parks.json';
+import water from './json/water.json';
 import playgrounds from './json/playgrounds.json';
 import trails from './json/bike.json';
 
@@ -25,6 +28,7 @@ import skateboardMarkerIcon from './Map/icons/skateboard.svg';
 import golfMarkerIcon from './Map/icons/golf.svg';
 import baseballMarkerIcon from './Map/icons/baseball.svg';
 import iceskateMarkerIcon from './Map/icons/iceskate.svg';
+import waterMarkerIcon from './Map/icons/water.svg';
 
 import parkIcon from './ListView/icons/park.svg';
 import poolIcon from './ListView/icons/pool.svg';
@@ -45,6 +49,7 @@ import skateboardIcon from './ListView/icons/skateboard.svg';
 import golfIcon from './ListView/icons/golf.svg';
 import baseballIcon from './ListView/icons/baseball.svg';
 import iceskateIcon from './ListView/icons/iceskate.svg';
+import waterIcon from './ListView/icons/water.svg';
 
 export const ICON_SIZE = 20;
 
@@ -69,6 +74,7 @@ export enum DataTypes {
   iceskate = 'Ice Skating',
   golf = 'Golf',
   baseball = 'Baseball',
+  water = 'Water Feature',
 }
 
 export enum Colors {
@@ -94,7 +100,10 @@ export const DATA: Record<
 > = {
   park: {
     type: 'park',
-    data: parks.map((d) => ({ ...d, type: 'park' })),
+    data: _.orderBy(
+      parks.map((d) => ({ ...d, type: 'park' })),
+      'name',
+    ),
     icon: parkIcon,
     group: 'park',
     markerIcon: parkMarkerIcon,
@@ -303,12 +312,22 @@ export const DATA: Record<
     interest: [DataTypes.baseball, DataTypes.sports],
     color: Colors.blue,
   },
+  water: {
+    type: 'water',
+    data: water.map((d) => ({ ...d, type: 'water' })),
+    icon: waterIcon,
+    group: 'park',
+    markerIcon: waterMarkerIcon,
+    interest: [DataTypes.water, DataTypes.park],
+    color: Colors.green,
+  },
 };
 
 export const SUB_PARK_DATA = [
   DATA.center,
   DATA.dogpark,
   DATA.playground,
+  DATA.water,
   DATA.pool,
   DATA.basketball,
   DATA.tennis,
@@ -335,6 +354,7 @@ export const TREE_NODE_DATA = [
       DATA.dogpark,
       DATA.playground,
       DATA.center,
+      DATA.water,
     ].map(({ type, data, icon, interest, color }) => ({
       key: type,
       label: interest[0],

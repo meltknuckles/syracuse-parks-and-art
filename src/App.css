@@ -234,6 +234,11 @@ h2 {
 .p-card-content label {
     font-family: Inclusive Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
+.filter-text {
+    box-shadow: none !important;
+    border: 1px solid #a1c30d !important;
+    border-right: none !important;
+}
 
 @media only screen and (max-width: 600px) {
     .map-container {

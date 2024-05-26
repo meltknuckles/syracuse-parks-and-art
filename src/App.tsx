@@ -424,14 +424,13 @@ const App = () => {
         ),
     }));
 
+  const parentPark = selectedMarker?.properties?.park ?? selectedMarker?.park;
   const selectedAddress =
     selectedMarker?.properties?.address ||
     selectedMarker?.address ||
-    (selectedMarker?.properties?.park &&
-      DATA.park.data.find(
-        ({ name }: { name: string }) =>
-          name === selectedMarker?.properties?.park,
-      )?.address);
+    (parentPark &&
+      DATA.park.data.find(({ name }: { name: string }) => name === parentPark)
+        ?.address);
   const selectedtags = [];
 
   if (selectedMarker) {
@@ -507,6 +506,7 @@ const App = () => {
                   setLocation({ latitude: null, longitude: null });
                   setMapLoadedForFirstTime(false);
                   setSelectedMarker(null);
+                  setActiveIndex(0);
                   getPosition();
                 }}
               ></Button>
@@ -558,7 +558,12 @@ const App = () => {
                     setGoogleApiLoaded(false);
                     setInterests({});
                   }}
-                  style={{ float: 'right', marginTop: -8, marginBottom: 8 }}
+                  style={{
+                    float: 'right',
+                    marginTop: -8,
+                    marginBottom: 8,
+                    padding: '4px 6px',
+                  }}
                 ></Button>
               )}
               <TreeSelect
@@ -600,6 +605,7 @@ const App = () => {
               scrollToRef={scrollToRef}
               map={map}
               setSelectedMarker={setSelectedMarker}
+              setActiveIndex={setActiveIndex}
               markers={prevMarkersRef?.current ?? []}
             />
           )}

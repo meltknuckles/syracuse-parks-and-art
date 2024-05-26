@@ -3,7 +3,10 @@
     "name": "Grace Messina Playlot",
     "park": "Grace & Massena Park",
     "latitude": 43.03853143199562,
-    "longitude": -76.16651810470975
+    "longitude": -76.16651810470975,
+    "gallery": {
+      "parent": [1, 2, 3, 4]
+    }
   },
   {
     "name": "Lincoln Park Playlot",
@@ -24,13 +27,17 @@
     "name": "Sheridan Park Playlot",
     "park": "Sheridan Park",
     "latitude": 43.05918756380618,
-    "longitude": -76.10341245794532
+    "longitude": -76.10341245794532,
+    "gallery": { "parent": [2] }
   },
   {
     "name": "Lower Union Park Playground",
     "park": "Union Park",
     "latitude": 43.06430987493252,
-    "longitude": -76.15663522383383
+    "longitude": -76.15663522383383,
+    "gallery": {
+      "parent": [1, 3, 5]
+    }
   },
   {
     "name": "Clark Spaulding Field Playlot",
@@ -55,34 +62,49 @@
     "park": "Comfort Tyler Park",
     "address": "Comfort Tyler Park Playground, 1100 Comstock Ave, Syracuse, NY 13210",
     "latitude": 43.02275541814875,
-    "longitude": -76.12888916161386
+    "longitude": -76.12888916161386,
+    "gallery": {
+      "parent": [3, 4]
+    }
   },
   {
     "name": "Burnet Park Playground",
     "park": "Burnet Park",
     "address": "Playground at Burnet Park, Syracuse, NY 13204",
     "latitude": 43.041903831381866,
-    "longitude": -76.18512406885901
+    "longitude": -76.18512406885901,
+    "gallery": {
+      "parent": [11, 12, 13, 14, 15, 16]
+    }
   },
   {
     "name": "Barry Park Playground",
     "park": "Barry Park",
     "address": "Playground at Barry Park, Syracuse, NY 13210",
     "latitude": 43.030258742387794,
-    "longitude": -76.11662575504594
+    "longitude": -76.11662575504594,
+    "gallery": {
+      "parent": [2, 3, 9]
+    }
   },
   {
     "name": "Kirk Park Playground",
     "park": "Kirk Park",
     "address": "Kirk Park Playground, 300 W Borden Ave, Syracuse, NY 13205",
     "latitude": 43.0257484057715,
-    "longitude": -76.15355591793012
+    "longitude": -76.15355591793012,
+    "gallery": {
+      "parent": [1, 5]
+    }
   },
   {
     "name": "Wilson Park Playground",
     "park": "Wilson Park",
     "latitude": 43.04017821710141,
-    "longitude": -76.14354565155952
+    "longitude": -76.14354565155952,
+    "gallery": {
+      "parent": [1, 2]
+    }
   },
   {
     "name": "Leavenworth Park Playground",
@@ -94,19 +116,28 @@
     "name": "McKinley Park Playground",
     "park": "McKinley Park",
     "latitude": 43.01609875909572,
-    "longitude": -76.1510909761443
+    "longitude": -76.1510909761443,
+    "gallery": {
+      "parent": [1, 2, 3, 5, 7]
+    }
   },
   {
     "name": "Elmwood Park Playground",
     "park": "Elmwood Park",
     "latitude": 43.01879722760227,
-    "longitude": -76.16748772427137
+    "longitude": -76.16748772427137,
+    "gallery": {
+      "parent": [3]
+    }
   },
   {
     "name": "Wadsworth Park Playground",
     "park": "Wadsworth Park",
     "latitude": 43.02604763423936,
-    "longitude": -76.18147146336953
+    "longitude": -76.18147146336953,
+    "gallery": {
+      "parent": [2]
+    }
   },
   {
     "name": "Ormand Spencer Park Playground",
@@ -119,67 +150,104 @@
     "name": "Westmoreland Park Playground",
     "park": "Westmoreland Park",
     "latitude": 43.05012646688127,
-    "longitude": -76.11545840669135
+    "longitude": -76.11545840669135,
+    "gallery": {
+      "parent": [1]
+    }
   },
   {
     "name": "McChesney Park Playground",
     "park": "McChesney Park",
     "latitude": 43.073965357772046,
-    "longitude": -76.14514527387172
+    "longitude": -76.14514527387172,
+    "gallery": {
+      "parent": [4]
+    }
   },
   {
     "name": "Thornden Park Playground",
     "park": "Thornden Park",
     "address": "Thornden Park playground, Thornden Park Dr, Syracuse, NY 13210",
     "latitude": 43.04257598868644,
-    "longitude": -76.12685513019612
+    "longitude": -76.12685513019612,
+    "gallery": {
+      "parent": [8, 9]
+    }
   },
   {
     "name": "Homer Wheaton Park Playground",
     "park": "Homer Wheaton Park",
     "latitude": 43.05101959583402,
-    "longitude": -76.09849573576925
+    "longitude": -76.09849573576925,
+    "gallery": {
+      "parent": [1]
+    }
   },
   {
     "name": "Norwood Park Playground",
     "park": "Norwood Park",
     "latitude": 43.076322123046,
-    "longitude": -76.10990899081375
+    "longitude": -76.10990899081375,
+    "gallery": {
+      "parent": [1, 2, 3]
+    }
   },
   {
     "name": "Loguen Park Playground",
     "park": "Loguen Park",
     "address": "Loguen Park Playground, 300 Columbus Ave, Syracuse, NY 13210",
     "latitude": 43.0468233238884,
-    "longitude": -76.12242303312743
+    "longitude": -76.12242303312743,
+    "gallery": {
+      "parent": [1, 2, 3]
+    }
   },
   {
     "name": "Lewis Park Playground",
     "park": "Lewis Park",
     "address": "Lewis Park Playground, 825 Milton Ave, Syracuse, NY 13204",
     "latitude": 43.05468456075809,
-    "longitude": -76.19255326396059
+    "longitude": -76.19255326396059,
+    "gallery": {
+      "parent": [1]
+    }
   },
   {
     "name": "Washington Square Park Playground",
     "park": "Washington Square Park",
     "address": "Washington Square Park Playground, 101 Washington Square, Syracuse, NY 13208",
     "latitude": 43.07042313903923,
-    "longitude": -76.1622159355018
+    "longitude": -76.1622159355018,
+    "gallery": {
+      "parent": [1, 2, 3, 5]
+    }
   },
   {
     "name": "Spirit of Jubilee Park Playground",
     "park": "Spirit of Jubilee Park",
     "address": "Spirit of Jubilee Park playground, South Ave &, White St, Syracuse, NY 13204",
     "latitude": 43.037307983610965,
-    "longitude": -76.15866775728514
+    "longitude": -76.15866775728514,
+    "gallery": {
+      "parent": [2]
+    }
+  },
+  {
+    "name": "Sunnycrest Playground",
+    "park": "Sunnycrest Park",
+    "address": "536 Boyden St, Syracuse, NY 13206",
+    "latitude": 43.06109313085206,
+    "longitude": -76.11765993892375,
+    "gallery": {
+      "parent": [5, 7]
+    }
   },
   {
     "name": "Skiddy Park Playground",
     "park": "Skiddy Park",
     "address": "Skiddy Park Playground, 300 Tioga St, Syracuse, NY 13204",
     "gallery": {
-      "parent": [2]
+      "parent": [2, 3]
     },
     "latitude": 43.04513858591291,
     "longitude": -76.1633333448874

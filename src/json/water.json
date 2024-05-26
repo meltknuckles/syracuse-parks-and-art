@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Spray Feature",
+    "park": "Wilson Park",
+    "latitude": 43.03961800238222,
+    "longitude": -76.14338721047274,
+    "gallery": {
+      "parent": [7]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Comfort Tyler Park",
+    "latitude": 43.02262747518535,
+    "longitude": -76.12910402017513,
+    "gallery": {
+      "parent": [7, 5]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Onondaga Park - Lower",
+    "latitude": 43.029058381785674,
+    "longitude": -76.16312067485418,
+    "gallery": {
+      "parent": [6]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Onondaga Park - Upper",
+    "latitude": 43.02385336439044,
+    "longitude": -76.16846198248304,
+    "gallery": {
+      "parent": [18]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "McKinley Park",
+    "latitude": 43.0154725814253,
+    "longitude": -76.15070523263523,
+    "gallery": {
+      "parent": [4, 8]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Skiddy Park",
+    "latitude": 43.04469510679978,
+    "longitude": -76.16318137266579,
+    "gallery": {
+      "parent": [5]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Thornden Park",
+    "latitude": 43.04242356579247,
+    "longitude": -76.12542266498731,
+    "gallery": {
+      "parent": [14]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Union Park",
+    "latitude": 43.06414301151039,
+    "longitude": -76.15677369974055,
+    "gallery": {
+      "parent": [2, 6]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Washington Square Park",
+    "latitude": 43.07052309303171,
+    "longitude": -76.16261023656288,
+    "gallery": {
+      "parent": [6]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Sunnycrest Park",
+    "latitude": 43.061015706200024,
+    "longitude": -76.11779587403625,
+    "gallery": {
+      "parent": [4]
+    }
+  },
+  {
+    "name": "Spray Feature",
+    "park": "Elmwood Park",
+    "latitude": 43.01906786099012,
+    "longitude": -76.16716204623421
+  }
+]

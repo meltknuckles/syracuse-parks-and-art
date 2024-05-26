@@ -24,9 +24,9 @@
       "Tennis Court(s)"
     ],
     "gallery": {
-      "count": 10,
-      "folder": "barry-park"
+      "count": 10
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Barry-Park",
     "accessibility": "https://search.inclusiverec.org/agencies/6088",
     "latitude": 43.028827,
     "longitude": -76.117295
@@ -62,9 +62,10 @@
       "Turf Field (Partially Enclosed)",
       "Walking Trails Paved"
     ],
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Burnet-Park",
     "accessibility": "https://search.inclusiverec.org/agencies/6108",
     "gallery": {
-      "count": 19
+      "count": 20
     },
     "latitude": 43.042274,
     "longitude": -76.183936
@@ -80,6 +81,7 @@
       "Drinking Fountains",
       "Multi-Purpose Field(s)"
     ],
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Clark-Spaulding-Field",
     "gallery": {
       "count": 1
     },
@@ -102,6 +104,7 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6106",
     "url": "https://en.wikipedia.org/wiki/Clinton_Square",
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Clinton-Square",
     "gallery": {
       "count": 11
     },
@@ -119,6 +122,7 @@
       "Monument/Memorial",
       "Water Feature (Natural/Decorative)"
     ],
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Columbus-Circle",
     "gallery": {
       "count": 5
     },
@@ -131,6 +135,7 @@
     "address": "Comfort Tyler Park, 1212-44 E Colvin St, Syracuse, NY 13210",
     "description": "This 3+ acre park offers plenty of outdoor recreation and is classified as a neighborhood park.",
     "tags": ["Athletic Court", "Athletic Field", "Multi-Use Park"],
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Comfort-Tyler-Park",
     "features": [
       "Baseball Field(s)",
       "Basketball Court(s)",
@@ -163,6 +168,7 @@
     "gallery": {
       "count": 1
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Cummings-Field",
     "latitude": 43.070529,
     "longitude": -76.114924
   },
@@ -180,6 +186,7 @@
     "gallery": {
       "count": 1
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Eastwood-Heights",
     "latitude": 43.062695,
     "longitude": -76.101659
   },
@@ -204,6 +211,7 @@
     "gallery": {
       "count": 4
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Elmwood-Park",
     "tags": ["Athletic Field", "Natural Areas"],
     "latitude": 43.018696,
     "longitude": -76.16694
@@ -222,6 +230,7 @@
     "gallery": {
       "count": 7
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Fayette-Firefighters-Memorial-Park",
     "tags": ["Downtown Park"],
     "latitude": 43.048354,
     "longitude": -76.146495
@@ -239,6 +248,7 @@
     "gallery": {
       "count": 5
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Forman-Park",
     "tags": ["Downtown Park"],
     "latitude": 43.047192,
     "longitude": -76.14107
@@ -256,6 +266,7 @@
     "gallery": {
       "count": 10
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Franklin-Square-Park",
     "announcement": "The Franklin Square fountain has been removed for restoration. We anticipate the restoration will be complete by mid-2024.",
     "tags": ["Downtown Park"],
     "latitude": 43.056991,
@@ -276,6 +287,7 @@
       "count": 4,
       "folder": "grace-messina-park"
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Grace-Massena-Playlot",
     "latitude": 43.038505,
     "longitude": -76.166615
   },
@@ -290,6 +302,7 @@
       "count": 8
     },
     "url": "https://en.wikipedia.org/wiki/Hanover_Square,_Syracuse",
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Hanover-Square",
     "latitude": 43.050402,
     "longitude": -76.150988
   },
@@ -311,6 +324,7 @@
     "gallery": {
       "count": 4
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Homer-Wheaton-Park",
     "latitude": 43.05136,
     "longitude": -76.099707
   },
@@ -329,6 +343,7 @@
     "gallery": {
       "count": 3
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Huntington-Park",
     "latitude": 43.059396,
     "longitude": -76.110449
   },
@@ -355,8 +370,9 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6092",
     "gallery": {
-      "count": 12
+      "count": 13
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Kirk-Park",
     "latitude": 43.026792,
     "longitude": -76.154486
   },
@@ -369,6 +385,7 @@
     "gallery": {
       "count": 2
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Leavenworth-Park",
     "latitude": 43.051315,
     "longitude": -76.163144
   },
@@ -391,6 +408,7 @@
     "gallery": {
       "count": 1
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Lewis-Park",
     "latitude": 43.054076,
     "longitude": -76.192185
   },
@@ -436,8 +454,9 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6095",
     "gallery": {
-      "count": 7
+      "count": 8
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Lincoln-Park",
     "latitude": 43.056873,
     "longitude": -76.126814
   },
@@ -450,6 +469,7 @@
     "gallery": {
       "count": 7
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Lipe-Art-Park",
     "latitude": 43.046464,
     "longitude": -76.169608
   },
@@ -472,9 +492,10 @@
       "Tennis Court(s)"
     ],
     "gallery": {
-      "count": 4,
+      "count": 6,
       "folder": "mcchesney-park"
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/McChesney-Park",
     "latitude": 43.07399,
     "longitude": -76.145253
   },
@@ -493,9 +514,10 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 7,
+      "count": 8,
       "folder": "mckinley-park"
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/McKinley-Park",
     "latitude": 43.016545,
     "longitude": -76.150892
   },
@@ -524,6 +546,7 @@
     "gallery": {
       "count": 4
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Meachem-Field",
     "accessibility": "https://search.inclusiverec.org/agencies/6094",
     "latitude": 43.000026,
     "longitude": -76.146268
@@ -545,6 +568,7 @@
     "gallery": {
       "count": 3
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Norwood-Park",
     "latitude": 43.077105,
     "longitude": -76.109578
   },
@@ -566,6 +590,7 @@
       "count": 5,
       "folder": "onondaga-creekwalk"
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Onondaga-Creekwalk",
     "latitude": 43.059744,
     "longitude": -76.166213
   },
@@ -584,8 +609,9 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 5
+      "count": 7
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Onondaga-Park-Lower",
     "latitude": 43.02872,
     "longitude": -76.162606
   },
@@ -612,9 +638,10 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6091",
     "gallery": {
-      "count": 17,
+      "count": 18,
       "folder": "onondaga-park-upper"
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Onondaga-Park-Upper",
     "latitude": 43.026796,
     "longitude": -76.165426
   },
@@ -631,6 +658,7 @@
     "gallery": {
       "count": 12
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Ormand-Spencer-Park",
     "latitude": 43.049764,
     "longitude": -76.133157
   },
@@ -662,6 +690,7 @@
     "gallery": {
       "count": 13
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Schiller-Park",
     "latitude": 43.066534,
     "longitude": -76.13852
   },
@@ -674,6 +703,7 @@
     "gallery": {
       "count": 2
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Sheridan-Park",
     "latitude": 43.059183,
     "longitude": -76.103409
   },
@@ -686,6 +716,7 @@
     "gallery": {
       "count": 4
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Sherman-Park",
     "latitude": 43.026427,
     "longitude": -76.113003
   },
@@ -709,8 +740,9 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 2
+      "count": 4
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Skiddy-Park",
     "latitude": 43.044966,
     "longitude": -76.163669
   },
@@ -728,6 +760,7 @@
     "gallery": {
       "count": 2
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Spirit-of-Jubilee-Park",
     "latitude": 43.037403,
     "longitude": -76.158379
   },
@@ -757,8 +790,9 @@
     ],
     "accessibility": "https://search.inclusiverec.org/agencies/6097",
     "gallery": {
-      "count": 12
+      "count": 15
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Sunnycrest-Park",
     "latitude": 43.058909,
     "longitude": -76.116918
   },
@@ -792,8 +826,9 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 10
+      "count": 14
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Thornden-Park",
     "accessibility": "https://search.inclusiverec.org/agencies/6084",
     "latitude": 43.04222,
     "longitude": -76.126505
@@ -805,8 +840,9 @@
     "tags": ["Playlot"],
     "features": ["Accessible"],
     "gallery": {
-      "count": 5
+      "count": 6
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Union-Park",
     "latitude": 43.064213,
     "longitude": -76.156655
   },
@@ -827,8 +863,9 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 5
+      "count": 6
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Washington-Square-Park",
     "latitude": 43.070437,
     "longitude": -76.162851
   },
@@ -852,6 +889,7 @@
     "gallery": {
       "count": 3
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Westmoreland-Park",
     "latitude": 43.049808,
     "longitude": -76.115491
   },
@@ -873,8 +911,9 @@
       "Water Feature (Play)"
     ],
     "gallery": {
-      "count": 6
+      "count": 7
     },
+    "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Wilson-Park",
     "acreage": 1.523,
     "latitude": 43.039905,
     "longitude": -76.142923
