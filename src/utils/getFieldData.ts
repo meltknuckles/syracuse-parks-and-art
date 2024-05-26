@@ -7,6 +7,7 @@ export const getFieldData = (data: any, type: string) => {
     wikipedia: d['url'],
   });
 
+  console.log('type', type);
   if (
     [
       'basketball',

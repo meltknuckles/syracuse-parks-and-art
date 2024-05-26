@@ -41,10 +41,10 @@ const generateMapsLink = (address: string, directions = false) => {
 };
 
 const App = () => {
-  const [location, setLocation] = useState<{
+  const [location, setLocation] = useLocalStorage<{
     latitude: any;
     longitude: any;
-  } | null>({
+  } | null>('location', {
     latitude: null,
     longitude: null,
   });
@@ -98,7 +98,7 @@ const App = () => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [coords, location]);
+  }, [coords]);
 
   const [googleApiLoaded, setGoogleApiLoaded] = useState(false);
   const [mapLoadedForFirstTime, setMapLoadedForFirstTime] = useState(false);
@@ -220,23 +220,15 @@ const App = () => {
           setMapLoadedForFirstTime(true);
         }
       }
-      filterMarkers(DATA.dogpark);
-      filterMarkers(DATA.playground);
-      filterMarkers(DATA.pool);
-      filterMarkers(DATA.center);
-      filterMarkers(DATA.mural);
-      filterMarkers(DATA.mosaic);
-      filterMarkers(DATA.sculpture);
-      filterMarkers(DATA.basketball);
-      filterMarkers(DATA.tennis);
-      filterMarkers(DATA.soccer);
-      filterMarkers(DATA.biking);
-      filterMarkers(DATA.shuffleboard);
-      filterMarkers(DATA.skateboard);
-      filterMarkers(DATA.golf);
-      filterMarkers(DATA.baseball);
-      filterMarkers(DATA.iceskate);
-      filterMarkers(DATA.park);
+      const validKeys = Object.keys(DATA).filter(
+        (k) => !TREE_NODE_DATA.map(({ key }) => key).includes(k),
+      );
+      const keys = Object.keys(interests).filter((interest) =>
+        validKeys.includes(interest),
+      );
+      for (const key of keys) {
+        filterMarkers(DATA[key]);
+      }
 
       const bounds = new gmaps.LatLngBounds(
         new gmaps.LatLng(42.97132928046586, -76.25925946941094),
@@ -514,6 +506,7 @@ const App = () => {
                 onClick={() => {
                   setLocation({ latitude: null, longitude: null });
                   setMapLoadedForFirstTime(false);
+                  setSelectedMarker(null);
                   getPosition();
                 }}
               ></Button>
@@ -522,7 +515,10 @@ const App = () => {
               <SelectButton
                 allowEmpty={false}
                 value={_.startCase(mapType)}
-                onChange={(e) => setMapType(e.value.toLowerCase())}
+                onChange={(e) => {
+                  setMapType(e.value.toLowerCase());
+                  setGoogleApiLoaded(false);
+                }}
                 options={['Roadmap', 'Satellite']}
               />
             )}
@@ -608,7 +604,7 @@ const App = () => {
             />
           )}
           {selectedMarker && (
-            <Card style={{ padding: 0, textAlign: 'left' }}>
+            <Card className="sidebar" style={{ padding: 0, textAlign: 'left' }}>
               <div className="grid">
                 <div className="col">
                   <h2>{selectedMarker.title}</h2>
@@ -810,7 +806,7 @@ const App = () => {
             </Card>
           )}
           {selectedPath && (
-            <Card>
+            <Card className="sidebar">
               <div className="grid">
                 <div className="col">
                   <h2 style={{ textAlign: 'left' }}>{selectedPath.name}</h2>

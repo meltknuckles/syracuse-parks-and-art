@@ -220,7 +220,11 @@ h2 {
     padding: 12px;
     padding-top: 0;
     padding-right: 24px;
-    height: calc(100vh - 280px);
+    height: calc(100vh - 270px);
+    overflow-y: auto;
+}
+.sidebar {
+    height: calc(100vh - 230px);
     overflow-y: auto;
 }
 .clear-button {
