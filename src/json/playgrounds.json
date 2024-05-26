@@ -251,5 +251,14 @@
     },
     "latitude": 43.04513858591291,
     "longitude": -76.1633333448874
+  },
+  {
+    "name": "Schiller Park Playground",
+    "park": "Schiller Park",
+    "gallery": {
+      "parent": [3, 4, 5, 10, 12]
+    },
+    "latitude": 43.06507090979493,
+    "longitude": -76.13705603555981
   }
 ]
