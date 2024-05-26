@@ -7,24 +7,43 @@ import dogparks from './json/dog-parks.json';
 import playgrounds from './json/playgrounds.json';
 import trails from './json/bike.json';
 
-import parkIcon from './Map/icons/park.svg';
-import poolIcon from './Map/icons/pool.svg';
-import centerIcon from './Map/icons/center.svg';
-import basketballIcon from './Map/icons/basketball.svg';
-import soccerIcon from './Map/icons/soccer.svg';
-import tennisIcon from './Map/icons/tennis.svg';
-import dogparkIcon from './Map/icons/dog.svg';
-import artIcon from './Map/icons/mural.svg';
-import sculptureIcon from './Map/icons/sculpture.svg';
-import mosaicIcon from './Map/icons/mosaic.svg';
-import shuffleboardIcon from './Map/icons/shuffleboard.svg';
-import playgroundIcon from './Map/icons/playground.svg';
-import bikingIcon from './Map/icons/biking.svg';
-import walkIcon from './Map/icons/walking.svg';
-import skateboardIcon from './Map/icons/skateboard.svg';
-import golfIcon from './Map/icons/golf.svg';
-import baseballIcon from './Map/icons/baseball.svg';
-import iceskateIcon from './Map/icons/iceskate.svg';
+import parkMarkerIcon from './Map/icons/park.svg';
+import poolMarkerIcon from './Map/icons/pool.svg';
+import centerMarkerIcon from './Map/icons/center.svg';
+import basketballMarkerIcon from './Map/icons/basketball.svg';
+import soccerMarkerIcon from './Map/icons/soccer.svg';
+import tennisMarkerIcon from './Map/icons/tennis.svg';
+import dogparkMarkerIcon from './Map/icons/dog.svg';
+import muralMarkerIcon from './Map/icons/mural.svg';
+import sculptureMarkerIcon from './Map/icons/sculpture.svg';
+import mosaicMarkerIcon from './Map/icons/mosaic.svg';
+import shuffleboardMarkerIcon from './Map/icons/shuffleboard.svg';
+import playgroundMarkerIcon from './Map/icons/playground.svg';
+import bikingMarkerIcon from './Map/icons/biking.svg';
+import walkMarkerIcon from './Map/icons/walking.svg';
+import skateboardMarkerIcon from './Map/icons/skateboard.svg';
+import golfMarkerIcon from './Map/icons/golf.svg';
+import baseballMarkerIcon from './Map/icons/baseball.svg';
+import iceskateMarkerIcon from './Map/icons/iceskate.svg';
+
+import parkIcon from './ListView/icons/park.svg';
+import poolIcon from './ListView/icons/pool.svg';
+import centerIcon from './ListView/icons/center.svg';
+import basketballIcon from './ListView/icons/basketball.svg';
+import soccerIcon from './ListView/icons/soccer.svg';
+import tennisIcon from './ListView/icons/tennis.svg';
+import dogparkIcon from './ListView/icons/dogpark.svg';
+import artIcon from './ListView/icons/art.svg';
+import muralIcon from './ListView/icons/mural.svg';
+import sculptureIcon from './ListView/icons/sculpture.svg';
+import mosaicIcon from './ListView/icons/mosaic.svg';
+import shuffleboardIcon from './ListView/icons/shuffleboard.svg';
+import playgroundIcon from './ListView/icons/playground.svg';
+import bikingIcon from './ListView/icons/biking.svg';
+import skateboardIcon from './ListView/icons/skateboard.svg';
+import golfIcon from './ListView/icons/golf.svg';
+import baseballIcon from './ListView/icons/baseball.svg';
+import iceskateIcon from './ListView/icons/iceskate.svg';
 
 export const ICON_SIZE = 20;
 
@@ -62,12 +81,20 @@ export enum Colors {
 
 export const DATA: Record<
   string,
-  { type: string; data: any; icon: any; interest: DataTypes[]; color: string }
+  {
+    type: string;
+    data: any;
+    icon?: any;
+    markerIcon: any;
+    interest: DataTypes[];
+    color: string;
+  }
 > = {
   park: {
     type: 'park',
     data: parks.map((d) => ({ ...d, type: 'park' })),
     icon: parkIcon,
+    markerIcon: parkMarkerIcon,
     interest: [DataTypes.park],
     color: Colors.green,
   },
@@ -75,6 +102,7 @@ export const DATA: Record<
     type: 'pool',
     data: pools.features.map((d) => ({ ...d, type: 'pool' })),
     icon: poolIcon,
+    markerIcon: poolMarkerIcon,
     interest: [DataTypes.pool],
     color: Colors.green,
   },
@@ -82,6 +110,7 @@ export const DATA: Record<
     type: 'center',
     data: centers.features.map((d) => ({ ...d, type: 'center' })),
     icon: centerIcon,
+    markerIcon: centerMarkerIcon,
     interest: [DataTypes.center],
     color: Colors.green,
   },
@@ -89,6 +118,7 @@ export const DATA: Record<
     type: 'art',
     data: art.features,
     icon: artIcon,
+    markerIcon: artIcon,
     interest: [DataTypes.art],
     color: Colors.red,
   },
@@ -97,7 +127,8 @@ export const DATA: Record<
     data: art.features
       .filter(({ properties }: any) => properties.type.includes('Mural'))
       .map((d) => ({ ...d, type: 'mural' })),
-    icon: artIcon,
+    icon: muralIcon,
+    markerIcon: muralMarkerIcon,
     interest: [DataTypes.mural, DataTypes.art],
     color: Colors.red,
   },
@@ -109,6 +140,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'basketball' })),
     icon: basketballIcon,
+    markerIcon: basketballMarkerIcon,
     interest: [DataTypes.basketball, DataTypes.sports],
     color: Colors.blue,
   },
@@ -116,6 +148,7 @@ export const DATA: Record<
     type: 'dogpark',
     data: dogparks.map((d) => ({ ...d, type: 'dogpark' })),
     icon: dogparkIcon,
+    markerIcon: dogparkMarkerIcon,
     interest: [DataTypes.dogpark, DataTypes.park],
     color: Colors.green,
   },
@@ -127,6 +160,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'tennis' })),
     icon: tennisIcon,
+    markerIcon: tennisMarkerIcon,
     interest: [DataTypes.tennis, DataTypes.sports],
     color: Colors.blue,
   },
@@ -140,6 +174,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'sculpture' })),
     icon: sculptureIcon,
+    markerIcon: sculptureMarkerIcon,
     interest: [DataTypes.sculpture, DataTypes.art],
     color: Colors.red,
   },
@@ -149,6 +184,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Mosaic'))
       .map((d) => ({ ...d, type: 'mosaic' })),
     icon: mosaicIcon,
+    markerIcon: mosaicMarkerIcon,
     interest: [DataTypes.mosaic, DataTypes.art],
     color: Colors.red,
   },
@@ -160,6 +196,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'shuffleboard' })),
     icon: shuffleboardIcon,
+    markerIcon: shuffleboardMarkerIcon,
     interest: [DataTypes.shuffleboard, DataTypes.sports],
     color: Colors.blue,
   },
@@ -167,6 +204,7 @@ export const DATA: Record<
     type: 'playground',
     data: playgrounds.map((d) => ({ ...d, type: 'playground' })),
     icon: playgroundIcon,
+    markerIcon: playgroundMarkerIcon,
     interest: [DataTypes.playground, DataTypes.park],
     color: Colors.green,
   },
@@ -180,6 +218,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'biking' })),
     icon: bikingIcon,
+    markerIcon: bikingMarkerIcon,
     interest: [DataTypes.biking, DataTypes.sports],
     color: Colors.green,
   },
@@ -191,13 +230,14 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'soccer' })),
     icon: soccerIcon,
+    markerIcon: soccerMarkerIcon,
     interest: [DataTypes.soccer, DataTypes.sports],
     color: Colors.blue,
   },
   walking: {
     type: 'walking',
     data: trails,
-    icon: walkIcon,
+    markerIcon: walkMarkerIcon,
     interest: [DataTypes.walking],
     color: Colors.green,
   },
@@ -207,6 +247,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Skate'))
       .map((d) => ({ ...d, type: 'skateboard' })),
     icon: skateboardIcon,
+    markerIcon: skateboardMarkerIcon,
     interest: [DataTypes.skateboard, DataTypes.sports],
     color: Colors.blue,
   },
@@ -216,6 +257,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Golf'))
       .map((d) => ({ ...d, type: 'golf' })),
     icon: golfIcon,
+    markerIcon: golfMarkerIcon,
     interest: [DataTypes.golf, DataTypes.sports],
     color: Colors.blue,
   },
@@ -225,6 +267,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Ice Rink'))
       .map((d) => ({ ...d, type: 'iceskate' })),
     icon: iceskateIcon,
+    markerIcon: iceskateMarkerIcon,
     interest: [DataTypes.iceskate, DataTypes.sports],
     color: Colors.blue,
   },
@@ -234,6 +277,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Baseball'))
       .map((d) => ({ ...d, type: 'baseball' })),
     icon: baseballIcon,
+    markerIcon: baseballMarkerIcon,
     interest: [DataTypes.baseball, DataTypes.sports],
     color: Colors.blue,
   },

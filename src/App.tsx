@@ -181,7 +181,7 @@ const App = () => {
                 type: d.type,
                 title,
                 category: DATA[d.type as any].interest[0],
-                icon: data.icon,
+                icon: data.markerIcon,
                 lat,
                 lng,
                 selectable: d,
@@ -546,6 +546,7 @@ const App = () => {
               </label>
               {Object.keys(interests).length > 0 && (
                 <Button
+                  className="clear-button"
                   label="Clear"
                   icon="pi pi-times"
                   size="small"
@@ -801,8 +802,20 @@ const App = () => {
           )}
           {selectedPath && (
             <Card>
-              <h2>{selectedPath.name}</h2>
-              <pre>{JSON.stringify(selectedPath, null, 2)}</pre>
+              <div className="grid">
+                <div className="col">
+                  <h2 style={{ textAlign: 'left' }}>{selectedPath.name}</h2>
+                </div>
+                <div className="col-fixed">
+                  <Button
+                    icon="pi pi-times"
+                    text
+                    size="small"
+                    rounded
+                    onClick={() => setSelectedPath(null)}
+                  />
+                </div>
+              </div>
             </Card>
           )}
         </div>

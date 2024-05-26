@@ -1,7 +1,6 @@
 import { Button } from 'primereact/button';
 import { DATA, SUB_PARK_DATA } from '../constants';
 import { getFieldData } from '../utils/getFieldData';
-import { Card } from 'primereact/card';
 import { DEFAULT_ZOOM_IN } from '../Map/Map';
 import * as _ from 'lodash';
 import { formatTitle } from '../utils/formatTitle';
@@ -16,9 +15,12 @@ export const ListView = ({
   setFilter,
 }: any) => {
   return (
-    <div style={{ textAlign: 'left', padding: 12, marginTop: -16 }}>
-      <Card>
-        <div className="p-inputgroup" style={{ width: '50%', float: 'right' }}>
+    <div style={{ marginTop: -12, padding: 4 }}>
+      <div className="grid park-header-container">
+        <div className="col text-left">
+          <h2 className="park-header">Parks</h2>
+        </div>
+        <div className="col p-inputgroup">
           <InputText
             size="small"
             onChange={(e: any) => setFilter(e.target.value)}
@@ -34,9 +36,8 @@ export const ListView = ({
             onClick={() => setFilter('')}
           />
         </div>
-        <h2 className="park-header" style={{ fontWeight: 'bold' }}>
-          Parks
-        </h2>
+      </div>
+      <div className="listview-container">
         <ul className="listview">
           {DATA.park.data
             .map((data: any) => {
@@ -51,13 +52,13 @@ export const ListView = ({
                   parkFeatures = [
                     ...parkFeatures,
                     ...inPark
-                      .map((parkdata: any, idx: number) => {
+                      .map((featureData: any, idx: number) => {
                         const {
                           type,
                           properties,
                           latitude: plat,
                           longitude: plong,
-                        } = parkdata;
+                        } = featureData;
                         const lat = properties?.latitude ?? plat;
                         const lng = properties?.longitude ?? plong;
                         let label: string;
@@ -114,9 +115,10 @@ export const ListView = ({
                           lat,
                           lng,
                           cssType,
-                          parkdata,
+                          featureData: featureData,
                           properties,
                           label,
+                          icon: DATA[type].icon,
                         };
                       })
                       .filter((data: any) => {
@@ -124,10 +126,10 @@ export const ListView = ({
                           data.properties?.park
                             ?.toLowerCase()
                             .includes(filter.toLowerCase()) ||
-                          data.parkdata?.name
+                          data.featureData?.name
                             ?.toLowerCase()
                             .includes(filter.toLowerCase()) ||
-                          data.parkdata?.properties?.name
+                          data.featureData?.properties?.name
                             ?.toLowerCase()
                             .includes(filter.toLowerCase()) ||
                           data.label
@@ -158,9 +160,19 @@ export const ListView = ({
                 <li key={name}>
                   <Button
                     className={`${data.type}-link`}
-                    style={{ width: '100%', textAlign: 'left' }}
+                    style={{
+                      width: '100%',
+                      textAlign: 'left',
+                      fontSize: '1.2em',
+                    }}
                     text
                     label={name}
+                    icon={
+                      <img
+                        src={DATA.park.icon}
+                        style={{ width: 18, marginRight: 6 }}
+                      />
+                    }
                     onClick={() => {
                       if (zoom < DEFAULT_ZOOM_IN) {
                         map.setZoom(DEFAULT_ZOOM_IN);
@@ -185,9 +197,10 @@ export const ListView = ({
                       lat,
                       lng,
                       cssType,
-                      parkdata,
+                      featureData,
                       properties,
                       label,
+                      icon,
                     }: any) => {
                       return (
                         <Button
@@ -197,8 +210,15 @@ export const ListView = ({
                             width: '100%',
                             textAlign: 'left',
                             paddingLeft: '10%',
+                            fontSize: '1em',
                           }}
                           text
+                          icon={
+                            <img
+                              src={icon}
+                              style={{ width: 18, marginRight: 6 }}
+                            />
+                          }
                           size="small"
                           label={label}
                           onClick={() => {
@@ -210,11 +230,12 @@ export const ListView = ({
                               lng,
                             });
                             setSelectedMarker({
-                              ...parkdata,
-                              data: getFieldData(parkdata, type),
+                              ...featureData,
+                              data: getFieldData(featureData, type),
                               type,
-                              title: properties?.name ?? formatTitle(parkdata),
-                              icon: null,
+                              title:
+                                properties?.name ?? formatTitle(featureData),
+                              icon,
                               lat,
                               lng,
                               category: type,
@@ -229,7 +250,7 @@ export const ListView = ({
               );
             })}
         </ul>
-      </Card>
+      </div>
     </div>
   );
 };

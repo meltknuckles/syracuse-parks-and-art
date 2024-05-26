@@ -168,8 +168,7 @@ a:hover, a:focus, a:active,
 }
 .info-container {
     height: calc(100vh - 60px);
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 h2 {
     margin: 0;
@@ -181,6 +180,9 @@ h2 {
 .listview li {
     list-style: none;
 }
+.listview li:not(:first-child) {
+    border-top: 1px solid #ccc;
+}
 .p-button.p-button-icon-only {
     width: auto;
 }
@@ -188,6 +190,15 @@ h2 {
 .park-header,
 .park-link.p-button.p-button-text {
     color: #73b707;
+}
+.park-header-container {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    padding-top: 4px;
+    margin-bottom: 4px;
+}
+.park-header {
+    padding: 4px;
+    font-weight: bold;
 }
 .sport-link.p-button.p-button-text {
     color: #1982c4;
@@ -197,6 +208,27 @@ h2 {
 .park-link.p-button.p-button-text:focus,
 .park-link.p-button.p-button-text:active {
     background: #eef7de;
+}
+.sport-link.p-button.p-button-text:hover,
+.sport-link.p-button.p-button-text:focus,
+.sport-link.p-button.p-button-text:active {
+    background: #eaf7ff;
+}
+
+.listview-container {
+    text-align: left;
+    padding: 12px;
+    padding-top: 0;
+    padding-right: 24px;
+    height: calc(100vh - 280px);
+    overflow-y: auto;
+}
+.clear-button {
+    color: #2f3186;
+}
+.p-button,
+.p-card-content label {
+    font-family: Inclusive Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 @media only screen and (max-width: 600px) {
