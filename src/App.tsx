@@ -62,7 +62,13 @@ const App = () => {
     parksandrec?: { checked: boolean; partialChecked: boolean };
     playground?: { checked: boolean; partialChecked: boolean };
     walking?: { checked: boolean; partialChecked: boolean };
-  }>('interests', {});
+  }>('interests', {
+    park: { checked: true, partialChecked: false },
+    parksandrec: {
+      checked: false,
+      partialChecked: true,
+    },
+  });
   const interestedIn = Object.keys(interests);
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const { coords, isGeolocationAvailable, isGeolocationEnabled, getPosition } =
@@ -589,6 +595,9 @@ const App = () => {
           </div>
           {!selectedMarker && !selectedPath && map && (
             <ListView
+              setGoogleApiLoaded={setGoogleApiLoaded}
+              interests={interests}
+              setInterests={setInterests}
               zoom={zoom}
               filter={filter}
               setFilter={setFilter}

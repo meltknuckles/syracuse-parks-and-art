@@ -39,6 +39,7 @@ import sculptureIcon from './ListView/icons/sculpture.svg';
 import mosaicIcon from './ListView/icons/mosaic.svg';
 import shuffleboardIcon from './ListView/icons/shuffleboard.svg';
 import playgroundIcon from './ListView/icons/playground.svg';
+import walkIcon from './ListView/icons/walk.svg';
 import bikingIcon from './ListView/icons/biking.svg';
 import skateboardIcon from './ListView/icons/skateboard.svg';
 import golfIcon from './ListView/icons/golf.svg';
@@ -83,6 +84,7 @@ export const DATA: Record<
   string,
   {
     type: string;
+    group: string;
     data: any;
     icon?: any;
     markerIcon: any;
@@ -94,6 +96,7 @@ export const DATA: Record<
     type: 'park',
     data: parks.map((d) => ({ ...d, type: 'park' })),
     icon: parkIcon,
+    group: 'park',
     markerIcon: parkMarkerIcon,
     interest: [DataTypes.park],
     color: Colors.green,
@@ -102,6 +105,7 @@ export const DATA: Record<
     type: 'pool',
     data: pools.features.map((d) => ({ ...d, type: 'pool' })),
     icon: poolIcon,
+    group: 'park',
     markerIcon: poolMarkerIcon,
     interest: [DataTypes.pool],
     color: Colors.green,
@@ -110,6 +114,7 @@ export const DATA: Record<
     type: 'center',
     data: centers.features.map((d) => ({ ...d, type: 'center' })),
     icon: centerIcon,
+    group: 'park',
     markerIcon: centerMarkerIcon,
     interest: [DataTypes.center],
     color: Colors.green,
@@ -119,6 +124,7 @@ export const DATA: Record<
     data: art.features,
     icon: artIcon,
     markerIcon: artIcon,
+    group: 'art',
     interest: [DataTypes.art],
     color: Colors.red,
   },
@@ -129,6 +135,7 @@ export const DATA: Record<
       .map((d) => ({ ...d, type: 'mural' })),
     icon: muralIcon,
     markerIcon: muralMarkerIcon,
+    group: 'art',
     interest: [DataTypes.mural, DataTypes.art],
     color: Colors.red,
   },
@@ -140,6 +147,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'basketball' })),
     icon: basketballIcon,
+    group: 'sports',
     markerIcon: basketballMarkerIcon,
     interest: [DataTypes.basketball, DataTypes.sports],
     color: Colors.blue,
@@ -148,6 +156,7 @@ export const DATA: Record<
     type: 'dogpark',
     data: dogparks.map((d) => ({ ...d, type: 'dogpark' })),
     icon: dogparkIcon,
+    group: 'park',
     markerIcon: dogparkMarkerIcon,
     interest: [DataTypes.dogpark, DataTypes.park],
     color: Colors.green,
@@ -160,6 +169,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'tennis' })),
     icon: tennisIcon,
+    group: 'sports',
     markerIcon: tennisMarkerIcon,
     interest: [DataTypes.tennis, DataTypes.sports],
     color: Colors.blue,
@@ -174,6 +184,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'sculpture' })),
     icon: sculptureIcon,
+    group: 'art',
     markerIcon: sculptureMarkerIcon,
     interest: [DataTypes.sculpture, DataTypes.art],
     color: Colors.red,
@@ -184,6 +195,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Mosaic'))
       .map((d) => ({ ...d, type: 'mosaic' })),
     icon: mosaicIcon,
+    group: 'art',
     markerIcon: mosaicMarkerIcon,
     interest: [DataTypes.mosaic, DataTypes.art],
     color: Colors.red,
@@ -196,6 +208,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'shuffleboard' })),
     icon: shuffleboardIcon,
+    group: 'sports',
     markerIcon: shuffleboardMarkerIcon,
     interest: [DataTypes.shuffleboard, DataTypes.sports],
     color: Colors.blue,
@@ -204,6 +217,7 @@ export const DATA: Record<
     type: 'playground',
     data: playgrounds.map((d) => ({ ...d, type: 'playground' })),
     icon: playgroundIcon,
+    group: 'park',
     markerIcon: playgroundMarkerIcon,
     interest: [DataTypes.playground, DataTypes.park],
     color: Colors.green,
@@ -218,6 +232,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'biking' })),
     icon: bikingIcon,
+    group: 'park',
     markerIcon: bikingMarkerIcon,
     interest: [DataTypes.biking, DataTypes.sports],
     color: Colors.green,
@@ -230,6 +245,7 @@ export const DATA: Record<
       )
       .map((d) => ({ ...d, type: 'soccer' })),
     icon: soccerIcon,
+    group: 'sports',
     markerIcon: soccerMarkerIcon,
     interest: [DataTypes.soccer, DataTypes.sports],
     color: Colors.blue,
@@ -237,6 +253,8 @@ export const DATA: Record<
   walking: {
     type: 'walking',
     data: trails,
+    icon: walkIcon,
+    group: 'parl',
     markerIcon: walkMarkerIcon,
     interest: [DataTypes.walking],
     color: Colors.green,
@@ -247,6 +265,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Skate'))
       .map((d) => ({ ...d, type: 'skateboard' })),
     icon: skateboardIcon,
+    group: 'sports',
     markerIcon: skateboardMarkerIcon,
     interest: [DataTypes.skateboard, DataTypes.sports],
     color: Colors.blue,
@@ -257,6 +276,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Golf'))
       .map((d) => ({ ...d, type: 'golf' })),
     icon: golfIcon,
+    group: 'sports',
     markerIcon: golfMarkerIcon,
     interest: [DataTypes.golf, DataTypes.sports],
     color: Colors.blue,
@@ -268,6 +288,7 @@ export const DATA: Record<
       .map((d) => ({ ...d, type: 'iceskate' })),
     icon: iceskateIcon,
     markerIcon: iceskateMarkerIcon,
+    group: 'sports',
     interest: [DataTypes.iceskate, DataTypes.sports],
     color: Colors.blue,
   },
@@ -277,6 +298,7 @@ export const DATA: Record<
       .filter(({ properties }: any) => properties.type?.includes('Baseball'))
       .map((d) => ({ ...d, type: 'baseball' })),
     icon: baseballIcon,
+    group: 'sports',
     markerIcon: baseballMarkerIcon,
     interest: [DataTypes.baseball, DataTypes.sports],
     color: Colors.blue,
@@ -284,19 +306,19 @@ export const DATA: Record<
 };
 
 export const SUB_PARK_DATA = [
-  DATA.basketball,
-  DATA.baseball,
-  DATA.tennis,
-  DATA.golf,
-  DATA.pool,
-  DATA.iceskate,
-  DATA.skateboard,
-  DATA.soccer,
-  DATA.biking,
-  DATA.shuffleboard,
   DATA.center,
   DATA.dogpark,
   DATA.playground,
+  DATA.pool,
+  DATA.basketball,
+  DATA.tennis,
+  DATA.golf,
+  DATA.baseball,
+  DATA.soccer,
+  DATA.iceskate,
+  DATA.skateboard,
+  DATA.biking,
+  DATA.shuffleboard,
 ];
 
 export const TREE_NODE_DATA = [

@@ -13,6 +13,9 @@ export const ListView = ({
   zoom,
   filter,
   setFilter,
+  setInterests,
+  interests,
+  setGoogleApiLoaded,
 }: any) => {
   return (
     <div style={{ marginTop: -12, padding: 4 }}>
@@ -188,6 +191,18 @@ export const ListView = ({
                         lng: data.longitude,
                         category: data.type,
                       });
+                      if (!interests.park?.checked) {
+                        setInterests({
+                          ...interests,
+                          park: { checked: true, partialChecked: false },
+                          parksandrec: {
+                            checked: interests.parksandrec?.checked ?? false,
+                            partialChecked:
+                              interests.parksandrec?.partialChecked ?? true,
+                          },
+                        });
+                        setGoogleApiLoaded(false);
+                      }
                       scrollToRef();
                     }}
                   ></Button>
@@ -240,6 +255,23 @@ export const ListView = ({
                               lng,
                               category: type,
                             });
+
+                            if (!interests[type]?.checked) {
+                              const parent = DATA[type].group;
+                              setInterests({
+                                ...interests,
+                                [parent]: {
+                                  checked: interests[parent]?.checked ?? false,
+                                  partialChecked:
+                                    interests[parent]?.partialChecked ?? true,
+                                },
+                                [type]: {
+                                  checked: true,
+                                  partialChecked: false,
+                                },
+                              });
+                              setGoogleApiLoaded(false);
+                            }
                             scrollToRef();
                           }}
                         ></Button>
