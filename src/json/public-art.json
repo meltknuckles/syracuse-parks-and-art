@@ -142,9 +142,9 @@
       "properties": {
         "title": "LeMoyne Drinking Fountain",
         "type": "Monument",
-        "address": "232 Washington Sq",
-        "latitude": 43.070187,
-        "longitude": -76.162312,
+        "park": "Washington Square Park",
+        "latitude": 43.07020393954942,
+        "longitude": -76.16232592243361,
         "Artist_Last_": "Corbett",
         "Artist_First": "Gail Sherman",
         "Additional_Artists": null,
@@ -169,8 +169,9 @@
         "title": "Cristoforo Colombo Discoverer of America",
         "type": "Monument",
         "address": "259 East Onondaga St",
-        "latitude": 43.046844,
-        "longitude": -76.149104,
+        "park": "Columbus Circle",
+        "latitude": 43.046846700321794,
+        "longitude": -76.14910724978836,
         "Artist_Last_": "Baldi",
         "Artist_First": "Lorenzo V.",
         "Additional_Artists": null,
@@ -192,7 +193,7 @@
         "coordinates": [-8477185.7215632, 5320567.60638081]
       },
       "properties": {
-        "title": "General Gustavus Sniper ",
+        "title": "General Gustavus Sniper",
         "type": "Monument",
         "address": "426 North Salina St",
         "latitude": 43.056447,
@@ -299,8 +300,9 @@
         "title": "Libba Cotten Grove Memorial",
         "type": "Sculpture",
         "address": "East Castle St and South State St",
-        "latitude": 43.034322,
-        "longitude": -76.147506,
+        "park": "Libba Cotten Grove",
+        "latitude": 43.03361633776235,
+        "longitude": -76.14730583296975,
         "Artist_Last_": null,
         "Artist_First": null,
         "Additional_Artists": null,
@@ -408,7 +410,7 @@
         "Artist_Last_": "Cowie",
         "Artist_First": "William",
         "Additional_Artists": null,
-        "Media": "Granite ",
+        "Media": "Granite",
         "Year_Created": null,
         "Year_Erected": 1939,
         "TNT_Area": "Downtown",
@@ -426,9 +428,9 @@
         "coordinates": [-8476071.74741884, 5319156.34039849]
       },
       "properties": {
-        "title": "Redfield Monument ",
+        "title": "Redfield Monument",
         "type": "Sculpture",
-        "address": "Forman Park",
+        "park": "Forman Park",
         "latitude": 43.047183,
         "longitude": -76.141848,
         "Artist_Last_": "Landi",
@@ -454,7 +456,7 @@
       "properties": {
         "title": "Benjamin Franklin Statue",
         "type": "Monument",
-        "address": "Franklin Square Park",
+        "park": "Franklin Square Park",
         "latitude": 43.057096,
         "longitude": -76.15683,
         "Artist_Last_": "Benedict",
@@ -538,7 +540,7 @@
         "Artist_Last_": "Pederson",
         "Artist_First": "Thorvald",
         "Additional_Artists": null,
-        "Media": "Indiana Limestone, Brick, Recessed wood panels, Glass panel covers and Bronze ",
+        "Media": "Indiana Limestone, Brick, Recessed wood panels, Glass panel covers and Bronze",
         "Year_Created": null,
         "Year_Erected": 1946,
         "TNT_Area": "Northside",
@@ -584,7 +586,7 @@
       "properties": {
         "title": "Park History",
         "type": "Mural",
-        "address": "Thornden Park Dr and Greenwood Pl",
+        "park": "Thornden Park",
         "latitude": 43.042733,
         "longitude": -76.12441,
         "Artist_Last_": "Topp",
@@ -668,7 +670,7 @@
         "Artist_Last_": "Earle",
         "Artist_First": "Dennis",
         "Additional_Artists": null,
-        "Media": "Steel, concrete ",
+        "Media": "Steel, concrete",
         "Year_Created": 201,
         "Year_Erected": 2011,
         "TNT_Area": "Northside",
@@ -712,11 +714,11 @@
         "coordinates": [-8473465.98077835, 5318197.33740779]
       },
       "properties": {
-        "title": "Peace by Piece ",
-        "type": "Mural",
-        "address": "105 Victoria Place (Petit Library)",
-        "latitude": 43.040887,
-        "longitude": -76.11844,
+        "title": "Peace by Piece",
+        "type": "Mosaic",
+        "address": "Petit Branch Library, 105 Victoria Pl, Syracuse, NY 13210",
+        "latitude": 43.04088836608186,
+        "longitude": -76.1184580952116,
         "Artist_Last_": "Cofer",
         "Artist_First": "Annette",
         "Additional_Artists": "Mary Lynn Mahan",
@@ -740,9 +742,9 @@
       "properties": {
         "title": "Tectonic Sculpture 03 (Walt: The Lock Ness Monster)",
         "type": "Sculpture",
-        "address": "W. Fayette St at Onondaga Creek",
-        "latitude": 43.046469,
-        "longitude": -76.16935,
+        "park": "Onondaga Creekwalk",
+        "latitude": 43.04857791077921,
+        "longitude": -76.15680663920428,
         "Artist_Last_": "Rose",
         "Artist_First": "Brendan",
         "Additional_Artists": null,
@@ -751,9 +753,11 @@
         "Year_Erected": 2011,
         "TNT_Area": "Downtown",
         "Neighborhood": "Armory Square",
-        "Specific_Location": "Onondaga Creekwalk",
         "FID": 29,
         "imgUrl": null
+      },
+      "gallery": {
+        "parent": [6, 7]
       }
     },
     {
@@ -766,9 +770,10 @@
       "properties": {
         "title": "Honoring the Onondaga Creek",
         "type": "Sculpture",
-        "address": "Meachum Field Park",
-        "latitude": 43.0011259,
-        "longitude": -76.1524237,
+        "address": "Meachum Field Park, 121 W Seneca Turnpike, Syracuse, NY 13205",
+        "park": "Meachum Field Park",
+        "latitude": 43.00116326293952,
+        "longitude": -76.147927656215787,
         "Artist_Last_": "Michel",
         "Artist_First": "Peter",
         "Additional_Artists": null,
@@ -793,6 +798,7 @@
         "title": "Cycle",
         "type": "Sculpture",
         "address": "Henninger High School, 600 Robinson Street",
+        "park": "Sunnycrest Park",
         "latitude": 43.057583,
         "longitude": -76.117522,
         "Artist_Last_": "Roth",
@@ -803,7 +809,7 @@
         "Year_Erected": 2011,
         "TNT_Area": "Eastwood",
         "Neighborhood": "Eastwood",
-        "Specific_Location": "West side of campus ",
+        "Specific_Location": "West side of campus",
         "FID": 31,
         "imgUrl": null
       }
@@ -818,9 +824,10 @@
       "properties": {
         "title": "Community as Family",
         "type": "Sculpture",
-        "address": "Beauchamp Branch Library, 2111 S Salina Street",
-        "latitude": 43.00114,
-        "longitude": -76.147903,
+        "address": "Beauchamp Branch Library, 2111 S Salina St, Syracuse, NY 13205",
+        "park": "Meachem Field",
+        "latitude": 43.02580615070751,
+        "longitude": -76.14506630121795,
         "Artist_Last_": "Michel",
         "Artist_First": "Peter",
         "Additional_Artists": null,
@@ -844,7 +851,7 @@
       "properties": {
         "title": "SyraViews Stereoscopes",
         "type": "Sculpture",
-        "address": "Forman Park",
+        "park": "Forman Park",
         "latitude": 43.047149,
         "longitude": -76.141262,
         "Artist_Last_": "Woolpert",
@@ -870,7 +877,7 @@
       "properties": {
         "title": "Bells of Surrender",
         "type": "Sculpture",
-        "address": "412 University Avenue ",
+        "address": "412 University Avenue",
         "latitude": 43.045706,
         "longitude": -76.134479,
         "Artist_Last_": "Rose",
@@ -896,7 +903,7 @@
       "properties": {
         "title": "Let Us Continue",
         "type": "Mural",
-        "address": "Onondaga Creek Walk",
+        "park": "Onondaga Creekwalk",
         "latitude": 43.048911,
         "longitude": -76.15704,
         "Artist_Last_": "Fletchall",
@@ -922,7 +929,7 @@
       "properties": {
         "title": "Current",
         "type": "Sculpture",
-        "address": "Onondaga Creek Walk",
+        "park": "Onondaga Creekwalk",
         "latitude": 43.048891,
         "longitude": -76.157148,
         "Artist_Last_": "Hancock",
@@ -985,7 +992,7 @@
         "Year_Erected": 2016,
         "TNT_Area": "Downtown",
         "Neighborhood": "Downtown",
-        "Specific_Location": "West façade of 420 E. Genesee St",
+        "Specific_Location": "West Façade of 420 E. Genesee St",
         "FID": 38,
         "imgUrl": null
       }
@@ -1003,7 +1010,7 @@
         "address": "457 James Street",
         "latitude": 43.053341,
         "longitude": -76.147016,
-        "Artist_Last_": "Roe ",
+        "Artist_Last_": "Roe",
         "Artist_First": "Paul",
         "Additional_Artists": "Elliott Mattice",
         "Media": "Acrylic",
@@ -1011,7 +1018,7 @@
         "Year_Erected": 2016,
         "TNT_Area": "Downtown",
         "Neighborhood": "Downtown",
-        "Specific_Location": "East façade of 457 James Street",
+        "Specific_Location": "East Façade of 457 James Street",
         "FID": 39,
         "imgUrl": null
       }
@@ -1030,7 +1037,7 @@
         "latitude": 43.047782,
         "longitude": -76.145404,
         "Artist_Last_": "Park",
-        "Artist_First": "Daekwon ",
+        "Artist_First": "Daekwon",
         "Additional_Artists": null,
         "Media": "Galvanized and stainless steel",
         "Year_Created": 2017,
@@ -1110,10 +1117,10 @@
         "Artist_Last_": "Ferro",
         "Artist_First": "Tino",
         "Additional_Artists": null,
-        "Media": "Steel ",
+        "Media": "Steel",
         "Year_Created": 2021,
         "Year_Erected": 2022,
-        "TNT_Area": "Eastside ",
+        "TNT_Area": "Eastside",
         "Neighborhood": "Eastside",
         "Specific_Location": null,
         "FID": 43,
@@ -1130,13 +1137,13 @@
       "properties": {
         "title": "Onondaga Creekwalk Poster",
         "type": "Mural",
-        "address": "Creekwalk (Franklin Square)",
+        "park": "Onondaga Creekwalk",
         "latitude": 43.055394,
         "longitude": -76.157268,
         "Artist_Last_": "Thomas",
         "Artist_First": "Cecily",
         "Additional_Artists": "Jeffrey Corney (poet)",
-        "Media": "4x6 laminated Omegabond panel",
+        "Media": "4x6 Laminated Omegabond Panel",
         "Year_Created": 2022,
         "Year_Erected": 2022,
         "TNT_Area": "Franklin Square",
@@ -1154,13 +1161,14 @@
         "coordinates": [-8475703.16858482, 5321983.19966358]
       },
       "properties": {
-        "title": "Project C-Inspiration Through Art",
+        "title": "Project C - Inspiration Through Art",
         "type": "Mural",
-        "address": "Schiller Park Community Center ",
-        "latitude": 43.065738,
-        "longitude": -76.138537,
-        "Artist_Last_": "Walker ",
-        "Artist_First": "Ally ",
+        "park": "Schiller Park",
+        "address": "Butternut Community Police Center at Schiller Park, 223 Whitwell Dr, Syracuse, NY 13203",
+        "latitude": 43.06566703046692,
+        "longitude": -76.1384361696243,
+        "Artist_Last_": "Walker",
+        "Artist_First": "Ally",
         "Additional_Artists": null,
         "Media": null,
         "Year_Created": 2022,
@@ -1232,20 +1240,20 @@
         "coordinates": [-8474072.44936419, 5319179.79882047]
       },
       "properties": {
-        "title": "Jerry Rescue Mural",
+        "title": "Underground Railroad Mural",
         "type": "Mural",
-        "address": "1641 E Genesee St",
+        "address": "1641 E Genesee St, Syracuse, NY 13210",
         "latitude": 43.047337,
         "longitude": -76.123888,
-        "Artist_Last_": null,
-        "Artist_First": null,
+        "Artist_Last_": "Ladd",
+        "Artist_First": "London",
         "Additional_Artists": "Community Members assisted",
         "Media": null,
-        "Year_Created": null,
+        "Year_Created": 2019,
         "Year_Erected": null,
         "TNT_Area": "Eastside",
         "Neighborhood": "Near Eastside",
-        "Specific_Location": "On Richmark Building, opposite corner from Logan Park",
+        "Specific_Location": "On Richmark Building, opposite corner from Loguen Park",
         "FID": 48,
         "imgUrl": null
       }
@@ -1260,7 +1268,7 @@
       "properties": {
         "title": "Mountain Goat Monument",
         "type": "Sculpture",
-        "address": "Onondaga Park",
+        "park": "Onondaga Park - Upper",
         "latitude": 43.026855,
         "longitude": -76.165307,
         "Artist_Last_": "BuMann",
@@ -1375,7 +1383,7 @@
         "Year_Erected": 1982,
         "TNT_Area": "Eastside",
         "Neighborhood": "Near Eastside",
-        "Specific_Location": "Old railroad tracks off Erie Blvd, where Time Warner Cable, News 10 Now is located ",
+        "Specific_Location": "Old railroad tracks off Erie Blvd, where Time Warner Cable, News 10 Now is located",
         "FID": 53,
         "imgUrl": null
       }
@@ -1416,9 +1424,9 @@
       "properties": {
         "title": "Community Mural",
         "type": "Mural",
-        "address": "South Beech St and Westcott St",
-        "latitude": 43.040378,
-        "longitude": -76.119466,
+        "address": "South Beech St & Westcott St, Syracuse, NY 13210",
+        "latitude": 43.04026282527161,
+        "longitude": -76.11943218788964,
         "Artist_Last_": "Moody",
         "Artist_First": "Michael",
         "Additional_Artists": null,
@@ -1442,14 +1450,14 @@
       "properties": {
         "title": "Boom Babies",
         "type": "Mural",
-        "address": "Westcott St and Harvard Pl",
-        "latitude": 43.041605,
-        "longitude": -76.119129,
-        "Artist_Last_": null,
-        "Artist_First": null,
+        "address": "489 Westcott St, Syracuse, NY 13210",
+        "latitude": 43.04161303124288,
+        "longitude": -76.11915640835036,
+        "Artist_Last_": "Swatt",
+        "Artist_First": "Michael",
         "Additional_Artists": null,
         "Media": "Paint on Cement",
-        "Year_Created": null,
+        "Year_Created": 2002,
         "Year_Erected": null,
         "TNT_Area": "Eastside",
         "Neighborhood": "Westcott",
@@ -1468,14 +1476,14 @@
       "properties": {
         "title": "Mom's Diner Mosaic",
         "type": "Mosaic",
-        "address": "110 Harvard Pl",
-        "latitude": 43.041378,
-        "longitude": -76.118779,
-        "Artist_Last_": null,
-        "Artist_First": null,
+        "address": "Mom's, 501 Westcott St, Syracuse, NY 13210",
+        "latitude": 43.041425547059454,
+        "longitude": -76.11892839679555,
+        "Artist_Last_": "Temple",
+        "Artist_First": "Marisa",
         "Additional_Artists": null,
         "Media": "Glass, Cement, Paint",
-        "Year_Created": null,
+        "Year_Created": 1999,
         "Year_Erected": null,
         "TNT_Area": "Eastside",
         "Neighborhood": "Westcott",
@@ -1609,7 +1617,7 @@
         "Year_Erected": 2017,
         "TNT_Area": "Downtown",
         "Neighborhood": "Armory Square",
-        "Specific_Location": "West façade of 350 W. Fayette Street",
+        "Specific_Location": "West Façade of 350 W. Fayette Street",
         "FID": 62,
         "imgUrl": null
       }
@@ -1624,7 +1632,7 @@
       "properties": {
         "title": "Salmon Run Mosaic",
         "type": "Mural",
-        "address": "Onondaga Creek Walk",
+        "park": "Onondaga Creekwalk",
         "latitude": 43.056433,
         "longitude": -76.161227,
         "Artist_Last_": "Hirsch",
@@ -1635,7 +1643,7 @@
         "Year_Erected": 2017,
         "TNT_Area": "Lakefront",
         "Neighborhood": "Lakefront",
-        "Specific_Location": "Pedestrian bridge sidewall at 507 Plum Street ",
+        "Specific_Location": "Pedestrian bridge sidewall at 507 Plum Street",
         "FID": 63,
         "imgUrl": null
       }
@@ -1648,11 +1656,11 @@
         "coordinates": [-8479367.13830479, 5318841.63765283]
       },
       "properties": {
-        "title": "Bicylce Capital of the World",
+        "title": "Bicycle Capital of the World",
         "type": "Mural",
-        "address": "214 S. Geddes Street",
-        "latitude": 43.045117,
-        "longitude": -76.171451,
+        "address": "City Hardware, 214 S Geddes St, Syracuse, NY 13204",
+        "latitude": 43.04515117330525,
+        "longitude": -76.17132582541682,
         "Artist_Last_": "Roberts",
         "Artist_First": "Jacob",
         "Additional_Artists": null,
@@ -1661,7 +1669,7 @@
         "Year_Erected": 2018,
         "TNT_Area": "Westside",
         "Neighborhood": "Westside",
-        "Specific_Location": "South façade of building",
+        "Specific_Location": "South Façade of City Hardware Building",
         "FID": 64,
         "imgUrl": null
       }
@@ -1674,11 +1682,11 @@
         "coordinates": [-8479275.96764183, 5318986.64941154]
       },
       "properties": {
-        "title": "1022 W, Fayette St Mural",
+        "title": "Native Syracuse Mural",
         "type": "Mural",
-        "address": "1022 W. Fayette Street",
-        "latitude": 43.046069,
-        "longitude": -76.170632,
+        "address": "Ponchito's Taquiera, 1022 W Fayette St, Syracuse, NY 13204",
+        "latitude": 43.04610270647293,
+        "longitude": -76.17063491559526,
         "Artist_Last_": "Stetz",
         "Artist_First": "Eugene",
         "Additional_Artists": null,
@@ -1687,7 +1695,7 @@
         "Year_Erected": 2018,
         "TNT_Area": "Westside",
         "Neighborhood": "Westside",
-        "Specific_Location": "East façade of building",
+        "Specific_Location": "East Façade of Ponchito's Taquiera",
         "FID": 65,
         "imgUrl": null
       }
@@ -1705,15 +1713,15 @@
         "address": "713 E. Fayette Street",
         "latitude": 43.048774,
         "longitude": -76.141028,
-        "Artist_Last_": "Walker ",
-        "Artist_First": "Ally ",
+        "Artist_Last_": "Walker",
+        "Artist_First": "Ally",
         "Additional_Artists": null,
         "Media": "Acrylic",
         "Year_Created": 2019,
         "Year_Erected": 2020,
         "TNT_Area": "Eastside",
         "Neighborhood": "Eastside",
-        "Specific_Location": "East and west facades of building",
+        "Specific_Location": "East and west façades of building",
         "FID": 66,
         "imgUrl": null
       }
@@ -1739,7 +1747,7 @@
         "Year_Erected": 2020,
         "TNT_Area": "Northside",
         "Neighborhood": "Northside",
-        "Specific_Location": "West façade of building",
+        "Specific_Location": "West Façade of building",
         "FID": 67,
         "imgUrl": null
       }
@@ -1755,8 +1763,8 @@
         "title": "Middle Eastern Dreams",
         "type": "Mural",
         "address": "501-507 Westcott Street",
-        "latitude": 43.041191,
-        "longitude": -76.119034,
+        "latitude": 43.041209943457645,
+        "longitude": -76.11905990930228,
         "Artist_Last_": "Odeh",
         "Artist_First": "Nada",
         "Additional_Artists": null,
@@ -1765,7 +1773,7 @@
         "Year_Erected": 2020,
         "TNT_Area": "Eastside",
         "Neighborhood": "Eastside",
-        "Specific_Location": "South façade of building",
+        "Specific_Location": "South Façade of building",
         "FID": 68,
         "imgUrl": null
       }
@@ -1779,7 +1787,7 @@
       },
       "properties": {
         "title": "Lets Fly Syracuse",
-        "type": "Mural ",
+        "type": "Mural",
         "address": "547-53 N Salina St",
         "latitude": 43.058666,
         "longitude": -76.152398,
@@ -1791,8 +1799,33 @@
         "Year_Erected": 2021,
         "TNT_Area": "Northside",
         "Neighborhood": "Northside",
-        "Specific_Location": "northside of property",
+        "Specific_Location": "North Side of Property",
         "FID": 69,
+        "imgUrl": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 69,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-8477246.16804671, 5320905.67766904]
+      },
+      "properties": {
+        "title": "Francesca's Cucina",
+        "type": "Mura",
+        "address": "Francesca's Cucina, 545 N Salina St, Syracuse, NY 13208",
+        "latitude": 43.058666,
+        "longitude": -76.152398,
+        "Artist_Last_": "Colello",
+        "Artist_First": "Jacqueline",
+        "Additional_Artists": null,
+        "Media": "latex paints",
+        "Year_Created": 2021,
+        "Year_Erected": 2021,
+        "TNT_Area": "Northside",
+        "Neighborhood": "Northside",
+        "Specific_Location": "Right Side of Francesca’s Cucina",
         "imgUrl": null
       }
     },
@@ -1809,8 +1842,8 @@
         "address": "327 W. Fayette St",
         "latitude": 43.048515,
         "longitude": -76.15657,
-        "Artist_Last_": "Walker ",
-        "Artist_First": "Ally ",
+        "Artist_Last_": "Walker",
+        "Artist_First": "Ally",
         "Additional_Artists": null,
         "Media": "latex paints",
         "Year_Created": 2021,
@@ -1832,9 +1865,9 @@
       "properties": {
         "title": "Eva's Mural",
         "type": "Mural",
-        "address": "1305 Milton St",
-        "latitude": 43.059561,
-        "longitude": -76.199771,
+        "address": "Eva's European Sweets, 1305 Milton Ave, Syracuse, NY 13204",
+        "latitude": 43.05951723092516,
+        "longitude": -76.1997781245313,
         "Artist_Last_": "Colello",
         "Artist_First": "Jacqueline",
         "Additional_Artists": null,
@@ -1869,7 +1902,7 @@
         "Year_Erected": 2022,
         "TNT_Area": "Westside",
         "Neighborhood": "Westside",
-        "Specific_Location": "West façade of building",
+        "Specific_Location": "West Façade of building",
         "FID": 72,
         "imgUrl": null
       }
@@ -1895,7 +1928,7 @@
         "Year_Erected": 2022,
         "TNT_Area": "Eastside",
         "Neighborhood": "Eastside",
-        "Specific_Location": "West façade of the building",
+        "Specific_Location": "West Façade of the building",
         "FID": 73,
         "imgUrl": null
       }
@@ -1910,9 +1943,9 @@
       "properties": {
         "title": "This Must Be The Place",
         "type": "Mural",
-        "address": "441 E. Washington Street",
-        "latitude": 43.049725,
-        "longitude": -76.146012,
+        "address": "CNY Jazz Central, 441 E Washington St, Syracuse, NY 13202",
+        "latitude": 43.04972078428067,
+        "longitude": -76.14602600468682,
         "Artist_Last_": "Thomas",
         "Artist_First": "Cecily",
         "Additional_Artists": null,
@@ -2025,7 +2058,7 @@
         "Year_Erected": null,
         "TNT_Area": "Downtown",
         "Neighborhood": "Downtown",
-        "Specific_Location": "East façade of Monroe Building",
+        "Specific_Location": "East Façade of Monroe Building",
         "FID": 78,
         "imgUrl": null
       }

@@ -85,7 +85,7 @@ const App = () => {
       pointInPolygon(boundaryPolygon as any, [
         coords.latitude,
         coords.longitude,
-      ])
+      ]) === -1
     ) {
       setLocation({
         ...location,
@@ -96,6 +96,8 @@ const App = () => {
       if (map) {
         map.panTo({ lat: coords.latitude, lng: coords.longitude });
       }
+    } else {
+      setLocation({ latitude: null, longitude: null });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords]);
@@ -199,12 +201,13 @@ const App = () => {
 
       if (
         isGeolocationAvailable &&
+        isGeolocationEnabled &&
         location?.latitude &&
         location?.longitude &&
         pointInPolygon(boundaryPolygon as any, [
           location.latitude,
           location.longitude,
-        ])
+        ]) === -1
       ) {
         addMarker({
           type: 'you',
@@ -495,7 +498,7 @@ const App = () => {
         }
         end={
           <div className="map-button-container">
-            {isGeolocationEnabled && !isSmallDevice && (
+            {isGeolocationEnabled && !isSmallDevice && location?.latitude && (
               <Button
                 label="Re-center Map"
                 rounded
@@ -752,7 +755,11 @@ const App = () => {
                       href={generateMapsLink(selectedAddress)}
                       target="_blank"
                       rel="noreferrer"
-                      style={{ fontSize: '1.1em' }}
+                      style={{
+                        fontSize: '1.1em',
+                        display: 'block',
+                        wordBreak: 'keep-all',
+                      }}
                     >
                       {selectedAddress}
                       <i

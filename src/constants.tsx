@@ -323,7 +323,7 @@ export const DATA: Record<
   },
 };
 
-export const SUB_PARK_DATA = [
+export const SUB_PARK_DATA_ORDER = [
   DATA.center,
   DATA.dogpark,
   DATA.playground,
@@ -338,6 +338,9 @@ export const SUB_PARK_DATA = [
   DATA.skateboard,
   DATA.biking,
   DATA.shuffleboard,
+  DATA.mural,
+  DATA.mosaic,
+  DATA.sculpture,
 ];
 
 export const TREE_NODE_DATA = [

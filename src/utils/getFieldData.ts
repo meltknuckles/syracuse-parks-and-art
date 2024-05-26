@@ -17,6 +17,7 @@ export const getFieldData = (data: any, type: string) => {
       'golf',
       'skateboard',
       'iceskate',
+      'shuffleboard',
     ].includes(type)
   ) {
     data = {

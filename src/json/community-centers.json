@@ -93,7 +93,6 @@
         "park": "Burnet Park",
         "name": "Burnet Park Arts & Crafts Center",
         "COMMUNITY_CENTER": "Yes",
-        "address": "297 Coleridge Ave. ",
         "latitude": 43.042294,
         "longitude": -76.184737,
         "FID": 7
@@ -102,6 +101,26 @@
         "parent": [4]
       },
       "geometry": { "type": "Point", "coordinates": [-76.184737, 43.042294] }
+    },
+    {
+      "type": "Feature",
+      "address": "Syracuse Dunbar Center, 1453 S State St, Syracuse, NY 13205",
+      "properties": {
+        "park": "Dunbar Park",
+        "name": "Syracuse Dunbar Center",
+        "COMMUNITY_CENTER": "Yes",
+        "latitude": 43.03188110668436,
+        "longitude": -76.14582995459281,
+        "FID": 8
+      },
+      "link": "https://www.syracusedunbarcenter.org/",
+      "gallery": {
+        "parent": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.14582995459281, 43.031881106684364]
+      }
     }
   ]
 }

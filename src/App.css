@@ -203,6 +203,10 @@ h2 {
 .sport-link.p-button.p-button-text {
     color: #1982c4;
 }
+.art-header,
+.art-link.p-button.p-button-text {
+    color: #FF595E;
+}
 
 .park-link.p-button.p-button-text:hover,
 .park-link.p-button.p-button-text:focus,

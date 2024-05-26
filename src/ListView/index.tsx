@@ -1,5 +1,5 @@
 import { Button } from 'primereact/button';
-import { DATA, SUB_PARK_DATA } from '../constants';
+import { DATA, SUB_PARK_DATA_ORDER } from '../constants';
 import { getFieldData } from '../utils/getFieldData';
 import { DEFAULT_ZOOM_IN } from '../Map/Map';
 import * as _ from 'lodash';
@@ -48,7 +48,7 @@ export const ListView = ({
             .map((data: any) => {
               const { name, latitude, longitude } = data;
               let parkFeatures: any[] = [];
-              for (const subpark of SUB_PARK_DATA) {
+              for (const subpark of SUB_PARK_DATA_ORDER) {
                 const inPark = subpark.data.filter(
                   ({ park, properties }: any) =>
                     name && (properties?.park || park) === name,
@@ -70,11 +70,11 @@ export const ListView = ({
                         let cssType: string;
                         switch (type) {
                           case 'basketball':
-                            label = 'Basketball Court';
+                            label = `Basketball Court - ${properties.COURT_SIZE___QUANTITY}`;
                             cssType = 'sport';
                             break;
                           case 'tennis':
-                            label = 'Tennis Court';
+                            label = `Tennis Court - ${properties.COURT_SIZE___QUANTITY}`;
                             cssType = 'sport';
                             break;
                           case 'baseball':
@@ -86,7 +86,7 @@ export const ListView = ({
                             cssType = 'park';
                             break;
                           case 'pool':
-                            label = 'Swimming Pool';
+                            label = `${properties.type} Swimming Pool`;
                             cssType = 'park';
                             break;
                           case 'soccer':
@@ -102,26 +102,34 @@ export const ListView = ({
                             cssType = 'park';
                             break;
                           case 'center':
-                            label = 'Community Center';
+                            label = properties?.name ?? 'Community Center';
+                            cssType = 'park';
+                            break;
+                          case 'biking':
+                            label = properties.COURT_TYPE ?? properties.type;
                             cssType = 'park';
                             break;
                           case 'iceskate':
                             label = 'Ice Skating Rink';
                             cssType = 'sport';
                             break;
-                          case 'skating':
-                            label = 'Skate Park';
+                          case 'skateboard':
+                            label = properties?.name ?? 'Skate Park';
                             cssType = 'sport';
                             break;
+                          case 'mosaic':
+                          case 'mural':
+                          case 'sculpture':
+                            label = (properties?.title ?? type ?? '').replace(
+                              / *\([^)]*\) */g,
+                              '',
+                            );
+                            cssType = 'art';
+                            break;
                           default:
-                            label = properties?.type ?? type;
+                            label = properties?.type ?? _.startCase(type);
                             cssType = 'park';
                             break;
-                        }
-                        label = _.startCase(label);
-
-                        if (inPark.length > 1) {
-                          label += ` #${idx + 1}`;
                         }
                         return {
                           type,

@@ -587,7 +587,7 @@
       "Parking Lot"
     ],
     "gallery": {
-      "count": 5,
+      "count": 7,
       "folder": "onondaga-creekwalk"
     },
     "link": "https://www.syr.gov/Living/Our-Community/Parks-Recreation-Youth-Services/Visit-Our-Parks/Onondaga-Creekwalk",
@@ -941,5 +941,14 @@
     },
     "latitude": 43.02599273148895,
     "longitude": -76.18212055787517
+  },
+  {
+    "name": "Dunbar Park",
+    "address": "Wadsworth Park, 1234 Glenwood Ave, Syracuse, NY 13207",
+    "description": "",
+    "tags": [],
+    "features": [""],
+    "latitude": 43.03233353231377,
+    "longitude": -76.14581637397248
   }
 ]
