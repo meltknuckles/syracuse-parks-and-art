@@ -74,7 +74,7 @@ export enum DataTypes {
   iceskate = 'Ice Skating',
   golf = 'Golf',
   baseball = 'Baseball',
-  water = 'Water Feature',
+  water = 'Water Features',
 }
 
 export enum Colors {
@@ -100,6 +100,7 @@ export const DATA: Record<
 > = {
   park: {
     type: 'park',
+    group: 'park',
     data: _.orderBy(
       parks.map((d) => ({ ...d, type: 'park' })),
       'name',
@@ -127,15 +128,6 @@ export const DATA: Record<
     markerIcon: centerMarkerIcon,
     interest: [DataTypes.center],
     color: Colors.green,
-  },
-  art: {
-    type: 'art',
-    data: art.features,
-    icon: artIcon,
-    markerIcon: artIcon,
-    group: 'art',
-    interest: [DataTypes.art],
-    color: Colors.red,
   },
   mural: {
     type: 'mural',
@@ -321,6 +313,15 @@ export const DATA: Record<
     interest: [DataTypes.water, DataTypes.park],
     color: Colors.green,
   },
+};
+DATA.art = {
+  type: 'art',
+  data: [...DATA.mosaic.data, ...DATA.mural.data, ...DATA.sculpture.data],
+  icon: artIcon,
+  markerIcon: artIcon,
+  group: 'art',
+  interest: [DataTypes.art],
+  color: Colors.red,
 };
 
 export const SUB_PARK_DATA_ORDER = [

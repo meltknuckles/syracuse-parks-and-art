@@ -47,13 +47,13 @@
   },
   {
     "name": "Upper Onondaga Park Playground",
-    "park": "Onondoga Park - Upper",
+    "park": "Onondaga Park - Upper",
     "latitude": 43.02382887901292,
     "longitude": -76.16825628033135
   },
   {
     "name": "Lower Onondaga Park Playground",
-    "park": "Onondoga Park - Lower",
+    "park": "Onondaga Park - Lower",
     "latitude": 43.02920397259555,
     "longitude": -76.16226279508162
   },
@@ -260,5 +260,14 @@
     },
     "latitude": 43.06507090979493,
     "longitude": -76.13705603555981
+  },
+  {
+    "name": "Southwest Community Center Playground",
+    "park": "Southwest Community Center",
+    "gallery": {
+      "parent": []
+    },
+    "latitude": 43.03474815750439,
+    "longitude": -76.15780663307778
   }
 ]

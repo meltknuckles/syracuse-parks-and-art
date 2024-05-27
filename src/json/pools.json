@@ -105,7 +105,7 @@
       "type": "Feature",
       "address": "Onondaga Park Pool, 160-174 Onondaga Park Dr, Syracuse, NY 13207",
       "properties": {
-        "park": "Onondaga Park",
+        "park": "Onondaga Park - Upper",
         "Pool": "Yes",
         "type": "Oudoor \"L\"",
         "latitude": 43.024365999871975,
@@ -150,7 +150,7 @@
       "type": "Feature",
       "address": "230 Lincoln Ave, Syracuse, NY 13204",
       "properties": {
-        "park": "Southwest Community Center",
+        "name": "Southwest Community Center Pool",
         "Pool": "Yes",
         "type": "Indoor",
         "latitude": 43.03509056633906,
@@ -196,7 +196,7 @@
       "type": "Feature",
       "address": "Valley Pool, 4942 S Salina St, Syracuse, NY 13205",
       "properties": {
-        "park": "Valley Pool",
+        "name": "Valley Pool",
         "Pool": "Yes",
         "type": "Indoor",
         "latitude": 42.996843352849986,

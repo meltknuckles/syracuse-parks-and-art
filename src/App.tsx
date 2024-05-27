@@ -1,4 +1,4 @@
-import { useLocalStorage } from '@uidotdev/usehooks';
+import { useLocalStorage, useMediaQuery } from '@uidotdev/usehooks';
 import * as _ from 'lodash';
 import { SortOrder } from 'primereact/api';
 import { Badge } from 'primereact/badge';
@@ -15,19 +15,22 @@ import { TreeSelect } from 'primereact/treeselect';
 import { Ref, useEffect, useRef, useState } from 'react';
 import { useGeolocated } from 'react-geolocated';
 import { FaParking } from 'react-icons/fa';
+import { FaLocationCrosshairs } from 'react-icons/fa6';
 import { GiKidSlide } from 'react-icons/gi';
 import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
-import { FaLocationCrosshairs } from 'react-icons/fa6';
 import pointInPolygon from 'robust-point-in-polygon';
-import MapContainer, { DEFAULT_ZOOM, DEFAULT_ZOOM_IN } from './Map/Map';
+import './App.css';
+import { ListView } from './ListView';
+import MapContainer, {
+  DEFAULT_CENTER,
+  DEFAULT_ZOOM,
+  DEFAULT_ZOOM_IN,
+} from './Map/Map';
 import navIcon from './Map/icons/you.svg';
 import { Colors, DATA, TREE_NODE_DATA } from './constants';
 import boundary from './json/boundary.json';
-import { getFieldData } from './utils/getFieldData';
-import { useMediaQuery } from '@uidotdev/usehooks';
-import './App.css';
-import { ListView } from './ListView';
 import { formatTitle } from './utils/formatTitle';
+import { getFieldData } from './utils/getFieldData';
 
 export const ICON_SIZE = 60;
 const boundaryPolygon = boundary.features[0].geometry.coordinates[0];
@@ -49,7 +52,11 @@ const App = () => {
     longitude: null,
   });
   const [filter, setFilter] = useState('');
-  const [zoom, setZoom] = useState(DEFAULT_ZOOM);
+  const [zoom, setZoom] = useLocalStorage('zoom', DEFAULT_ZOOM);
+  const [mapPosition, setMapPosition] = useLocalStorage('map', {
+    lat: location?.latitude ?? DEFAULT_CENTER.latitude,
+    lng: location?.longitude ?? DEFAULT_CENTER.longitude,
+  });
   const prevMarkersRef = useRef([]);
   const [selectedMarker, setSelectedMarker] = useState<any>();
   const [selectedPath, setSelectedPath] = useState<any>();
@@ -165,6 +172,7 @@ const App = () => {
           setSelectedPath(null);
           setActiveIndex(0);
           gmap.panTo(_marker.getPosition());
+          setMapPosition(_marker.getPosition());
         });
         (prevMarkersRef.current as any).push(_marker);
       };
@@ -223,6 +231,7 @@ const App = () => {
           setMapLoadedForFirstTime(true);
         }
       }
+
       const validKeys = Object.keys(DATA).filter(
         (k) => !TREE_NODE_DATA.map(({ key }) => key).includes(k),
       );
@@ -609,6 +618,7 @@ const App = () => {
               setSelectedMarker={setSelectedMarker}
               setActiveIndex={setActiveIndex}
               markers={prevMarkersRef?.current ?? []}
+              setMapPosition={setMapPosition}
             />
           )}
           {selectedMarker && (
@@ -856,6 +866,7 @@ const App = () => {
             ></Button>
           )}
           <MapContainer
+            zoom={zoom}
             setZoom={setZoom}
             location={coords}
             setMapLocation={setLocation}
@@ -864,6 +875,8 @@ const App = () => {
             onGoogleApiLoaded={onGoogleApiLoaded}
             interests={interests as any}
             mapType={mapType}
+            mapPosition={mapPosition}
+            setMapPosition={setMapPosition}
           />
         </div>
       </div>

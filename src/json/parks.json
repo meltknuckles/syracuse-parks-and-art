@@ -950,5 +950,14 @@
     "features": [""],
     "latitude": 43.03233353231377,
     "longitude": -76.14581637397248
+  },
+  {
+    "name": "Roesler Park",
+    "address": "Roesler Park, 100 New St, Syracuse, NY 13202",
+    "description": "",
+    "tags": [],
+    "features": [""],
+    "latitude": 43.041156019989366,
+    "longitude": -76.14850736305115
   }
 ]

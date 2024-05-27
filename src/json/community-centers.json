@@ -121,6 +121,85 @@
         "type": "Point",
         "coordinates": [-76.14582995459281, 43.031881106684364]
       }
+    },
+    {
+      "type": "Feature",
+      "address": "529 Cannon St, Syracuse, NY 13205",
+      "properties": {
+        "name": "Cannon Street Community Center",
+        "COMMUNITY_CENTER": "Yes",
+        "latitude": 43.02066222429721,
+        "longitude": -76.14601132420066,
+        "FID": 9
+      },
+      "gallery": {
+        "parent": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.14601132420066, 43.02066222429721]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "230 Lincoln Avenue, Syracuse, NY 13204",
+      "properties": {
+        "name": "Southwest Community Center",
+        "COMMUNITY_CENTER": "Yes",
+        "latitude": 43.035092226352646,
+        "longitude": -76.15778043758611,
+        "FID": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.15778043758611, 43.035092226352646]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "Syracuse Northeast Community Center, 716 Hawley Ave, Syracuse, NY 13203",
+      "properties": {
+        "name": "Syracuse Northeast Community Center",
+        "COMMUNITY_CENTER": "Yes",
+        "latitude": 43.054760480211655,
+        "longitude": -76.13244964118738,
+        "FID": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.13244964118738, 43.054760480211655]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "Westcott Community Center, 826 Euclid Ave, Syracuse, NY 13210",
+      "properties": {
+        "name": "Westcott Community Center",
+        "COMMUNITY_CENTER": "Yes",
+        "latitude": 43.03655171619336,
+        "longitude": -76.11923668781384,
+        "FID": 12
+      },
+      "link": "https://westcottcc.org/",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.11923668781384, 43.03655171619336]
+      }
+    },
+    {
+      "type": "Feature",
+      "address": "Tipp Hill Community Center, 201 Hamilton St, Syracuse, NY 13204",
+      "properties": {
+        "name": "Tipp Hill Community Center",
+        "COMMUNITY_CENTER": "Yes",
+        "latitude": 43.05122881982562,
+        "longitude": -76.18293300006485,
+        "FID": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.18293300006485, 43.05122881982562]
+      }
     }
   ]
 }

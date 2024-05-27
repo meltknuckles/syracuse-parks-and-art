@@ -188,8 +188,16 @@ h2 {
 }
 
 .park-header,
+.park-tab-button,
 .park-link.p-button.p-button-text {
     color: #73b707;
+}
+.park-tab-button {
+    border-color: #73b707;
+}
+.park-tab-button.selected {
+    background: #73b707;
+    color: white;
 }
 .park-header-container {
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
@@ -200,24 +208,57 @@ h2 {
     padding: 4px;
     font-weight: bold;
 }
+.sport-header,
+.sport-tab-button,
 .sport-link.p-button.p-button-text {
     color: #1982c4;
 }
+.sport-tab-button {
+    border-color: #1982c4;
+}
+.sport-tab-button.selected {
+    background: #1982c4;
+    color: white;
+}
 .art-header,
+.art-tab-button,
 .art-link.p-button.p-button-text {
     color: #FF595E;
 }
+.art-tab-button {
+    border-color: #FF595E;
+}
+.art-tab-button.selected {
+    background: #FF595E;
+    color: white;
+}
 
+
+.park-tab-button:not(.selected):hover,
+.park-tab-button:not(.selected):focus,
+.park-tab-button:not(.selected):active,
 .park-link.p-button.p-button-text:hover,
 .park-link.p-button.p-button-text:focus,
 .park-link.p-button.p-button-text:active {
     background: #eef7de;
 }
+.sport-tab-button:not(.selected):hover,
+.sport-tab-button:not(.selected):focus,
+.sport-tab-button:not(.selected):active,
 .sport-link.p-button.p-button-text:hover,
 .sport-link.p-button.p-button-text:focus,
 .sport-link.p-button.p-button-text:active {
     background: #eaf7ff;
 }
+.art-tab-button:not(.selected):hover,
+.art-tab-button:not(.selected):focus,
+.art-tab-button:not(.selected):active,
+.art-link.p-button.p-button-text:hover,
+.art-link.p-button.p-button-text:focus,
+.art-link.p-button.p-button-text:active {
+    background: #fff2f2;
+}
+
 
 .listview-container {
     text-align: left;
@@ -227,6 +268,19 @@ h2 {
     height: calc(100vh - 270px);
     overflow-y: auto;
 }
+.listview-button {
+    min-width: 31%;
+    border-bottom: none;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: #CCC 0 0 .25em;
+    height: 48px;
+}
+
 .sidebar {
     height: calc(100vh - 230px);
     overflow-y: auto;

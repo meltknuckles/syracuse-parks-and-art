@@ -23,6 +23,9 @@ export const MapContainer = ({
   mapType,
   interests,
   setZoom,
+  zoom,
+  mapPosition,
+  setMapPosition,
 }: {
   location: any;
   setMapLocation: any;
@@ -32,6 +35,9 @@ export const MapContainer = ({
   setZoom: any;
   interests: any[];
   mapType: string;
+  zoom: number;
+  mapPosition: any;
+  setMapPosition: any;
 }) => {
   // const [circleRadius, setCircleRadius] = useState(location.radius);
   // const [selectedLocation, setSelectedLocation] = useState<any>(null);
@@ -113,10 +119,11 @@ export const MapContainer = ({
               libraries: ['places'],
             }}
             center={{
-              lat: DEFAULT_CENTER.latitude,
-              lng: DEFAULT_CENTER.longitude,
+              lat: mapPosition.lat ?? DEFAULT_CENTER.latitude,
+              lng: mapPosition.lng ?? DEFAULT_CENTER.longitude,
             }}
-            zoom={DEFAULT_ZOOM}
+            defaultZoom={DEFAULT_ZOOM}
+            zoom={zoom}
             yesIWantToUseGoogleMapApiInternals
             layerTypes={
               Object.keys(interests).includes('biking')
@@ -126,6 +133,9 @@ export const MapContainer = ({
             onGoogleApiLoaded={onGoogleApiLoaded}
             options={{ mapTypeId: mapType }}
             onZoomAnimationEnd={(z) => setZoom(z)}
+            onDragEnd={({ center }) =>
+              setMapPosition({ lat: center.lat(), lng: center.lng() })
+            }
           ></GoogleMap>
         </div>
       )}

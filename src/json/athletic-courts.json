@@ -9,7 +9,6 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Barker Square",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Half Court (2)",
         "IMPROV__YEAR": "2021",
@@ -321,20 +320,6 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Cannon Street Community Center",
-        "COURT_TYPE": "Backboard & Hoop",
-        "COURT_SIZE___QUANTITY": "No Lines",
-        "IMPROV__YEAR": "Unlined",
-        "latitude": 43.020535,
-        "longitude": -76.145916,
-        "ObjectId": 7
-      },
-      "geometry": { "type": "Point", "coordinates": [-76.145916, 43.020535] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "park": "Clinton Playlot",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": null,
@@ -432,7 +417,7 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Homer-Wheaton Park",
+        "park": "Homer Wheaton Park",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2019",
@@ -445,7 +430,7 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Homer-Wheaton Park",
+        "park": "Homer Wheaton Park",
         "COURT_TYPE": "Tennis/PickleBall",
         "COURT_SIZE___QUANTITY": "Lined (2)",
         "IMPROV__YEAR": "2022",
@@ -542,7 +527,7 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Libba-Cotton Grove",
+        "park": "Libba Cotten Grove",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court",
         "IMPROV__YEAR": "2021",
@@ -639,7 +624,7 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Meachem Park",
+        "park": "Meachem Field",
         "COURT_TYPE": "Tennis/Pickleball",
         "COURT_SIZE___QUANTITY": "Lined Court (3)",
         "IMPROV__YEAR": "2022",
@@ -652,7 +637,6 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Nottingham Courts",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (6)",
         "IMPROV__YEAR": null,
@@ -666,7 +650,7 @@
       "type": "Feature",
       "address": "Basketball Courts, Upper Onondaga Park, 655 Onondaga Ave, Syracuse, NY 13207",
       "properties": {
-        "park": "Onondaga Park  - Upper",
+        "park": "Onondaga Park - Upper",
         "COURT_TYPE": "Basketball",
         "COURT_SIZE___QUANTITY": "Full Court (3)",
         "IMPROV__YEAR": "2018",
@@ -683,7 +667,7 @@
       "type": "Feature",
       "address": "Tennis Courts, Onondaga Park Dr, Syracuse, NY 13207",
       "properties": {
-        "park": "Onondaga Park  - Upper",
+        "park": "Onondaga Park - Upper",
         "COURT_TYPE": "Tennis",
         "COURT_SIZE___QUANTITY": "Lined Court (8)",
         "IMPROV__YEAR": null,
