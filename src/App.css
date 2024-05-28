@@ -11,7 +11,6 @@
 }
 .info-table tr td:first-child {
     background: #eff4f4;
-    /* text-align: right; */
     padding-right: 12px;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -271,11 +270,12 @@ h2 {
     margin-top: 0;
 }
 
-
+.p-card-body {
+    padding: 8px !important;
+}
 .listview-container {
     text-align: left;
     padding: 0;
-    padding-right: 24px;
     height: calc(100vh - 285px);
     overflow-y: auto;
 }
@@ -322,10 +322,41 @@ h2 {
 .non-mobile-footer {
     display: block;
 }
+.listview-button,
+.p-inputgroup {
+    height: 48px !important;
+}
+.filter-container {
+    padding: 0 !important;
+    padding-left: 8px !important;
+    padding-top: 8px !important;
 
-@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 1200px) {
+    .listview-button,
+    .p-inputgroup {
+        height: 40px !important;
+    }
+    .p-treeselect-label,
+    .p-inputtext {
+        padding: 3px !important;
+        padding-left: 8px !important;
+    }
+    .p-treeselect-token {
+        padding: 3px 8px !important;
+    }
+    .filter-container {
+        padding: 0 !important;
+        padding-top: 4px !important;
+        padding-bottom: 12px !important;
+
+    }
+}
+
+@media only screen and (max-width: 767px) {
     .map-container {
-        height: 40vh;
+        height: calc(40vh - 60px);
     }
     .p-treeselect-label {
         padding: 4px;
@@ -374,7 +405,8 @@ h2 {
     .sidebar,
     .info-container {
         border-radius: 16px;
-        height: calc(60vh - 100px);
+        height: calc(60vh - 40px);
+        box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
     }
     .mobile-footer {
         display: block;

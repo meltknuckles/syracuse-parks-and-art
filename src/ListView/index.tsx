@@ -392,49 +392,64 @@ export const ListView = ({
   return (
     <div style={{ marginTop: -12, padding: 4 }}>
       <div className="grid park-header-container">
-        <div
-          className="col text-left flex"
-          style={{
-            justifyContent: 'space-between',
-            paddingBottom: 0,
-            alignItems: 'flex-end',
-          }}
-        >
-          <Button
-            outlined={selectedTab !== 'park'}
-            className={`park-tab-button listview-button ${selectedTab === 'park' ? 'selected' : ''}`}
-            label="Parks"
-            onClick={() => setSelectedTab('park')}
-          ></Button>
-          <Button
-            outlined={selectedTab !== 'sport'}
-            className={`sport-tab-button listview-button ${selectedTab === 'sport' ? 'selected' : ''}`}
-            label="Sports"
-            onClick={() => setSelectedTab('sport')}
-          ></Button>
-          <Button
-            outlined={selectedTab !== 'art'}
-            className={`art-tab-button listview-button ${selectedTab === 'art' ? 'selected' : ''}`}
-            label="Art"
-            onClick={() => setSelectedTab('art')}
-          ></Button>
-        </div>
-        <div className="col p-inputgroup">
-          <InputText
-            className="filter-text"
-            size="small"
-            onChange={(e: any) => setFilter(e.target.value)}
-            value={filter}
-            placeholder="Filter"
-          />
-          <Button
-            icon="pi pi-times"
-            severity="secondary"
-            size="small"
-            style={{ padding: 8 }}
-            outlined
-            onClick={() => setFilter('')}
-          />
+        <div className="col text-left" style={{}}>
+          <div
+            className="grid flex"
+            style={{
+              width: '102%',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div
+              className="flex col-12 xl:col flex-order-1 xl:flex-order-0"
+              style={{
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                padding: 0,
+                margin: 0,
+                marginBottom: -10,
+              }}
+            >
+              <Button
+                outlined={selectedTab !== 'park'}
+                className={`park-tab-button listview-button ${selectedTab === 'park' ? 'selected' : ''}`}
+                label="Parks"
+                onClick={() => setSelectedTab('park')}
+              ></Button>
+              <Button
+                outlined={selectedTab !== 'sport'}
+                className={`sport-tab-button listview-button ${selectedTab === 'sport' ? 'selected' : ''}`}
+                label="Sports"
+                onClick={() => setSelectedTab('sport')}
+              ></Button>
+              <Button
+                outlined={selectedTab !== 'art'}
+                className={`art-tab-button listview-button ${selectedTab === 'art' ? 'selected' : ''}`}
+                label="Art"
+                onClick={() => setSelectedTab('art')}
+              ></Button>
+            </div>
+            <div className="col-12 xl:col flex-order-0 xl:flex-order-1 filter-container">
+              <div className="p-inputgroup">
+                <InputText
+                  className="filter-text"
+                  size="small"
+                  onChange={(e: any) => setFilter(e.target.value)}
+                  value={filter}
+                  placeholder="Filter"
+                />
+                <Button
+                  className=""
+                  icon="pi pi-times"
+                  severity="secondary"
+                  size="small"
+                  style={{ padding: 8 }}
+                  outlined
+                  onClick={() => setFilter('')}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Card className="listview-container">

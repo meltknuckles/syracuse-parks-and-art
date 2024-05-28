@@ -545,7 +545,7 @@ const App = () => {
       />
       <div className="grid" style={{ margin: 0 }}>
         <div
-          className="info-container col-12 md:col-5 flex-order-1 md:flex-order-0"
+          className="info-container col-12 md:col-6 xl:col-5 flex-order-1 md:flex-order-0"
           ref={scrollRef}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -917,8 +917,8 @@ const App = () => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          padding: '6px 16px',
-          fontSize: '0.85em',
+          padding: '6px 8px',
+          fontSize: '0.8em',
         }}
       >
         <span>
