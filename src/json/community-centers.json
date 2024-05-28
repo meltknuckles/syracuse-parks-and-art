@@ -143,6 +143,10 @@
     {
       "type": "Feature",
       "address": "230 Lincoln Avenue, Syracuse, NY 13204",
+      "name": "Southwest Community Center",
+      "latitude": 43.035092226352646,
+      "longitude": -76.15778043758611,
+      "park": "Southwest Community Center",
       "properties": {
         "name": "Southwest Community Center",
         "COMMUNITY_CENTER": "Yes",

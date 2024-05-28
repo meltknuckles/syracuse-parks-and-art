@@ -106,7 +106,6 @@ export const DATA: Record<
       'name',
     ),
     icon: parkIcon,
-    group: 'park',
     markerIcon: parkMarkerIcon,
     interest: [DataTypes.park],
     color: Colors.green,

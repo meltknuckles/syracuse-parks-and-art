@@ -406,13 +406,19 @@ const App = () => {
             label={kvPairData[key]}
             style={{ background: 'transparent', border: 'none', padding: 4 }}
             onClick={() => {
-              const selectable = DATA.park.data.find(
-                ({ name }: { name: string }) => name === kvPairData[key],
+              const selectable = [...DATA.park.data, ...DATA.center.data].find(
+                (data: any) => {
+                  return (
+                    data.name === kvPairData[key] ||
+                    data.properties?.name === kvPairData[key]
+                  );
+                },
               );
-              const parentPark =
+              const parent =
                 selectedMarker?.properties?.park ?? selectedMarker?.park;
-              const park = DATA.park.data?.find(
-                ({ name }: any) => name === parentPark,
+              const park = [...DATA.park.data, ...DATA.center.data].find(
+                ({ name, properties }: any) =>
+                  name === parent || name === properties?.name,
               );
 
               if (selectable) {
@@ -500,7 +506,7 @@ const App = () => {
               style={{ height: 40 }}
               className="mr-2"
             />
-            <span style={{ fontSize: '1.1em', paddingLeft: 4 }}>
+            <span style={{ fontSize: '1.1em', paddingLeft: 4, paddingTop: 2 }}>
               {isSmallDevice ? 'SYR' : 'Syracuse'} Parks & Art
             </span>
           </div>
@@ -548,8 +554,9 @@ const App = () => {
                 padding: 0,
                 textAlign: 'left',
                 background: '#feefc3',
-                border: `1px outset rgb(254, 239, 195)`,
                 marginBottom: 16,
+                boxShadow:
+                  '0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12)',
               }}
             >
               <label
@@ -847,6 +854,31 @@ const App = () => {
               </div>
             </Card>
           )}
+
+          <div
+            className="non-mobile-footer flex"
+            style={{
+              justifyContent: 'space-between',
+              padding: 4,
+            }}
+          >
+            <span>
+              Made by{' '}
+              <a
+                href="https://www.linkedin.com/in/saramassoud/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mel Massoud
+              </a>
+            </span>
+            <span>
+              Using{' '}
+              <a href="https://data.syr.gov/" target="_blank" rel="noreferrer">
+                City of Syracuse Open Data
+              </a>
+            </span>
+          </div>
         </div>
         <div
           className="map-container col-12 md:col flex-order-0 md:flex-order-1"
@@ -879,6 +911,32 @@ const App = () => {
             setMapPosition={setMapPosition}
           />
         </div>
+      </div>
+      <div
+        className="mobile-footer"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '6px 16px',
+          fontSize: '0.85em',
+        }}
+      >
+        <span>
+          Made by{' '}
+          <a
+            href="https://www.linkedin.com/in/saramassoud/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Mel Massoud
+          </a>
+        </span>
+        <span>
+          Using{' '}
+          <a href="https://data.syr.gov/" target="_blank" rel="noreferrer">
+            City of Syracuse Open Data
+          </a>
+        </span>
       </div>
     </div>
   );

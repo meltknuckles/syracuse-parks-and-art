@@ -151,6 +151,7 @@
       "address": "230 Lincoln Ave, Syracuse, NY 13204",
       "properties": {
         "name": "Southwest Community Center Pool",
+        "park": "Southwest Community Center",
         "Pool": "Yes",
         "type": "Indoor",
         "latitude": 43.03509056633906,

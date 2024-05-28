@@ -65,6 +65,9 @@ a:hover, a:focus, a:active,
     color: #2d2f82 !important;
 }
 
+.p-card {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12) !important;
+}
 .p-card .p-card-body {
     padding: 1rem;
 }
@@ -169,6 +172,7 @@ a:hover, a:focus, a:active,
 .info-container {
     height: calc(100vh - 60px);
     overflow: hidden;
+    z-index: 9;
 }
 h2 {
     margin: 0;
@@ -189,7 +193,8 @@ h2 {
 
 .park-header,
 .park-tab-button,
-.park-link.p-button.p-button-text {
+.park-link.p-button.p-button-text ,
+.center-link.p-button.p-button-text {
     color: #73b707;
 }
 .park-tab-button {
@@ -239,7 +244,10 @@ h2 {
 .park-tab-button:not(.selected):active,
 .park-link.p-button.p-button-text:hover,
 .park-link.p-button.p-button-text:focus,
-.park-link.p-button.p-button-text:active {
+.park-link.p-button.p-button-text:active,
+.center-link.p-button.p-button-text:hover,
+.center-link.p-button.p-button-text:focus,
+.center-link.p-button.p-button-text:active {
     background: #eef7de;
 }
 .sport-tab-button:not(.selected):hover,
@@ -259,13 +267,16 @@ h2 {
     background: #fff2f2;
 }
 
+.listview {
+    margin-top: 0;
+}
+
 
 .listview-container {
     text-align: left;
-    padding: 12px;
-    padding-top: 0;
+    padding: 0;
     padding-right: 24px;
-    height: calc(100vh - 270px);
+    height: calc(100vh - 285px);
     overflow-y: auto;
 }
 .listview-button {
@@ -305,12 +316,16 @@ h2 {
     border-right: none !important;
 }
 
+.mobile-footer {
+    display: none;
+}
+.non-mobile-footer {
+    display: block;
+}
+
 @media only screen and (max-width: 600px) {
     .map-container {
         height: 40vh;
-    }
-    .p-card-body {
-        padding: 12px !important;
     }
     .p-treeselect-label {
         padding: 4px;
@@ -343,7 +358,7 @@ h2 {
         color: #797979;
         border-color: #c5c5c5;
         font-size: 1.2em;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+        box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
         user-select: none;
     }
     h2 {
@@ -352,5 +367,19 @@ h2 {
     }
     .p-card-body {
         padding: 0.5rem !important;
+    }
+    .listview-container {
+        padding: 0;
+    }
+    .sidebar,
+    .info-container {
+        border-radius: 16px;
+        height: calc(60vh - 100px);
+    }
+    .mobile-footer {
+        display: block;
+    }
+    .non-mobile-footer {
+        display: none;
     }
 }
