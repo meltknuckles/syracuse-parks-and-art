@@ -17,9 +17,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
-console.log('__filename', __filename);
 const __dirname = path.dirname(__filename); // get the name of the directory
-console.log('__dirname', __dirname);
 
 export class SyracuseParksCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -93,7 +91,11 @@ export class SyracuseParksCdkStack extends cdk.Stack {
 
     new BucketDeployment(this, 'syr-parks-bucket-deployment', {
       destinationBucket: bucket,
-      sources: [Source.asset(path.resolve(__dirname, '../dist'))],
+      sources: [
+        Source.asset(path.resolve(__dirname, '../dist'), {
+          exclude: ['parks/*'],
+        }),
+      ],
       distribution,
       accessControl: BucketAccessControl.PUBLIC_READ,
     });
