@@ -93,7 +93,7 @@ export class SyracuseParksCdkStack extends cdk.Stack {
 
     new BucketDeployment(this, 'syr-parks-bucket-deployment', {
       destinationBucket: bucket,
-      sources: [Source.asset(path.resolve(__dirname, '../build'))],
+      sources: [Source.asset(path.resolve(__dirname, '../dist'))],
       distribution,
       accessControl: BucketAccessControl.PUBLIC_READ,
     });
