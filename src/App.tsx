@@ -81,18 +81,18 @@ const App = () => {
   const { coords, isGeolocationAvailable, isGeolocationEnabled, getPosition } =
     useGeolocated({
       positionOptions: {
-        enableHighAccuracy: false,
+        enableHighAccuracy: true,
       },
-      isOptimisticGeolocationEnabled: false,
+      isOptimisticGeolocationEnabled: true,
     });
   useEffect(() => {
     if (
       coords?.latitude &&
-      !location?.latitude &&
+      (!location?.latitude || location.latitude !== coords.latitude) &&
       pointInPolygon(boundaryPolygon as any, [
         coords.latitude,
         coords.longitude,
-      ]) === -1
+      ])
     ) {
       setLocation({
         ...location,
@@ -100,11 +100,9 @@ const App = () => {
         longitude: coords.longitude,
       });
 
-      if (map) {
+      if (map && !mapLoadedForFirstTime) {
         map.panTo({ lat: coords.latitude, lng: coords.longitude });
       }
-    } else {
-      setLocation({ latitude: null, longitude: null });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords]);
@@ -215,7 +213,7 @@ const App = () => {
         pointInPolygon(boundaryPolygon as any, [
           location.latitude,
           location.longitude,
-        ]) === -1
+        ])
       ) {
         addMarker({
           type: 'you',
@@ -612,7 +610,7 @@ const App = () => {
               />
             </Card>
           </div>
-          {!selectedMarker && !selectedPath && map && (
+          {!selectedMarker && !selectedPath && (
             <ListView
               setGoogleApiLoaded={setGoogleApiLoaded}
               interests={interests}
@@ -893,6 +891,8 @@ const App = () => {
               onClick={() => {
                 setLocation({ latitude: null, longitude: null });
                 setMapLoadedForFirstTime(false);
+                setSelectedMarker(null);
+                setActiveIndex(0);
                 getPosition();
               }}
             ></Button>
@@ -902,7 +902,6 @@ const App = () => {
             setZoom={setZoom}
             location={coords}
             setMapLocation={setLocation}
-            isGeolocationAvailable={isGeolocationAvailable}
             getPosition={getPosition}
             onGoogleApiLoaded={onGoogleApiLoaded}
             interests={interests as any}
