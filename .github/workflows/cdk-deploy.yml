@@ -9,6 +9,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: cp ./tsconfig.cdk.json ./tsconfig.json
+      - run: pwd
+      - run: ls -l
       - name: cdk diff
         uses: youyo/aws-cdk-github-actions@v2
         with:
