@@ -99,6 +99,7 @@ const App = () => {
         latitude: coords.latitude,
         longitude: coords.longitude,
       });
+      setGoogleApiLoaded(false);
 
       if (map && !mapLoadedForFirstTime) {
         map.panTo({ lat: coords.latitude, lng: coords.longitude });
