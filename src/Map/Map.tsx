@@ -14,7 +14,6 @@ export const DEFAULT_CENTER = {
 };
 
 export const MapContainer = ({
-  location,
   onGoogleApiLoaded,
   mapType,
   interests,
@@ -23,9 +22,6 @@ export const MapContainer = ({
   mapPosition,
   setMapPosition,
 }: {
-  location: any;
-  setMapLocation: any;
-  getPosition: any;
   onGoogleApiLoaded: any;
   setZoom: any;
   interests: any[];

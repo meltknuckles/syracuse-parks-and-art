@@ -900,9 +900,6 @@ const App = () => {
           <MapContainer
             zoom={zoom}
             setZoom={setZoom}
-            location={coords}
-            setMapLocation={setLocation}
-            getPosition={getPosition}
             onGoogleApiLoaded={onGoogleApiLoaded}
             interests={interests as any}
             mapType={mapType}
