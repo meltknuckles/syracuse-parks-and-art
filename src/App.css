@@ -195,7 +195,7 @@ a:active,
   flex-direction: row;
 }
 .tag-container {
-  margin-top: -10px;
+  float: right;
   margin-bottom: 12px;
 }
 .recenter-button {
@@ -340,24 +340,14 @@ h2 {
   color: #2f3186;
   padding: 0 12px;
 }
-.clear-button {
+.back-button {
   color: #2f3186;
-  position: fixed;
-  float: none;
-  padding: 12px;
-  height: 42px;
-  margin-left: -40px;
-  z-index: 1000;
-  box-shadow:
-    0 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
-.clear-button:hover,
-.clear-button:focus,
-.clear-button:active {
-  background: #57a8d9;
-  border-color: #57a8d9;
+.back-button:hover,
+.back-button:focus,
+.back-button:active {
+  background: #eff9ff;
+  border-color: #eff9ff;
 }
 .p-button,
 .p-card-content label {

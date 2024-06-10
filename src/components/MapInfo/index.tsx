@@ -117,20 +117,19 @@ export const MapInfo = ({
 
   return (
     <Card className="sidebar" style={{ padding: 0, textAlign: 'left' }}>
-      <div className="grid">
-        <div className="col">
-          <h2>{selectedMarker.title}</h2>
-        </div>
-        <div className="col-fixed clear-btn-container">
+      <div style={{ display: 'inline-block' }}>
+        <h2 style={{ display: 'inline-block', marginTop: -8 }}>
           <Button
-            className="clear-button"
-            icon="pi pi-times"
-            severity="info"
+            className="back-button"
+            text
+            icon="pi pi-arrow-left"
+            style={{ width: 48, marginBottom: -6 }}
             size="small"
-            rounded
             onClick={() => setSelectedMarker(null)}
+            rounded
           />
-        </div>
+          {selectedMarker.title}
+        </h2>
       </div>
       {selectedTags.length > 0 && (
         <div className="tag-container">
