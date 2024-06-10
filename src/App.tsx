@@ -1,47 +1,31 @@
 import { useLocalStorage, useMediaQuery } from '@uidotdev/usehooks';
 import * as _ from 'lodash';
-import { SortOrder } from 'primereact/api';
-import { Badge } from 'primereact/badge';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
-import { Column } from 'primereact/column';
-import { DataTable } from 'primereact/datatable';
-import { Galleria } from 'primereact/galleria';
-import { Image as PrimereactImage } from 'primereact/image';
 import { Menubar } from 'primereact/menubar';
 import { SelectButton } from 'primereact/selectbutton';
-import { Tag } from 'primereact/tag';
 import { TreeSelect } from 'primereact/treeselect';
 import { Ref, useEffect, useRef, useState } from 'react';
 import { useGeolocated } from 'react-geolocated';
-import { FaParking } from 'react-icons/fa';
-import { FaLocationCrosshairs } from 'react-icons/fa6';
-import { GiKidSlide } from 'react-icons/gi';
-import { MdAccessible, MdSportsBasketball } from 'react-icons/md';
 import pointInPolygon from 'robust-point-in-polygon';
-import './App.css';
-import { ListView } from './ListView';
+import { Footer } from './components/Footer';
+import { ListView } from './components/ListView';
 import MapContainer, {
   DEFAULT_CENTER,
   DEFAULT_ZOOM,
   DEFAULT_ZOOM_IN,
-} from './Map/Map';
-import navIcon from './Map/icons/you.svg';
-import { Colors, DATA, TREE_NODE_DATA } from './constants';
-import boundary from './json/boundary.json';
+} from './components/Map';
+import navIcon from './components/Map/icons/you.svg';
+import { MapInfo } from './components/MapInfo';
+import { RecenterButton } from './components/RecenterButton';
+import { Colors, DATA, TRAIL_NAMES, TREE_NODE_DATA } from './constants';
+import boundary from './data/boundary.json';
 import { formatTitle } from './utils/formatTitle';
 import { getFieldData } from './utils/getFieldData';
+import './App.css';
 
 export const ICON_SIZE = 60;
 const boundaryPolygon = boundary.features[0].geometry.coordinates[0];
-
-const generateMapsLink = (address: string, directions = false) => {
-  const encodedAddress = encodeURIComponent(address);
-  const googleMapsUrl = directions
-    ? `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`
-    : `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
-  return googleMapsUrl;
-};
 
 const App = () => {
   const [location, setLocation] = useLocalStorage<{
@@ -105,14 +89,13 @@ const App = () => {
         map.panTo({ lat: coords.latitude, lng: coords.longitude });
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords]);
 
   const [googleApiLoaded, setGoogleApiLoaded] = useState(false);
   const [mapLoadedForFirstTime, setMapLoadedForFirstTime] = useState(false);
   const [mapType, setMapType] = useLocalStorage<string>('maptype', 'roadmap');
 
-  const onGoogleApiLoaded = ({ map: gmap, maps: gmaps }: any) => {
+  const loadGeoData = ({ map: gmap, maps: gmaps }: any) => {
     if (gmap && gmaps && !googleApiLoaded) {
       for (let m of prevMarkersRef.current) {
         const marker: any = m;
@@ -289,24 +272,13 @@ const App = () => {
           strokeColor: '#ffca3a',
           strokeWeight: 2,
         };
-      } else if (
-        [
-          'Onondaga Creekwalk',
-          'Empire State Trail',
-          'Ley Creek Trail',
-          'Coldbrook Creek Trail',
-        ].includes(feature.getProperty('name'))
-      ) {
+      } else if (TRAIL_NAMES.includes(feature.getProperty('name'))) {
         return {
           fillColor: interestedIn.includes('walking')
-            ? mapType === 'roadmap'
-              ? Colors.lgreen
-              : Colors.lgreen
+            ? Colors.lgreen
             : 'transparent',
           strokeColor: interestedIn.includes('walking')
-            ? mapType === 'roadmap'
-              ? Colors.lgreen
-              : Colors.lgreen
+            ? Colors.lgreen
             : 'transparent',
           strokeWeight: 5,
         };
@@ -332,12 +304,13 @@ const App = () => {
       };
     });
   };
+
   useEffect(() => {
     if (map && maps && !googleApiLoaded) {
-      onGoogleApiLoaded({ map, maps });
+      loadGeoData({ map, maps });
     }
   }, [interests, map, maps]);
-  const galleriaRef = useRef();
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   let photos = selectedMarker?.gallery?.count
@@ -358,139 +331,8 @@ const App = () => {
     );
   }
   const item = photos[activeIndex];
-  const [width, setWidth] = useState(0);
-  const ref: any = useRef(null);
-  useEffect(() => {
-    if (ref.current?.offsetWidth) {
-      setWidth(ref.current.offsetWidth);
-    }
-  }, [ref, item, activeIndex, photos]);
-  const imgRef = useRef();
 
   const scrollRef: Ref<any> = useRef();
-  const scrollToRef = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scroll({
-        top: -100,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const kvPairData = selectedMarker?.data
-    ? {
-        ...selectedMarker.data,
-        hours: selectedMarker.data.hours,
-      }
-    : { _labels: {} };
-  const kvPairs = Object.keys(kvPairData)
-    .filter(
-      (l) =>
-        l !== '_labels' &&
-        !!kvPairData[l] &&
-        (!Array.isArray(kvPairData[l]) || kvPairData[l].length > 0),
-    )
-    .map((key) => ({
-      key: Object.keys(kvPairData._labels).includes(key)
-        ? kvPairData._labels[key]
-        : _.startCase(key),
-      value:
-        key.toLowerCase() === 'park' &&
-        DATA.park.data.find(
-          ({ name }: { name: string }) => name === kvPairData[key],
-        ) ? (
-          <Button
-            key={kvPairData[key]}
-            link
-            label={kvPairData[key]}
-            style={{ background: 'transparent', border: 'none', padding: 4 }}
-            onClick={() => {
-              const selectable = [...DATA.park.data, ...DATA.center.data].find(
-                (data: any) => {
-                  return (
-                    data.name === kvPairData[key] ||
-                    data.properties?.name === kvPairData[key]
-                  );
-                },
-              );
-              const parent =
-                selectedMarker?.properties?.park ?? selectedMarker?.park;
-              const park = [...DATA.park.data, ...DATA.center.data].find(
-                ({ name, properties }: any) =>
-                  name === parent || name === properties?.name,
-              );
-
-              if (selectable) {
-                setSelectedPath(null);
-                setSelectedMarker({
-                  ...selectable,
-                  data: getFieldData(park, 'park'),
-                  type: 'park',
-                  title: selectable.name,
-                  icon: null,
-                  lat: selectable.latitude,
-                  lng: selectable.longitude,
-                  category: selectable.type,
-                });
-                setActiveIndex(0);
-              }
-            }}
-          />
-        ) : (
-          kvPairData[key]
-        ),
-    }));
-
-  const parentPark = selectedMarker?.properties?.park ?? selectedMarker?.park;
-  const selectedAddress =
-    selectedMarker?.properties?.address ||
-    selectedMarker?.address ||
-    (parentPark &&
-      DATA.park.data.find(({ name }: { name: string }) => name === parentPark)
-        ?.address);
-  const selectedtags = [];
-
-  if (selectedMarker) {
-    if (
-      selectedMarker.accessibility ||
-      selectedMarker.features?.find((f: string) => f === 'Accessible')
-    ) {
-      selectedtags.push({
-        label: 'Accessible',
-        icon: MdAccessible,
-        color: Colors.blue,
-      });
-    }
-    if (selectedMarker.features?.find((f: string) => f.includes('Parking'))) {
-      selectedtags.push({
-        label: 'Parking',
-        icon: FaParking,
-        color: Colors.purple,
-      });
-    }
-    if (
-      selectedMarker.features?.find(
-        (f: string) => !!['Playground', 'Swing'].find((i) => f.includes(i)),
-      )
-    ) {
-      selectedtags.push({
-        label: 'Playground',
-        icon: GiKidSlide,
-        color: Colors.green,
-      });
-    }
-    if (
-      selectedMarker.features?.find(
-        (f: string) => !!['Court', 'Field', 'Pool'].find((i) => f.includes(i)),
-      )
-    ) {
-      selectedtags.push({
-        label: 'Sports',
-        icon: MdSportsBasketball,
-        color: Colors.red,
-      });
-    }
-  }
 
   return (
     <div>
@@ -505,7 +347,7 @@ const App = () => {
               style={{ height: 40 }}
               className="mr-2"
             />
-            <span style={{ fontSize: '1.1em', paddingLeft: 4, paddingTop: 2 }}>
+            <span className="menu-title">
               {isSmallDevice ? 'SYR' : 'Syracuse'} Parks & Art
             </span>
           </div>
@@ -513,12 +355,7 @@ const App = () => {
         end={
           <div className="map-button-container">
             {isGeolocationEnabled && !isSmallDevice && location?.latitude && (
-              <Button
-                label="Re-center Map"
-                rounded
-                icon={<FaLocationCrosshairs style={{ marginRight: 6 }} />}
-                severity="secondary"
-                style={{ marginRight: 12, padding: '2px 16px' }}
+              <RecenterButton
                 onClick={() => {
                   setLocation({ latitude: null, longitude: null });
                   setMapLoadedForFirstTime(false);
@@ -526,7 +363,7 @@ const App = () => {
                   setActiveIndex(0);
                   getPosition();
                 }}
-              ></Button>
+              />
             )}
             {mapType && (
               <SelectButton
@@ -548,16 +385,7 @@ const App = () => {
           ref={scrollRef}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Card
-              style={{
-                padding: 0,
-                textAlign: 'left',
-                background: '#feefc3',
-                marginBottom: 16,
-                boxShadow:
-                  '0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12)',
-              }}
-            >
+            <Card className="interests-card">
               <label
                 htmlFor="interests"
                 style={{ fontWeight: 'bold', fontSize: '1.1em' }}
@@ -566,6 +394,7 @@ const App = () => {
               </label>
               {Object.keys(interests).length > 0 && (
                 <Button
+                  className="clear-interests-button"
                   label="Clear"
                   icon="pi pi-times"
                   size="small"
@@ -574,12 +403,6 @@ const App = () => {
                   onClick={() => {
                     setGoogleApiLoaded(false);
                     setInterests({});
-                  }}
-                  style={{
-                    float: 'right',
-                    marginTop: -8,
-                    marginBottom: 8,
-                    padding: '4px 6px',
                   }}
                 ></Button>
               )}
@@ -613,226 +436,41 @@ const App = () => {
           </div>
           {!selectedMarker && !selectedPath && (
             <ListView
-              setGoogleApiLoaded={setGoogleApiLoaded}
-              interests={interests}
-              setInterests={setInterests}
-              zoom={zoom}
-              filter={filter}
-              setFilter={setFilter}
-              scrollToRef={scrollToRef}
-              map={map}
-              setSelectedMarker={setSelectedMarker}
-              setActiveIndex={setActiveIndex}
-              markers={prevMarkersRef?.current ?? []}
-              setMapPosition={setMapPosition}
+              {...{
+                filter,
+                interests,
+                map,
+                markers: prevMarkersRef?.current ?? [],
+                scrollToRef: () => {
+                  if (scrollRef.current) {
+                    scrollRef.current.scroll({
+                      top: -100,
+                      behavior: 'smooth',
+                    });
+                  }
+                },
+                setActiveIndex,
+                setFilter,
+                setGoogleApiLoaded,
+                setInterests,
+                setMapPosition,
+                setSelectedMarker,
+                zoom,
+              }}
             />
           )}
           {selectedMarker && (
-            <Card className="sidebar" style={{ padding: 0, textAlign: 'left' }}>
-              <div className="grid">
-                <div className="col">
-                  <h2>{selectedMarker.title}</h2>
-                </div>
-                <div className="col-fixed">
-                  <Button
-                    className="clear-button"
-                    icon="pi pi-times"
-                    text
-                    size="small"
-                    rounded
-                    onClick={() => setSelectedMarker(null)}
-                  />
-                </div>
-              </div>
-              {selectedtags.length > 0 && (
-                <div className="tag-container">
-                  {selectedtags.map((tag) => (
-                    <Tag
-                      key={tag.label}
-                      style={{
-                        backgroundColor: tag.color,
-                        marginLeft: 6,
-                        borderRadius: 16,
-                        padding: '4px 10px',
-                      }}
-                      icon={<tag.icon style={{ marginRight: 6 }} />}
-                    >
-                      {tag.label}
-                    </Tag>
-                  ))}
-                </div>
-              )}
-              {photos.length > 0 && (
-                <div
-                  className="grid img-container"
-                  style={{ margin: 0, position: 'relative' }}
-                >
-                  <div
-                    className="col-fixed"
-                    style={{
-                      width: 45,
-                      height: '100%',
-                      position: 'absolute',
-                      left: 6,
-                      zIndex: 999,
-                    }}
-                  >
-                    {activeIndex > 0 && (
-                      <Button
-                        type="button"
-                        className="img-button"
-                        icon="pi pi-chevron-left"
-                        onClick={() => setActiveIndex(activeIndex - 1)}
-                      ></Button>
-                    )}
-                  </div>
-                  <div className="col">
-                    <Button
-                      type="button"
-                      ref={ref}
-                      className="img-container"
-                      onClick={() => {
-                        (imgRef.current as any)?.show();
-                        (galleriaRef.current as any)?.stopSlideShow();
-                      }}
-                      style={{
-                        height: `${Math.floor(width * (2 / 3))}px`,
-                        backgroundImage: `url("${item}")`,
-                      }}
-                    >
-                      {photos.length > 1 && (
-                        <Badge
-                          className="img-count"
-                          value={`${activeIndex + 1}/${photos.length}`}
-                        ></Badge>
-                      )}
-                    </Button>
-                  </div>
-                  <div
-                    className="col-fixed"
-                    style={{
-                      width: 45,
-                      height: '100%',
-                      position: 'absolute',
-                      right: 14,
-                      zIndex: 999,
-                    }}
-                  >
-                    {photos.length > 1 && activeIndex < photos.length - 1 && (
-                      <Button
-                        type="button"
-                        className="img-button"
-                        icon="pi pi-chevron-right"
-                        onClick={() => setActiveIndex(activeIndex + 1)}
-                      ></Button>
-                    )}
-                  </div>
-                  <PrimereactImage
-                    ref={imgRef as any}
-                    src={item}
-                    alt="Image"
-                    style={{ display: 'none' }}
-                    preview
-                  />
-                  <Galleria
-                    ref={galleriaRef as any}
-                    value={photos}
-                    circular
-                    style={{ display: 'none' }}
-                    showItemNavigators={false}
-                    activeIndex={activeIndex}
-                    showThumbnails={false}
-                  />
-                </div>
-              )}
-              <div style={{ marginTop: 16 }}>
-                {selectedAddress && (
-                  <Card
-                    header={
-                      <div
-                        style={{
-                          padding: 8,
-                          paddingLeft: 16,
-                          paddingBottom: 0,
-                          opacity: 0.8,
-                          textAlign: 'left',
-                        }}
-                      >
-                        Address
-                      </div>
-                    }
-                    style={{
-                      background: '#eff4f4',
-                      marginBottom: 16,
-                      textAlign: 'right',
-                    }}
-                  >
-                    <a
-                      href={generateMapsLink(selectedAddress)}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        fontSize: '1.1em',
-                        display: 'block',
-                        wordBreak: 'keep-all',
-                      }}
-                    >
-                      {selectedAddress}
-                      <i
-                        className="pi pi-external-link"
-                        style={{ marginLeft: 12 }}
-                      />
-                    </a>
-                  </Card>
-                )}
-                {selectedMarker.description && (
-                  <p
-                    style={{ textAlign: 'left' }}
-                    dangerouslySetInnerHTML={{
-                      __html: selectedMarker.description,
-                    }}
-                  ></p>
-                )}
-              </div>
-              {kvPairs && Object.keys(kvPairs).length > 0 && (
-                <DataTable
-                  stripedRows
-                  value={kvPairs}
-                  sortField="key"
-                  sortOrder={SortOrder.ASC}
-                  className="info-table"
-                  size="small"
-                >
-                  <Column field="key" header=""></Column>
-                  <Column
-                    field="value"
-                    header=""
-                    body={(info) => {
-                      let value = info.value;
-                      const regexp = new RegExp(
-                        /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
-                      );
-                      if (Array.isArray(value)) {
-                        value = (
-                          <ul style={{ margin: 0 }}>
-                            {value.map((v) => (
-                              <li key={v}>{v}</li>
-                            ))}
-                          </ul>
-                        );
-                      } else if (regexp.test(value)) {
-                        value = (
-                          <a href={value} target="_blank" rel="noreferrer">
-                            <i className="pi pi-external-link" />
-                          </a>
-                        );
-                      }
-                      return <div>{value}</div>;
-                    }}
-                  ></Column>
-                </DataTable>
-              )}
-            </Card>
+            <MapInfo
+              {...{
+                selectedMarker,
+                setSelectedPath,
+                setSelectedMarker,
+                setActiveIndex,
+                item,
+                activeIndex,
+                photos,
+              }}
+            />
           )}
           {selectedPath && (
             <Card className="sidebar">
@@ -840,7 +478,7 @@ const App = () => {
                 <div className="col">
                   <h2 style={{ textAlign: 'left' }}>{selectedPath.name}</h2>
                 </div>
-                <div className="col-fixed">
+                <div className="col-fixed clear-btn-container">
                   <Button
                     className="clear-button"
                     icon="pi pi-times"
@@ -853,42 +491,12 @@ const App = () => {
               </div>
             </Card>
           )}
-
-          <div
-            className="non-mobile-footer flex"
-            style={{
-              justifyContent: 'space-between',
-              padding: 4,
-            }}
-          >
-            <span>
-              Made by{' '}
-              <a
-                href="https://www.linkedin.com/in/saramassoud/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Mel Massoud
-              </a>
-            </span>
-            <span>
-              Using{' '}
-              <a href="https://data.syr.gov/" target="_blank" rel="noreferrer">
-                City of Syracuse Open Data
-              </a>
-            </span>
-          </div>
+          <Footer />
         </div>
-        <div
-          className="map-container col-12 md:col flex-order-0 md:flex-order-1"
-          style={{ padding: 0, position: 'relative' }}
-        >
+        <div className="map-container col-12 md:col flex-order-0 md:flex-order-1">
           {isGeolocationEnabled && isSmallDevice && (
-            <Button
-              className="recenter-button"
-              rounded
-              icon={<FaLocationCrosshairs />}
-              severity="secondary"
+            <RecenterButton
+              mobile={true}
               onClick={() => {
                 setLocation({ latitude: null, longitude: null });
                 setMapLoadedForFirstTime(false);
@@ -896,12 +504,12 @@ const App = () => {
                 setActiveIndex(0);
                 getPosition();
               }}
-            ></Button>
+            />
           )}
           <MapContainer
             zoom={zoom}
             setZoom={setZoom}
-            onGoogleApiLoaded={onGoogleApiLoaded}
+            onGoogleApiLoaded={loadGeoData}
             interests={interests as any}
             mapType={mapType}
             mapPosition={mapPosition}
@@ -909,32 +517,7 @@ const App = () => {
           />
         </div>
       </div>
-      <div
-        className="mobile-footer"
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: '6px 8px',
-          fontSize: '0.8em',
-        }}
-      >
-        <span>
-          Made by{' '}
-          <a
-            href="https://www.linkedin.com/in/saramassoud/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Mel Massoud
-          </a>
-        </span>
-        <span>
-          Using{' '}
-          <a href="https://data.syr.gov/" target="_blank" rel="noreferrer">
-            City of Syracuse Open Data
-          </a>
-        </span>
-      </div>
+      {isSmallDevice && <Footer mobile />}
     </div>
   );
 };

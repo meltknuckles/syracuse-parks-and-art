@@ -1,57 +1,55 @@
 import * as _ from 'lodash';
 
-import parks from './json/parks.json';
-import pools from './json/pools.json';
-import centers from './json/community-centers.json';
-import courts from './json/athletic-courts.json';
-import art from './json/public-art.json';
-import dogparks from './json/dog-parks.json';
-import water from './json/water.json';
-import playgrounds from './json/playgrounds.json';
-import trails from './json/bike.json';
+import parks from './data/parks.json';
+import pools from './data/pools.json';
+import centers from './data/community-centers.json';
+import courts from './data/athletic-courts.json';
+import art from './data/public-art.json';
+import dogparks from './data/dog-parks.json';
+import water from './data/water.json';
+import playgrounds from './data/playgrounds.json';
+import trails from './data/bike.json';
 
-import parkMarkerIcon from './Map/icons/park.svg';
-import poolMarkerIcon from './Map/icons/pool.svg';
-import centerMarkerIcon from './Map/icons/center.svg';
-import basketballMarkerIcon from './Map/icons/basketball.svg';
-import soccerMarkerIcon from './Map/icons/soccer.svg';
-import tennisMarkerIcon from './Map/icons/tennis.svg';
-import dogparkMarkerIcon from './Map/icons/dog.svg';
-import muralMarkerIcon from './Map/icons/mural.svg';
-import sculptureMarkerIcon from './Map/icons/sculpture.svg';
-import mosaicMarkerIcon from './Map/icons/mosaic.svg';
-import shuffleboardMarkerIcon from './Map/icons/shuffleboard.svg';
-import playgroundMarkerIcon from './Map/icons/playground.svg';
-import bikingMarkerIcon from './Map/icons/biking.svg';
-import walkMarkerIcon from './Map/icons/walking.svg';
-import skateboardMarkerIcon from './Map/icons/skateboard.svg';
-import golfMarkerIcon from './Map/icons/golf.svg';
-import baseballMarkerIcon from './Map/icons/baseball.svg';
-import iceskateMarkerIcon from './Map/icons/iceskate.svg';
-import waterMarkerIcon from './Map/icons/water.svg';
+import parkMarkerIcon from './components/Map/icons/park.svg';
+import poolMarkerIcon from './components/Map/icons/pool.svg';
+import centerMarkerIcon from './components/Map/icons/center.svg';
+import basketballMarkerIcon from './components/Map/icons/basketball.svg';
+import soccerMarkerIcon from './components/Map/icons/soccer.svg';
+import tennisMarkerIcon from './components/Map/icons/tennis.svg';
+import dogparkMarkerIcon from './components/Map/icons/dog.svg';
+import muralMarkerIcon from './components/Map/icons/mural.svg';
+import sculptureMarkerIcon from './components/Map/icons/sculpture.svg';
+import mosaicMarkerIcon from './components/Map/icons/mosaic.svg';
+import shuffleboardMarkerIcon from './components/Map/icons/shuffleboard.svg';
+import playgroundMarkerIcon from './components/Map/icons/playground.svg';
+import bikingMarkerIcon from './components/Map/icons/biking.svg';
+import walkMarkerIcon from './components/Map/icons/walking.svg';
+import skateboardMarkerIcon from './components/Map/icons/skateboard.svg';
+import golfMarkerIcon from './components/Map/icons/golf.svg';
+import baseballMarkerIcon from './components/Map/icons/baseball.svg';
+import iceskateMarkerIcon from './components/Map/icons/iceskate.svg';
+import waterMarkerIcon from './components/Map/icons/water.svg';
 
-import parkIcon from './ListView/icons/park.svg';
-import poolIcon from './ListView/icons/pool.svg';
-import centerIcon from './ListView/icons/center.svg';
-import basketballIcon from './ListView/icons/basketball.svg';
-import soccerIcon from './ListView/icons/soccer.svg';
-import tennisIcon from './ListView/icons/tennis.svg';
-import dogparkIcon from './ListView/icons/dogpark.svg';
-import artIcon from './ListView/icons/art.svg';
-import muralIcon from './ListView/icons/mural.svg';
-import sculptureIcon from './ListView/icons/sculpture.svg';
-import mosaicIcon from './ListView/icons/mosaic.svg';
-import shuffleboardIcon from './ListView/icons/shuffleboard.svg';
-import playgroundIcon from './ListView/icons/playground.svg';
-import walkIcon from './ListView/icons/walk.svg';
-import bikingIcon from './ListView/icons/biking.svg';
-import skateboardIcon from './ListView/icons/skateboard.svg';
-import golfIcon from './ListView/icons/golf.svg';
-import baseballIcon from './ListView/icons/baseball.svg';
-import iceskateIcon from './ListView/icons/iceskate.svg';
-import waterIcon from './ListView/icons/water.svg';
-
-export const ICON_SIZE = 20;
+import parkIcon from './components/ListView/icons/park.svg';
+import poolIcon from './components/ListView/icons/pool.svg';
+import centerIcon from './components/ListView/icons/center.svg';
+import basketballIcon from './components/ListView/icons/basketball.svg';
+import soccerIcon from './components/ListView/icons/soccer.svg';
+import tennisIcon from './components/ListView/icons/tennis.svg';
+import dogparkIcon from './components/ListView/icons/dogpark.svg';
+import artIcon from './components/ListView/icons/art.svg';
+import muralIcon from './components/ListView/icons/mural.svg';
+import sculptureIcon from './components/ListView/icons/sculpture.svg';
+import mosaicIcon from './components/ListView/icons/mosaic.svg';
+import shuffleboardIcon from './components/ListView/icons/shuffleboard.svg';
+import playgroundIcon from './components/ListView/icons/playground.svg';
+import walkIcon from './components/ListView/icons/walk.svg';
+import bikingIcon from './components/ListView/icons/biking.svg';
+import skateboardIcon from './components/ListView/icons/skateboard.svg';
+import golfIcon from './components/ListView/icons/golf.svg';
+import baseballIcon from './components/ListView/icons/baseball.svg';
+import iceskateIcon from './components/ListView/icons/iceskate.svg';
+import waterIcon from './components/ListView/icons/water.svg';
 
 export enum DataTypes {
   park = 'Parks',
@@ -102,7 +100,7 @@ export const DATA: Record<
     type: 'park',
     group: 'park',
     data: _.orderBy(
-      parks.map((d) => ({ ...d, type: 'park' })),
+      parks.map((d: any) => ({ ...d, type: 'park' })),
       'name',
     ),
     icon: parkIcon,
@@ -112,7 +110,7 @@ export const DATA: Record<
   },
   pool: {
     type: 'pool',
-    data: pools.features.map((d) => ({ ...d, type: 'pool' })),
+    data: pools.features.map((d: any) => ({ ...d, type: 'pool' })),
     icon: poolIcon,
     group: 'park',
     markerIcon: poolMarkerIcon,
@@ -121,7 +119,7 @@ export const DATA: Record<
   },
   center: {
     type: 'center',
-    data: centers.features.map((d) => ({ ...d, type: 'center' })),
+    data: centers.features.map((d: any) => ({ ...d, type: 'center' })),
     icon: centerIcon,
     group: 'park',
     markerIcon: centerMarkerIcon,
@@ -132,7 +130,7 @@ export const DATA: Record<
     type: 'mural',
     data: art.features
       .filter(({ properties }: any) => properties.type.includes('Mural'))
-      .map((d) => ({ ...d, type: 'mural' })),
+      .map((d: any) => ({ ...d, type: 'mural' })),
     icon: muralIcon,
     markerIcon: muralMarkerIcon,
     group: 'art',
@@ -145,7 +143,7 @@ export const DATA: Record<
       .filter(({ properties }: any) =>
         properties.COURT_TYPE?.includes('Basketball'),
       )
-      .map((d) => ({ ...d, type: 'basketball' })),
+      .map((d: any) => ({ ...d, type: 'basketball' })),
     icon: basketballIcon,
     group: 'sports',
     markerIcon: basketballMarkerIcon,
@@ -154,7 +152,7 @@ export const DATA: Record<
   },
   dogpark: {
     type: 'dogpark',
-    data: dogparks.map((d) => ({ ...d, type: 'dogpark' })),
+    data: dogparks.map((d: any) => ({ ...d, type: 'dogpark' })),
     icon: dogparkIcon,
     group: 'park',
     markerIcon: dogparkMarkerIcon,
@@ -167,7 +165,7 @@ export const DATA: Record<
       .filter(({ properties }: any) =>
         properties.COURT_TYPE?.includes('Tennis'),
       )
-      .map((d) => ({ ...d, type: 'tennis' })),
+      .map((d: any) => ({ ...d, type: 'tennis' })),
     icon: tennisIcon,
     group: 'sports',
     markerIcon: tennisMarkerIcon,
@@ -182,7 +180,7 @@ export const DATA: Record<
           properties.type.includes('Sculpture') ||
           properties.type.includes('Monument'),
       )
-      .map((d) => ({ ...d, type: 'sculpture' })),
+      .map((d: any) => ({ ...d, type: 'sculpture' })),
     icon: sculptureIcon,
     group: 'art',
     markerIcon: sculptureMarkerIcon,
@@ -193,7 +191,7 @@ export const DATA: Record<
     type: 'mosaic',
     data: art.features
       .filter(({ properties }: any) => properties.type?.includes('Mosaic'))
-      .map((d) => ({ ...d, type: 'mosaic' })),
+      .map((d: any) => ({ ...d, type: 'mosaic' })),
     icon: mosaicIcon,
     group: 'art',
     markerIcon: mosaicMarkerIcon,
@@ -206,7 +204,7 @@ export const DATA: Record<
       .filter(({ properties }: any) =>
         properties.COURT_TYPE?.includes('Shuffleboard'),
       )
-      .map((d) => ({ ...d, type: 'shuffleboard' })),
+      .map((d: any) => ({ ...d, type: 'shuffleboard' })),
     icon: shuffleboardIcon,
     group: 'sports',
     markerIcon: shuffleboardMarkerIcon,
@@ -215,7 +213,7 @@ export const DATA: Record<
   },
   playground: {
     type: 'playground',
-    data: playgrounds.map((d) => ({ ...d, type: 'playground' })),
+    data: playgrounds.map((d: any) => ({ ...d, type: 'playground' })),
     icon: playgroundIcon,
     group: 'park',
     markerIcon: playgroundMarkerIcon,
@@ -230,7 +228,7 @@ export const DATA: Record<
           properties.COURT_TYPE?.includes('Cycle') ||
           properties.type?.includes('BMX'),
       )
-      .map((d) => ({ ...d, type: 'biking' })),
+      .map((d: any) => ({ ...d, type: 'biking' })),
     icon: bikingIcon,
     group: 'park',
     markerIcon: bikingMarkerIcon,
@@ -243,7 +241,7 @@ export const DATA: Record<
       .filter(({ properties }: any) =>
         properties.COURT_TYPE?.includes('Soccer'),
       )
-      .map((d) => ({ ...d, type: 'soccer' })),
+      .map((d: any) => ({ ...d, type: 'soccer' })),
     icon: soccerIcon,
     group: 'sports',
     markerIcon: soccerMarkerIcon,
@@ -263,7 +261,7 @@ export const DATA: Record<
     type: 'skateboard',
     data: courts.features
       .filter(({ properties }: any) => properties.type?.includes('Skate'))
-      .map((d) => ({ ...d, type: 'skateboard' })),
+      .map((d: any) => ({ ...d, type: 'skateboard' })),
     icon: skateboardIcon,
     group: 'sports',
     markerIcon: skateboardMarkerIcon,
@@ -274,7 +272,7 @@ export const DATA: Record<
     type: 'golf',
     data: courts.features
       .filter(({ properties }: any) => properties.type?.includes('Golf'))
-      .map((d) => ({ ...d, type: 'golf' })),
+      .map((d: any) => ({ ...d, type: 'golf' })),
     icon: golfIcon,
     group: 'sports',
     markerIcon: golfMarkerIcon,
@@ -285,7 +283,7 @@ export const DATA: Record<
     type: 'iceskate',
     data: courts.features
       .filter(({ properties }: any) => properties.type?.includes('Ice Rink'))
-      .map((d) => ({ ...d, type: 'iceskate' })),
+      .map((d: any) => ({ ...d, type: 'iceskate' })),
     icon: iceskateIcon,
     markerIcon: iceskateMarkerIcon,
     group: 'sports',
@@ -296,7 +294,7 @@ export const DATA: Record<
     type: 'baseball',
     data: courts.features
       .filter(({ properties }: any) => properties.type?.includes('Baseball'))
-      .map((d) => ({ ...d, type: 'baseball' })),
+      .map((d: any) => ({ ...d, type: 'baseball' })),
     icon: baseballIcon,
     group: 'sports',
     markerIcon: baseballMarkerIcon,
@@ -305,7 +303,7 @@ export const DATA: Record<
   },
   water: {
     type: 'water',
-    data: water.map((d) => ({ ...d, type: 'water' })),
+    data: water.map((d: any) => ({ ...d, type: 'water' })),
     icon: waterIcon,
     group: 'park',
     markerIcon: waterMarkerIcon,
@@ -347,7 +345,7 @@ export const TREE_NODE_DATA = [
   {
     label: 'Parks and Recreation',
     key: 'parksandrec',
-    icon: <img src={parkIcon} style={{ width: ICON_SIZE, marginRight: 6 }} />,
+    icon: <img className="icon-img" src={parkIcon} />,
     color: Colors.green,
     children: [
       DATA.park,
@@ -362,16 +360,14 @@ export const TREE_NODE_DATA = [
       key: type,
       label: interest[0],
       data,
-      icon: <img src={icon} style={{ width: ICON_SIZE, marginRight: 6 }} />,
+      icon: <img className="icon-img" src={icon} />,
       color,
     })),
   },
   {
     label: 'Sports',
     key: 'sports',
-    icon: (
-      <img src={basketballIcon} style={{ width: ICON_SIZE, marginRight: 6 }} />
-    ),
+    icon: <img className="icon-img" src={basketballIcon} />,
     color: Colors.blue,
     children: [
       DATA.basketball,
@@ -386,23 +382,30 @@ export const TREE_NODE_DATA = [
       key: type,
       label: interest[0],
       data,
-      icon: <img src={icon} style={{ width: ICON_SIZE, marginRight: 6 }} />,
+      icon: <img className="icon-img" src={icon} />,
       color,
     })),
   },
   {
     label: 'Public Art',
     key: 'art',
-    icon: <img src={artIcon} style={{ width: ICON_SIZE, marginRight: 6 }} />,
+    icon: <img className="icon-img" src={artIcon} />,
     color: Colors.red,
     children: [DATA.mural, DATA.sculpture, DATA.mosaic].map(
       ({ type, data, icon, interest, color }) => ({
         key: type,
         label: interest[0],
         data,
-        icon: <img src={icon} style={{ width: ICON_SIZE, marginRight: 6 }} />,
+        icon: <img className="icon-img" src={icon} />,
         color,
       }),
     ),
   },
+];
+
+export const TRAIL_NAMES = [
+  'Onondaga Creekwalk',
+  'Empire State Trail',
+  'Ley Creek Trail',
+  'Coldbrook Creek Trail',
 ];

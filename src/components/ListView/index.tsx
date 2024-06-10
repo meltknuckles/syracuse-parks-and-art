@@ -1,12 +1,12 @@
+import { useLocalStorage } from '@uidotdev/usehooks';
 import * as _ from 'lodash';
 import { Button } from 'primereact/button';
-import { InputText } from 'primereact/inputtext';
-import { DEFAULT_ZOOM_IN } from '../Map/Map';
-import { DATA, SUB_PARK_DATA_ORDER } from '../constants';
-import { formatTitle } from '../utils/formatTitle';
-import { getFieldData } from '../utils/getFieldData';
-import { useLocalStorage } from '@uidotdev/usehooks';
 import { Card } from 'primereact/card';
+import { InputText } from 'primereact/inputtext';
+import { DEFAULT_ZOOM_IN } from '../Map';
+import { DATA, SUB_PARK_DATA_ORDER } from '../../constants';
+import { formatTitle } from '../../utils/formatTitle';
+import { getFieldData } from '../../utils/getFieldData';
 
 export const ListView = ({
   filter,
@@ -178,12 +178,7 @@ export const ListView = ({
     return (
       <li key={name}>
         <Button
-          className={`${type ?? data?.type ?? 'b'}-link`}
-          style={{
-            width: '100%',
-            textAlign: 'left',
-            fontSize: '1.2em',
-          }}
+          className={`${type ?? data?.type ?? 'b'}-link table-link`}
           text
           label={name}
           icon={
@@ -242,13 +237,7 @@ export const ListView = ({
             return (
               <Button
                 key={`${type},${lat},${lng},${label}`}
-                className={`${cssType}-link`}
-                style={{
-                  width: '100%',
-                  textAlign: 'left',
-                  paddingLeft: '10%',
-                  fontSize: '1em',
-                }}
+                className={`${cssType}-link sub-link`}
                 text
                 icon={<img src={icon} style={{ width: 18, marginRight: 6 }} />}
                 size="small"
@@ -400,16 +389,7 @@ export const ListView = ({
               justifyContent: 'space-between',
             }}
           >
-            <div
-              className="flex col-12 xl:col flex-order-1 xl:flex-order-0"
-              style={{
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                padding: 0,
-                margin: 0,
-                marginBottom: -10,
-              }}
-            >
+            <div className="flex col-12 xl:col flex-order-1 xl:flex-order-0 tab-container">
               <Button
                 outlined={selectedTab !== 'park'}
                 className={`park-tab-button listview-button ${selectedTab === 'park' ? 'selected' : ''}`}
@@ -439,7 +419,6 @@ export const ListView = ({
                   placeholder="Filter"
                 />
                 <Button
-                  className=""
                   icon="pi pi-times"
                   severity="secondary"
                   size="small"
